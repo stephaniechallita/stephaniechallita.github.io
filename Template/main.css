@@ -1751,7 +1751,7 @@
 
 /* Desktop */
 
-	@media screen and (min-width: 737px) {
+	@media screen and (min-width: 970px) {
 
 		/* Basic */
 
@@ -1935,7 +1935,7 @@
 
 /* Tablet */
 
-	@media screen and (min-width: 737px) and (max-width: 1200px) {
+	@media screen and (min-width: 970px) and (max-width: 1400px) {
 
 		/* Basic */
 
@@ -1981,13 +1981,14 @@
 
 /* Mobile */
 
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 970px) {
 
 		/* Basic */
 
 			body, input, textarea, select {
 				line-height: 1.75em;
-				font-size: 10pt;
+				font-size: 
+10pt;
 				letter-spacing: 0;
 			}
 
@@ -2102,7 +2103,7 @@
 			}
 
 				.wrapper.first {
-					padding-top: 5em;
+					padding-top: 6em;
 				}
 
 		/* Nav */
