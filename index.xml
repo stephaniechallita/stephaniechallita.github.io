@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Stéphanie Challita</title>
+    <link>https://stephaniechallita.github.io/</link>
+    <description>Recent content in About on Stéphanie Challita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://stephaniechallita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://stephaniechallita.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/about/</guid>
+      <description>About Me &#34;Everything you can imagine is real.&#34; -- Pablo Picasso
+ I am Associate Professor of Software Engineering at University of Rennes 1. I teach at the engineering school ESIR and I am a member of DiverSE research team, which is joint to CNRS, Inria Rennes - Bretagne Atlantique and Irisa. Until September 2020, I was a Postdoctoral Researcher at I3S laboratory &amp;amp; Inria Sophia Antipolis – Méditerranée in France, within the Kairos research team.</description>
+    </item>
+    
+    <item>
+      <title>Activities</title>
+      <link>https://stephaniechallita.github.io/activities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/activities/</guid>
+      <description>Activities Activities @IEEE Computer Society Member of IEEE Conference Activities Committee (CAC).   Conferences Organizing Committees  Publication Chair @ICSA&amp;rsquo;2021 Program Co-Chair @FAACS&amp;rsquo;2020 (co-located with ECSA&amp;rsquo;2020 Publicity Co-Chair @ECSA&amp;rsquo;2020 Student Volunteers Co-Chair @ECSA&amp;rsquo;2019 Communications Chair @FormaliSE&amp;rsquo;2019 (co-located with ICSE&amp;rsquo;2019    Conferences &amp;amp; Workshops Program Committees  PC Member @ICSR&amp;rsquo;2022 PC Member @SLE&amp;rsquo;2021-Artifact Evaluation Track PC Member @MODELS&amp;rsquo;2021-Tools &amp;amp; Demonstrations Track PC Member @Models@runtime&amp;rsquo;2021 (co-located with MODELS&amp;rsquo;2021) PC Member @MLE&amp;rsquo;2021 (co-located with MODELS&amp;rsquo;2021) PC Member @FAACS&amp;rsquo;2021 (co-located with ECSA&amp;rsquo;2021) PC Member @ICSA&amp;rsquo;2021-Artifact track PC Member @ICSA&amp;rsquo;2021-ECR track) PC Member @FormaliSE&amp;rsquo;2021 (co-located with ICSE&amp;rsquo;2021) PC Member @SA-TTA&amp;rsquo;2021 (part of SAC&amp;rsquo;2021) PC Member @MODELS&amp;rsquo;2020-Demo Track PC Member @FAACS&amp;rsquo;2019 (co-located with ECSA&amp;rsquo;2019) PC Member @SERVICE COMPUTATION&amp;rsquo;2018    External Reviewing Services  JoT, IEEE Access, CCPE &amp;amp; SPE journals IEEE/ACM MobileSoft&amp;rsquo;2017 IEEE WCNC&amp;rsquo;2018    Session Chair Services  ICSA&amp;rsquo;2021 FAACS&amp;rsquo;2020 CLOSER&amp;rsquo;2018 CLOUD&amp;rsquo;2017 CLOSER&amp;rsquo;2017    Collaborative projects  SPAI (2018 - 2023) OCCIware (2014 - 2017)    Talks  Seminar in 2020 @ENS Rennes (see the slides here) GLE/LOUISE/RIMEL working day 2019 organized by GDR GPL PechaKucha @FormaliSE&amp;rsquo;2018 (see the slides here) TED speech @IEEE WISC&amp;rsquo;2018  Most of my slides are available on my Slideshare account .</description>
+    </item>
+    
+    <item>
+      <title>JXT</title>
+      <link>https://stephaniechallita.github.io/jxt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/jxt/</guid>
+      <description>Matériel de cours - Programmation Web - ESIR Professeurs :
+Stéphanie Challita &amp;amp Benjamin Danglot  Cours Les slides du cours sont disponibles ici.
+Plan du cours : Cours    Date Heure Thème Notes     28/03/2021 08:00 - 10:00 Introduction et Généralités Histoire, vision globale, architecture, frontend, backend, TypeScript et NestJS   01/04/2021 08:00 - 10:00 Object Relationnal Mapping (ORM) Comment passer du monde objet au monde relationel des BDDs   08/04/2021 08:00 - 10:00 TypeORM et OpenAPI Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI   14/04/2021 10:15 - 12:15 Sécurité Sécurisation d&amp;rsquo;API, de mots de passe, HTTPs, Autorisation &amp;amp; Authentification     Séances de TP Le sujet du projet est disponible sur GitHub ici.</description>
+    </item>
+    
+    <item>
+      <title>Positions</title>
+      <link>https://stephaniechallita.github.io/positions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/positions/</guid>
+      <description>Positions M2 internships positions  Automated reverse-engineering of a Cloud API DSML for design, orchestration and adaptation of microservices    PhD positions No position avalaible  </description>
+    </item>
+    
+    <item>
+      <title>Prog1</title>
+      <link>https://stephaniechallita.github.io/prog1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/prog1/</guid>
+      <description>Matériel de cours - Programmation - ESIR Professeurs :
+Stéphanie Challita, Hélène Feuillatre, Fabrice Lamarche, François Mentec, Philippe Rannou  Cours Les slides du cours sont disponibles ici.
+Plan du cours : Cours    Date Heure Thème Notes     03/09/2021 10h15 - 12:15 Rappel de programmation Programmes, Syntaxe, Variables, Structures de contrôles, etc   07/09/2021 10h15 - 12:15 Classes et Objets Concepts de classes et d&amp;rsquo;objets, attributs, méthodes, instances, etc.</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://stephaniechallita.github.io/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/publications/</guid>
+      <description>Publications All my publications are available on Google Scholar . You can also access all the articles from HAL .
+ PhD Thesis  Stéphanie Challita  &amp;ldquo;Inferring Models from Cloud APIs and Reasoning over Them: A Tooled and Formal Approach.&amp;rdquo; Defended on December 21, 2018 in Lille, France. (see the slides here)    International Journals   Stéphanie Challita, Fabian Korte, Johannes Erbel, Faiez Zalila, Jens Grabowski, Philippe Merle  &amp;ldquo;Model-Based Cloud Resource Provisioning with TOSCA and OCCI.</description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>https://stephaniechallita.github.io/research/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/research/</guid>
+      <description>Research Overall, my research project aims to facilitate and improve software development. For this, I am interested in the development of Domain-Specific Modeling Languages which have shown their effectiveness in the world of software development, thanks to a set of features such as abstraction, verification, code generation and many others. More specifically, my research aims to provide languages and tools to model, verify and ease software development of heterogeneous distributed systems like Cloud Computing.</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://stephaniechallita.github.io/teaching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/teaching/</guid>
+      <description>Teaching 2020 - Present I teach many courses related to software engineering at ESIR (Ecole Supérieure d&amp;rsquo;Ingénieurs de Rennes) attached to University of Rennes 1.
+ ESIR1-SI (S5) &amp;gt; Programmation ESIR2-SI (S7) &amp;gt; V&amp;amp;V ESIR2-SI (S8) &amp;gt; MDI ESIR2-SI (S8) &amp;gt; JXT-Webserver Engineering   2020 During my postdoc, I was responsible of teaching a course (28 hours) related to systems and networks administration at the IUT, attached to University of Côte d&amp;rsquo;Azur.</description>
+    </item>
+    
+  </channel>
+</rss>
