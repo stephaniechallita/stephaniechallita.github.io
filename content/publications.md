@@ -32,10 +32,6 @@ You can also access all the articles from [HAL <i class="ai ai-hal"></i>](https:
                                     
 {{< expand "International Conferences" >}}
 
-- **Stéphanie Challita**, [Robert De Simone](http://www-sop.inria.fr/members/Robert.De_Simone/).
-<i class="fa fa-paperclip"></i> "Sock: A Clock-based Modeling Language for Specifying Periodic Task Systems with Security and Safety Insights."
-*Submitted to 13th ACM SIGPLAN International Conference on Software Language Engineering (SLE). Online conference, 2020.*
-										
 - **Stéphanie Challita**, [Faiez Zalila](https://sites.google.com/site/faiezzalila), [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html).
 [<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-01790629/document) "Specifying Semantic Interoperability between Heterogeneous Cloud Resources with the fclouds Formal Language."
 *11th IEEE International Conference on Cloud Computing (CLOUD).* San Francisco, California, USA, 2018.
