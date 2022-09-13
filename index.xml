@@ -85,7 +85,8 @@ Plan du cours : Cours    Date Heure Thème Notes     27/09/2022 08:00 - 10:00 Ra
       
       <guid>https://stephaniechallita.github.io/web/</guid>
       <description>Matériel de cours - Programmation Web - ESIR Professeurs :
-Stéphanie Challita &amp;amp Hélène Feuillatre  Cours Les slides du cours de Dev Backend sont disponibles ici. Les slides du cours de Dev Frontend sont disponibles ici :
+Stéphanie Challita &amp;amp Hélène Feuillatre  Cours Les slides du cours de Dev Backend sont disponibles ici.
+Les slides du cours de Dev Frontend sont disponibles ici :
  Partie 1 : Introduction Partie 2 : Web Component Partie 3 : Angular Partie 4 : suite Angular Partie 5 : Tests  Plan du cours : Cours    Date Heure Thème Notes     17/10/2022 10:15 - 12:15 Introduction et Généralités Histoire, vision globale, architecture, frontend, backend, TypeScript et NestJS   20/10/2022 08:00 - 10:00 Object Relationnal Mapping (ORM) Comment passer du monde objet au monde relationel des BDDs   24/10/2022 08:00 - 10:00 TypeORM et OpenAPI Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI   25/10/2022 14:00 - 16:00 Sécurité Sécurisation d&amp;rsquo;API, de mots de passe, HTTPs, Autorisation &amp;amp; Authentification   18/11/2022 08:00 - 10:00 Extra Backend Dev Vendre son API, Développement No-code     Séances de TP Le sujet du projet (partie Backend) est disponible sur GitHub ici.</description>
     </item>
     
