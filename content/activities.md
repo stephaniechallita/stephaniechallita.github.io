@@ -11,6 +11,7 @@ Member of IEEE Conference Activities Committee [(CAC)](https://www.computer.org/
 ---
     							
 {{< expand "Conferences Organizing Committees" >}}
+- Student Volunteers Co-Chair @[ICT4S'2023](https://conf.researchr.org/home/ict4s-2023)
 - Publication Chair @[ICSA'2021](https://icsa-conferences.org/2021/organization/)
 - Program Co-Chair @[FAACS'2020](https://faacs-workshop.github.io/2020/) (*co-located with* [ECSA'2020](https://ecsa2020.disim.univaq.it)
 - Publicity Co-Chair @[ECSA'2020](https://ecsa2020.disim.univaq.it)

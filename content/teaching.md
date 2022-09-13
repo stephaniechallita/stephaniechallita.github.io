@@ -6,12 +6,20 @@ title = "Teaching"
 
 ### 2020 - Present
 
-I teach many courses related to software engineering  at [ESIR (Ecole Supérieure d'Ingénieurs de Rennes)](https://esir.univ-rennes1.fr/en) attached to [University of Rennes 1](https://www.univ-rennes1.fr/).
+I teach many courses related to software engineering  at [ESIR (Ecole Supérieure d'Ingénieurs de Rennes)](https://esir.univ-rennes1.fr/en) attached to [University of Rennes 1](https://www.univ-rennes1.fr/). I am mainly responsible of the object-oriented programming and web development courses.
     
 - ESIR1-SI (S5) > [Programmation](../prog1)
+- ESIR2-SI (S7) > [Web](../web)
+- ESIR3-SI (S9) > [JXC-Frontend Engineering](../jxc)
+
+
+### 2020 - 2021
+
+I taught courses related to software modelling and to software development tools.
+
 - ESIR2-SI (S7) > [V&V](https://people.irisa.fr/Benoit.Combemale/course/esir/esir2/)
 - ESIR2-SI (S8) > [MDI](https://people.irisa.fr/Benoit.Combemale/course/esir/esir2/)
-- ESIR2-SI (S8) > [JXT-Webserver Engineering](../jxt)
+
 
 ---
 
