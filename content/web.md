@@ -14,6 +14,7 @@ title = "Web"
 ### Cours
 				
 Les slides du cours de Dev Backend sont disponibles [ici](/web/WebServer-ESIR.pdf).
+
 Les slides du cours de Dev Frontend sont disponibles ici :
 - [Partie 1](/web/Front_Partie1_2021-2022.pdf) : Introduction
 - [Partie 2](web/Front_Partie2_2021-2022.pdf) : Web Component
@@ -56,9 +57,8 @@ Ci-dessous, une tentative de planning pour les différentes étapes du projet.
 
 Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ici](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront).
 
-| Semaine | Date | Sujets |
-| -------- | -------- | -------- | 
-
+| Semaine | Date |
+| -------- | -------- |
 | 05/12/2022 | 08:00 - 10:00 |
 | 09/12/2022 | 08:00 - 10:00 |
 | 12/12/2022 | 08:00 - 10:00 |
@@ -67,8 +67,7 @@ Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ic
 | 06/01/2023 | 14:00 - 16:00 |
 | 09/01/2023 | 10:15 - 12:15 |
 
-La soutenance du projet aura lieu le :
-| 10/01/2023 | 14:00 - 16:00 | Soutenance |
+La soutenance du projet du groupe 1 aura lieu le 10/01/2023 de 14:00 à 16:00.
 							
 ---
 
