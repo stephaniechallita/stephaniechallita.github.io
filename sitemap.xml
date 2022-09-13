@@ -19,10 +19,6 @@
   </url>
   
   <url>
-    <loc>https://stephaniechallita.github.io/jxt/</loc>
-  </url>
-  
-  <url>
     <loc>https://stephaniechallita.github.io/positions/</loc>
   </url>
   
@@ -44,6 +40,10 @@
   
   <url>
     <loc>https://stephaniechallita.github.io/teaching/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stephaniechallita.github.io/web/</loc>
   </url>
   
 </urlset>
