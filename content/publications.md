@@ -33,7 +33,7 @@ You can also access all the articles from [HAL <i class="ai ai-hal"></i>](https:
 {{< expand "International Conferences" >}}
 
 - Anne Bumiller, [Olivier Barais](https://olivier.barais.fr/), **Stéphanie Challita**, [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), Nicolas Aillery, Gaël Le Lan.
-[<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-03729080/document) "A Context-Driven Modelling Framework for Dynamic Authentication Decisions,"
+[<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-03729080/document) "A Context-Driven Modelling Framework for Dynamic Authentication Decisions."
 *Euromicro Conference Series on Software Engineering and Advanced Applications (SEAA).* Gran Canaria, Spain, 2022.
 
 - **Stéphanie Challita**, [Faiez Zalila](https://sites.google.com/site/faiezzalila), [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html).

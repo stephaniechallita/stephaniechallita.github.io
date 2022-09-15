@@ -51,7 +51,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 | Semaine 45 | 07/11/2022 - 11/11/2022 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 1 | 
 | Semaine 46 | 14/11/2022 - 18/11/2022 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 3 | 
 | Semaine 47 | 21/11/2022 - 25/11/2022 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 2 | 
-| Semaine 48 | 28/11/2022 - 02/11/2022 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 2 | 
+| Semaine 48 | 28/11/2022 - 02/12/2022 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 2 | 
 <!-- [Correction TP1](/prog/materials/tp1/correction-TP01.zip) -->
 
 ---

@@ -17,10 +17,10 @@ Les slides du cours de Dev Backend sont disponibles [ici](/web/WebServer-ESIR.pd
 
 Les slides du cours de Dev Frontend sont disponibles ici :
 - [Partie 1](/web/Front_Partie1_2021-2022.pdf) : Introduction
-- [Partie 2](web/Front_Partie2_2021-2022.pdf) : Web Component
-- [Partie 3](web/Front_Partie3_2021-2022.pdf) : Angular
-- [Partie 4](web/Front_Partie4_2021-2022.pdf) : suite Angular
-- [Partie 5](web/Front_Partie5_2021-2022.pdf) : Tests
+- [Partie 2](/web/Front_Partie2_2021-2022.pdf) : Web Component
+- [Partie 3](/web/Front_Partie3_2021-2022.pdf) : Angular
+- [Partie 4](/web/Front_Partie4_2021-2022.pdf) : suite Angular
+- [Partie 5](/web/Front_Partie5_2021-2022.pdf) : Tests
 
 
 #### Plan du cours :
