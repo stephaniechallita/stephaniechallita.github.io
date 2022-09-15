@@ -67,7 +67,7 @@ Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ic
 | 06/01/2023 | 14:00 - 16:00 |
 | 09/01/2023 | 10:15 - 12:15 |
 
-La soutenance du projet du groupe 1 aura lieu le 10/01/2023 de 14:00 à 16:00.
+La soutenance du projet aura lieu le 10/01/2023 de 14:00 à 16:00.
 							
 ---
 
