@@ -60,9 +60,9 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 | Semaine | Date | Examen | Durée (h) |
 | -------- | -------- | -------- | -------- |
-| Semaine 43 | 27/10/2021 | Contrôle sur table | 2 | 
 | Semaine 43 | 28/10/2022 | Devoir (sur machine) | 1 | 
 | Semaine 49 | 08/12/2022 | Devoir (sur machine)  | 1 | 
+| Semaine 02 | 09/01/2023 | Contrôle sur table | 2 | 
 
 ---
 
