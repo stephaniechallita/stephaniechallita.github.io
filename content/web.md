@@ -25,7 +25,7 @@ Les slides du cours de Dev Frontend sont disponibles ici :
 
 #### Plan du cours :
 
-##### Cours
+##### Cours (partie Backend)
 
 | Date | Heure | Thème | Notes |
 | -------- | -------- | -------- | -------- |
@@ -51,21 +51,21 @@ Ci-dessous, une tentative de planning pour les différentes étapes du projet.
 | 21/10/2022 | 10:15 - 12:15 | [Contrôleurs et première API (suite)](https://github.com/stephaniechallita/WebServer/blob/master/controleurs_et_premiere_api.md), [Modules et logique métier](https://github.com/stephaniechallita/WebServer/blob/master/modules_et_logiques_metiers.md) |
 | 25/10/2022 | 08:00 - 10:00 | [Modules et logique métier (suite)](https://github.com/stephaniechallita/WebServer/blob/master/modules_et_logiques_metiers.md), [TypeORM, Repository et données](https://github.com/stephaniechallita/WebServer/blob/master/typeorm_repository_et_donnees.md) |
 | 25/10/2022 | 10:15 - 12:15 | [TypeORM, Repository et données (suite)](https://github.com/stephaniechallita/WebServer/blob/master/typeorm_repository_et_donnees.md), [OpenAPI](https://github.com/stephaniechallita/WebServer/blob/master/openapi.md) |
-| 28/10/2022 | 14:00 - 16:00 | [Tester son backend NestJS](https://github.com/stephaniechallita/WebServer/blob/master/tester_son_backend_nestjs.md) |
-| 08/11/2022 | 16:15 - 18:15 | [Sécurité](https://github.com/stephaniechallita/WebServer/blob/master/securite.md) |
+| 28/10/2022 | 10:15 - 12:15 | [Tester son backend NestJS](https://github.com/stephaniechallita/WebServer/blob/master/tester_son_backend_nestjs.md) |
+| 28/10/2022 | 14:00 - 16:00 | [Sécurité](https://github.com/stephaniechallita/WebServer/blob/master/securite.md) |
 | 25/11/2022 | 08:00 - 10:00 | [Développement](https://github.com/stephaniechallita/WebServer/blob/master/developpement.md) |
 
 Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ici](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront).
 
-| Semaine | Date |
-| -------- | -------- |
-| 05/12/2022 | 08:00 - 10:00 |
-| 09/12/2022 | 08:00 - 10:00 |
-| 12/12/2022 | 08:00 - 10:00 |
-| 16/12/2022 | 14:00 - 16:00 |
-| 03/01/2023 | 14:00 - 16:00 |
-| 06/01/2023 | 14:00 - 16:00 |
-| 09/01/2023 | 10:15 - 12:15 |
+| Semaine | Date | Sujet |
+| -------- | -------- | -------- |
+| 05/12/2022 | 08:00 - 10:00 | Introduction à Angular |
+| 09/12/2022 | 08:00 - 10:00 | Introduction à Angular |
+| 12/12/2022 | 08:00 - 10:00 | Projet |
+| 16/12/2022 | 14:00 - 16:00 | Projet |
+| 03/01/2023 | 14:00 - 16:00 | Projet |
+| 06/01/2023 | 14:00 - 16:00 | Projet |
+| 09/01/2023 | 10:15 - 12:15 | Projet |
 
 La soutenance du projet aura lieu le 10/01/2023 de 14:00 à 16:00.
 							
