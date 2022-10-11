@@ -91,7 +91,7 @@ public class Exemple {
     int [] lesNombres = new int[nb];
     System.out.println("Donnez une suite de " + nb + " entiers");
     // effectuer la saisie
-    for (int i = 0, i < nb, i = i + 1) {
+    for (int i = 0; i < nb; i = i + 1) {
       System.out.print("valeur numéro " + (i+1) + " : ");
       lesNombres[i]=entree.nextInt();
     }
