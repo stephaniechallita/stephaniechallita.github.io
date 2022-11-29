@@ -59,13 +59,13 @@ Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ic
 
 | Semaine | Date | Sujet |
 | -------- | -------- | -------- |
-| 05/12/2022 | 08:00 - 10:00 | Introduction à Angular |
-| 09/12/2022 | 08:00 - 10:00 | Introduction à Angular |
-| 12/12/2022 | 08:00 - 10:00 | Projet |
-| 16/12/2022 | 14:00 - 16:00 | Projet |
-| 03/01/2023 | 14:00 - 16:00 | Projet |
-| 06/01/2023 | 14:00 - 16:00 | Projet |
-| 09/01/2023 | 10:15 - 12:15 | Projet |
+| 05/12/2022 | 08:00 - 10:00 | [Introduction à Angular](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_tp2_angular) |
+| 09/12/2022 | 08:00 - 10:00 | [Introduction à Angular](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_tp2_angular) |
+| 12/12/2022 | 08:00 - 10:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 16/12/2022 | 14:00 - 16:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 03/01/2023 | 14:00 - 16:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 06/01/2023 | 14:00 - 16:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 09/01/2023 | 10:15 - 12:15 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
 
 La soutenance du projet aura lieu le 10/01/2023 de 14:00 à 16:00.
 							
