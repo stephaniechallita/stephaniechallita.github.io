@@ -16,11 +16,9 @@ title = "Web"
 Les slides du cours de Dev Backend sont disponibles [ici](/web/WebServer-ESIR.pdf).
 
 Les slides du cours de Dev Frontend sont disponibles ici :
-- [Partie 1](/web/Front_Partie1_2021-2022.pdf) : Introduction
-- [Partie 2](/web/Front_Partie2_2021-2022.pdf) : Web Component
-- [Partie 3](/web/Front_Partie3_2021-2022.pdf) : Angular
-- [Partie 4](/web/Front_Partie4_2021-2022.pdf) : suite Angular
-- [Partie 5](/web/Front_Partie5_2021-2022.pdf) : Tests
+- [Partie 1](/web/Cours_WM_FrontEnd_2223_part1.pdf) : Généralités, HTML, Javascript, Introduction à Angular, Composants web
+- [Partie 2](/web/Cours_WM_FrontEnd_2223_part2.pdf) : Concepts Angular
+- [Partie 3](/web/Cours_WM_FrontEnd_2223_part3.pdf) : Tests Angular
 
 
 #### Plan du cours :
@@ -61,11 +59,11 @@ Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ic
 | -------- | -------- | -------- |
 | 05/12/2022 | 08:00 - 10:00 | [Introduction à Angular](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_tp2_angular) |
 | 09/12/2022 | 08:00 - 10:00 | [Introduction à Angular](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_tp2_angular) |
-| 12/12/2022 | 08:00 - 10:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
-| 16/12/2022 | 14:00 - 16:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
-| 03/01/2023 | 14:00 - 16:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
-| 06/01/2023 | 14:00 - 16:00 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
-| 09/01/2023 | 10:15 - 12:15 | [Projet](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 12/12/2022 | 08:00 - 10:00 | [Frontend FR administration](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 16/12/2022 | 14:00 - 16:00 | [Frontend FR administration](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 03/01/2023 | 14:00 - 16:00 | [Frontend FR administration](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 06/01/2023 | 14:00 - 16:00 | [Frontend FR administration](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
+| 09/01/2023 | 10:15 - 12:15 | [Frontend FR administration](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_fradministrationfront) |
 
 La soutenance du projet aura lieu le 10/01/2023 de 14:00 à 16:00.
 							
