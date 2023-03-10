@@ -6,7 +6,7 @@ title = "Prog1"
 
 **Professeurs** : 
 <p style="text-align: center;">
-Stéphanie Challita, Hélène Feuillatre, Manal Hamzaoui, Fabrice Lamarche, Philippe Rannou 
+Stéphanie Challita, Hélène Feuillâtre, Manal Hamzaoui, Fabrice Lamarche, Philippe Rannou 
 </p>
 
 ---

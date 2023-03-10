@@ -8,8 +8,8 @@ title = "Teaching"
 
 I teach many courses related to software engineering  at [ESIR (Ecole Supérieure d'Ingénieurs de Rennes)](https://esir.univ-rennes1.fr/en) attached to [University of Rennes 1](https://www.univ-rennes1.fr/). I am mainly responsible of the object-oriented programming and web development courses.
     
-- ESIR1-SI (S5) > [Programmation](../prog1)
-- ESIR2-SI (S7) > [Web](../web)
+- ESIR1-SI (S5) > [Object-Oriented Programming in Java (PROG1)](../prog1)
+- ESIR2-SI (S7) > [Web Development](../web)
 
 
 ### 2020 - 2021
