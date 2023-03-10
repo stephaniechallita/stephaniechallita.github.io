@@ -6,7 +6,7 @@ title = "Web"
 
 **Professeurs** : 
 <p style="text-align: center;">
-    Stéphanie Challita &amp Hélène Feuillatre
+    Stéphanie Challita &amp Hélène Feuillâtre
 </p>
 
 ---

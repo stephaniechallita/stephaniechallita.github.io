@@ -9,6 +9,12 @@ Member of IEEE Conference Activities Committee [(CAC)](https://www.computer.org/
 {{< /expand >}}
 
 ---
+
+{{< expand "Journals" >}}
+Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoSyM)](https://sosym.org/).
+{{< /expand >}}
+
+---
     							
 {{< expand "Conferences Organizing Committees" >}}
 - Student Volunteers Co-Chair @[ICT4S'2023](https://conf.researchr.org/home/ict4s-2023)
