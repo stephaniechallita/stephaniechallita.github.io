@@ -6,7 +6,7 @@ title = "Prog1"
 
 **Professeurs** : 
 <p style="text-align: center;">
-Stéphanie Challita, Hélène Feuillâtre, Manal Hamzaoui, Fabrice Lamarche, Philippe Rannou 
+Stéphanie Challita, Hélène Feuillâtre, Fabrice Lamarche, Paul Temple, Pierre-Victor Besson
 </p>
 
 ---
@@ -19,24 +19,27 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 ##### Cours
 
-| Date | Heure | Thème | Notes |
+| Semaine | Date | Heure | Thème | Notes |
 | -------- | -------- | -------- | -------- |
-| 27/09/2022 | 08:00 - 10:00 | Rappel de programmation | Programmes, Syntaxe, Variables, Structures de contrôles, etc |
-| 29/09/2022 | 08:00 - 10:00 | Classes et Objets | Concepts de classes et d'objets, attributs, méthodes, instances, etc. |
-| 03/10/2022 | 08:00 - 10:00 | Interfaces et Implémentations - Généricité | Notion d'interfaces, abstractions, polymorphisme et liaisons tardives | 
-| 06/10/2022 | 10:15 - 12:15 | Structures de données | Collections, List, Map, File, Pile, Arbre |
-| 17/10/2022 | 08:00 - 10:00 | Héritage | Classes mères, Classes filles, Classes abstraites | 
+| Semaine 41 | 09/10/2023 | 08:00 - 09:30 | Rappel de programmation | Programmes, Syntaxe, Variables |
+| Semaine 41 | 12/10/2023 | 11:30 - 13:00 | Structures de contrôles | Classes et Objets |
+| Semaine 42 | 16/10/2023 | 08:00 - 09:30 | Concepts de classes et d'objets, attributs, méthodes, instances, etc. |
+| Semaine 42 | 20/10/2023 | 16:45 - 18:15 | Interfaces et Implémentations - Généricité | Notion d'interfaces, abstractions, polymorphisme et liaisons tardives |
+| Semaine 43 | 27/10/2023 | 08:00 - 09:30 | Structures de données | Collections, List, Map, File, Pile, Arbre | 
+| Semaine 45 | 10/11/2023 | 13:15 - 14:45 | Collections, List, Map, File, Pile, Arbre | Héritage |
+| Semaine 46 | 13/11/2023 | 08:00 - 09:30 | Héritage | Classes mères, Classes filles, Classes abstraites | 
 
 ---
 
-##### Séances de TD (Groupes A et B)
+##### Séances de TD (Groupe A)
 
-| Date | Heure | Sujets |
+| Semaine | Date | Heure | Sujets |
 | -------- | -------- | -------- |
-| 04/10/2022 | 08:00 - 10:00 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (première partie) | 
-| 21/10/2022 | 14:00 - 16:00 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (deuxième partie) | 
-| 07/11/2022 | 08:00 - 10:00 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (première partie) | 
-| 17/11/2022 | 10:15 - 12:15 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (deuxième partie) |
+| Semaine 43 | 24/10/2023 | 15:00 - 16:30 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (première partie) | 
+| Semaine 45 | 10/11/2023 | 15:00 - 16:30 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (deuxième partie) | 
+| Semaine 46 | 13/11/2023 | 15:15 - 16:45 |  [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (deuxième partie) + [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (première partie) | 
+| Semaine 46 | 17/11/2023 | 11:15 - 12:45 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (première partie) |
+| Semaine 48 | 27/11/2023 | 08:00 - 09:30 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (deuxième partie) |
 				
 ---
 
@@ -45,24 +48,26 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 | Semaine | Date | Sujets | # Séances |
 | -------- | -------- | -------- | -------- |
-| Semaine 40 | 03/10/2022 - 07/10/2022 | [TP0 : Configuration Eclipse](/prog/TP00-config-prog-ESIR.pdf) | Autonomie | 
-| Semaine 41 | 10/10/2022 - 14/10/2022 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 2 | 
-| Semaine 42 | 17/10/2022 - 21/10/2022 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 | 
-| Semaine 45 | 07/11/2022 - 11/11/2022 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 1 | 
-| Semaine 46 | 14/11/2022 - 18/11/2022 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 3 | 
-| Semaine 47 | 21/11/2022 - 25/11/2022 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 2 | 
-| Semaine 48 | 28/11/2022 - 02/12/2022 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 2 | 
+| Semaine 42 | 16/10/2023 - 22/10/2023 | [TP0 : Configuration Eclipse](/prog/TP00-config-prog-ESIR.pdf) | Autonomie | 
+| Semaine 43 | 23/10/2023 - 29/10/2023 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 1 | 
+| Semaine 45 | 06/11/2023 - 12/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 | 
+| Semaine 46 | 13/11/2023 - 19/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 | 
+| Semaine 47 | 20/11/2023 - 26/11/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 3 | 
+| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 2 | 
+| Semaine 49 | 04/12/2023 - 10/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
+| Semaine 50 | 11/12/2023 - 17/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
 <!-- [Correction TP1](/prog/materials/tp1/correction-TP01.zip) -->
 
 ---
 
 ##### Contrôles</h3>
 
-| Semaine | Date | Examen | Durée (h) |
+| Semaine | Date | Heure | Examen | Durée (h) |
 | -------- | -------- | -------- | -------- |
-| Semaine 43 | 28/10/2022 | Devoir (sur machine) | 1 | 
-| Semaine 49 | 08/12/2022 | Devoir (sur machine)  | 1 | 
-| Semaine 02 | 09/01/2023 | Contrôle sur table | 2 | 
+| Semaine 47 | 20/11/2023 | 08:00 - 09:00 | Contrôle sur table   | 1 | 
+| Semaine 47 | 24/11/2023 | 16:45 - 18:45 (pour tous) et 13:15 - 15:15 (pour TIS Groupe 5) | Devoir (sur machine) | 1 | 
+| Semaine 51 | 18/12/2023 | 15:15 - 16:15 | Contrôle sur table   | 1 | 
+| Semaine 02 | 11/01/2024 | 08:00 - 10:00 (pour tous) et 10:15 - 12:15 (pour TIS Groupe 5) | Devoir (sur machine) | 1 | 
 
 ---
 
