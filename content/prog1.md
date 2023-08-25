@@ -20,13 +20,13 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 ##### Cours
 
 | Semaine | Date | Heure | Thème | Notes |
-| -------- | -------- | -------- | -------- |
-| Semaine 41 | 09/10/2023 | 08:00 - 09:30 | Rappel de programmation | Programmes, Syntaxe, Variables |
-| Semaine 41 | 12/10/2023 | 11:30 - 13:00 | Structures de contrôles | Classes et Objets |
-| Semaine 42 | 16/10/2023 | 08:00 - 09:30 | Concepts de classes et d'objets, attributs, méthodes, instances, etc. |
+| -------- | -------- | -------- | -------- |-------- |
+| Semaine 41 | 09/10/2023 | 08:00 - 09:30 | Rappel de programmation | Programmes, Syntaxe, Variables, Structures de contrôles |
+| Semaine 41 | 12/10/2023 | 11:30 - 13:00 | Classes et Objets | Concepts de classes et d'objets, attributs, méthodes, instances, etc.
+| Semaine 42 | 16/10/2023 | 08:00 - 09:30 | Classes et Objets | Concepts de classes et d'objets, attributs, méthodes, instances, etc. |
 | Semaine 42 | 20/10/2023 | 16:45 - 18:15 | Interfaces et Implémentations - Généricité | Notion d'interfaces, abstractions, polymorphisme et liaisons tardives |
 | Semaine 43 | 27/10/2023 | 08:00 - 09:30 | Structures de données | Collections, List, Map, File, Pile, Arbre | 
-| Semaine 45 | 10/11/2023 | 13:15 - 14:45 | Collections, List, Map, File, Pile, Arbre | Héritage |
+| Semaine 45 | 10/11/2023 | 13:15 - 14:45 | Structures de données | Collections, List, Map, File, Pile, Arbre | 
 | Semaine 46 | 13/11/2023 | 08:00 - 09:30 | Héritage | Classes mères, Classes filles, Classes abstraites | 
 
 ---
@@ -34,7 +34,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 ##### Séances de TD (Groupe A)
 
 | Semaine | Date | Heure | Sujets |
-| -------- | -------- | -------- |
+| -------- | -------- | -------- | -------- |
 | Semaine 43 | 24/10/2023 | 15:00 - 16:30 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (première partie) | 
 | Semaine 45 | 10/11/2023 | 15:00 - 16:30 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (deuxième partie) | 
 | Semaine 46 | 13/11/2023 | 15:15 - 16:45 |  [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (deuxième partie) + [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (première partie) | 
@@ -50,10 +50,12 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 | -------- | -------- | -------- | -------- |
 | Semaine 42 | 16/10/2023 - 22/10/2023 | [TP0 : Configuration Eclipse](/prog/TP00-config-prog-ESIR.pdf) | Autonomie | 
 | Semaine 43 | 23/10/2023 - 29/10/2023 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 1 | 
-| Semaine 45 | 06/11/2023 - 12/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 | 
+| Semaine 45 | 06/11/2023 - 12/11/2023 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 2 | 
 | Semaine 46 | 13/11/2023 - 19/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 | 
-| Semaine 47 | 20/11/2023 - 26/11/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 3 | 
-| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 2 | 
+| Semaine 47 | 20/11/2023 - 26/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 |
+| Semaine 47 | 20/11/2023 - 26/11/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 1 |  
+| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 1 | 
+| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 1 | 
 | Semaine 49 | 04/12/2023 - 10/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
 | Semaine 50 | 11/12/2023 - 17/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
 <!-- [Correction TP1](/prog/materials/tp1/correction-TP01.zip) -->
@@ -63,7 +65,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 ##### Contrôles</h3>
 
 | Semaine | Date | Heure | Examen | Durée (h) |
-| -------- | -------- | -------- | -------- |
+| -------- | -------- | -------- | -------- | -------- |
 | Semaine 47 | 20/11/2023 | 08:00 - 09:00 | Contrôle sur table   | 1 | 
 | Semaine 47 | 24/11/2023 | 16:45 - 18:45 (pour tous) et 13:15 - 15:15 (pour TIS Groupe 5) | Devoir (sur machine) | 1 | 
 | Semaine 51 | 18/12/2023 | 15:15 - 16:15 | Contrôle sur table   | 1 | 
