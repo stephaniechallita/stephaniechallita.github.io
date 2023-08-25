@@ -25,6 +25,7 @@ My research interests include:
 --- 
 
 **Internships supervision**
+- Yazid Benjamaa, June 12 - September 15, 2023, **“A DSL for specifying DevSecOps tools”**
 - Mouna Hissane, May 01 - August 31, 2021, **“A model-driven approach for analyzing security of Cloud APIs”**, co-supervision: [Nan Messe](https://nanzhangmesse.github.io/"), [Olivier Barais](https://olivier.barais.fr/)
 - Léo Rolland, June 07 - August 27, 2021, **“A technical dive into software cloudification”**, co-supervision: [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/)
 
