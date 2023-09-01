@@ -54,8 +54,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 | Semaine 46 | 13/11/2023 - 19/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 | 
 | Semaine 47 | 20/11/2023 - 26/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 |
 | Semaine 47 | 20/11/2023 - 26/11/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 1 |  
-| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 1 | 
-| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 1 | 
+| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 2 | 
 | Semaine 49 | 04/12/2023 - 10/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
 | Semaine 50 | 11/12/2023 - 17/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
 <!-- [Correction TP1](/prog/materials/tp1/correction-TP01.zip) -->
