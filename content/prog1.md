@@ -66,9 +66,9 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 | Semaine | Date | Heure | Examen | Durée (h) |
 | -------- | -------- | -------- | -------- | -------- |
 | Semaine 47 | 20/11/2023 | 08:00 - 09:00 | Contrôle sur table   | 1 | 
-| Semaine 47 | 24/11/2023 | 16:45 - 18:45 (pour tous) et 13:15 - 15:15 (pour TIS Groupe 5) | Devoir (sur machine) | 1 | 
+| Semaine 47 | 24/11/2023 | 16:45 - 18:45 | Devoir (sur machine) | 1 | 
 | Semaine 51 | 18/12/2023 | 15:15 - 16:15 | Contrôle sur table   | 1 | 
-| Semaine 02 | 11/01/2024 | 08:00 - 10:00 (pour tous) et 10:15 - 12:15 (pour TIS Groupe 5) | Devoir (sur machine) | 1 | 
+| Semaine 02 | 11/01/2024 | 08:00 - 10:00 | Devoir (sur machine) | 1 | 
 
 ---
 
