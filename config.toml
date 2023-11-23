@@ -53,7 +53,10 @@ googleAnalytics = ""  # add your tracking id
     icon = "fab fa-researchgate"
     title = "Research Gate"
     url = "https://www.researchgate.net/profile/Stephanie_Challita"
-  
+  [[params.socialIcons]]
+    icon = "fab fa-mastodon"
+    title = "Mastodon"
+    url = "https://mastodon.social/@stephaniechallita"
     
 
 [permalinks]
