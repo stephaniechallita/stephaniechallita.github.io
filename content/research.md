@@ -32,4 +32,4 @@ My research interests include:
 ---
 
 I have [open positions](../positions) and I am always looking for competent and motivated students to join us in [DiverSE](https://www.diverse-team.fr/).
-Contact me on <i class="icon fa-envelope"></i> stephanie{dot}challita{at}inria{dot}fr.
+Contact me on <i class="fa-regular fa-envelope"></i> stephanie{dot}challita{at}inria{dot}fr.
