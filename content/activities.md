@@ -28,6 +28,8 @@ Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoS
 ---
 
 {{< expand "Conferences & Workshops Program Committees" >}}
+- PC Member @[ICSR'2024](https://cyprusconferences.org/icsr2024/)
+- PC Member @[SATrends'2024](https://conf.researchr.org/home/icse-2024/satrends-2024) (*co-located with* [ICSE'2024](https://conf.researchr.org/home/icse-2024))
 - PC Member @[ICSR'2022](https://icsr2022.wp.imt.fr/)
 - PC Member @[SLE'2021-Artifact Evaluation Track](https://conf.researchr.org/committee/sle-2021/sle-2021-papers-artifact-evaluation-committee)
 - PC Member @[MODELS'2021-Tools & Demonstrations Track](https://conf.researchr.org/track/models-2021/models-2021-tools-and-demonstrations)
