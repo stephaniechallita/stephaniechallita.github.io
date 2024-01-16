@@ -14,13 +14,13 @@ My research interests include:
 - ***Software Language Engineering***
 - ***Reverse-Engineering***
 - ***Model Verification & Validation***
-- ***Cloud Computing***
-- and ***Internet of Things***
+- ***REST APIs***
+- and ***Cloud Computing***
 	
 ---
 
 **Thesis supervision:**
-- Anne Bumiller, since October 2020, **“Contextual modeling of adaptive authentication systems”**, co-supervision: [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/)
+- Anne Bumiller, October 2020 - November 2023, **“Contextual modeling of adaptive authentication systems”**, co-supervision: [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/)
 
 --- 
 
@@ -32,4 +32,4 @@ My research interests include:
 ---
 
 I have [open positions](../positions) and I am always looking for competent and motivated students to join us in [DiverSE](https://www.diverse-team.fr/).
-Contact me on <i class="icon fa-envelope"></i> stephanie{dot}challita{at}inria{dot}fr.
+Contact me on <i class="fa-regular fa-envelope"></i> stephanie{dot}challita{at}inria{dot}fr.
