@@ -44,8 +44,8 @@
       
       <guid>https://stephaniechallita.github.io/prog1/</guid>
       <description>Matériel de cours - Programmation - ESIR Professeurs :
-Stéphanie Challita, Hélène Feuillâtre, Fabrice Lamarche, Paul Temple, Pierre-Victor Besson  Cours Les slides du cours sont disponibles ici.
-Plan du cours : Cours    Semaine Date Heure Thème Notes     Semaine 41 09/10/2023 08:00 - 09:30 Rappel de programmation Programmes, Syntaxe, Variables, Structures de contrôles   Semaine 41 12/10/2023 11:30 - 13:00 Classes et Objets Concepts de classes et d&amp;rsquo;objets, attributs, méthodes, instances, etc.</description>
+Stéphanie Challita, Hélène Feuillâtre, Fabrice Lamarche, Paul Temple, Philémon Houdaille, Manel Chehibi  Cours Les slides du cours sont disponibles ici.
+Plan du cours : Cours    Semaine Date Heure Thème Notes     Semaine 42 15/10/2024 13:15 - 14:45 Rappel de programmation Programmes, Syntaxe, Variables, Structures de contrôles   Semaine 42 15/10/2024 15:00 - 16:30 Classes et Objets Concepts de classes et d&amp;rsquo;objets, attributs, méthodes, instances, etc.</description>
     </item>
     
     <item>
@@ -85,9 +85,9 @@ Plan du cours : Cours    Semaine Date Heure Thème Notes     Semaine 41 09/10/20
       
       <guid>https://stephaniechallita.github.io/web/</guid>
       <description>Matériel de cours - Programmation Web - ESIR Professeurs :
-Stéphanie Challita &amp;amp Hélène Feuillâtre  Cours Les slides du cours de Dev Backend sont disponibles ici.
+Stéphanie Challita, Hélène Feuillâtre &amp;amp Charly Reux  Cours Les slides du cours de Dev Backend sont disponibles ici.
 Les slides du cours de Dev Frontend sont disponibles ici :
- Partie 1 : Généralités, HTML, Javascript, Introduction à Angular, Composants web Partie 2 : Concepts Angular Partie 3 : Tests Angular  Plan du cours : Cours (partie Backend)    Date Heure Thème Notes     09/10/2023 15:00 - 16:30 Introduction et Généralités Histoire, vision globale, architecture, frontend, backend, TypeScript et NestJS   16/10/2023 11:30 - 13:00 Object Relationnal Mapping (ORM) Comment passer du monde objet au monde relationel des BDDs   17/10/2023 08:00 - 9:30 Object Relationnal Mapping (ORM) Comment passer du monde objet au monde relationel des BDDs   23/10/2023 09:45 - 11:15 TypeORM et OpenAPI Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI   23/10/2023 15:00 - 16:30 TypeORM et OpenAPI Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI   07/11/2023 11:15 - 12:45 Sécurité Sécurisation d&amp;rsquo;API, de mots de passe, HTTPs, Autorisation &amp;amp; Authentification   10/11/2023 08:00 - 09:30 Extra Backend Dev Vendre son API, Développement No-code     Séances de TP Le sujet du projet (partie Backend) est disponible sur GitHub ici.</description>
+ Partie 1 : Généralités, HTML, Javascript, Introduction à Angular, Composants web Partie 2 : Concepts Angular Partie 3 : Tests Angular  Plan du cours : Cours (partie Backend)    Date Heure Thème Notes     12/11/2024 09:45 - 11:15 Introduction et Généralités Histoire, vision globale, architecture, frontend, backend, TypeScript et NestJS   14/11/2024 09:45 - 11:15 Object Relationnal Mapping (ORM) Comment passer du monde objet au monde relationel des BDDs   15/11/2024 09:45 - 11:15 Object Relationnal Mapping (ORM) Comment passer du monde objet au monde relationel des BDDs   18/11/2024 11:30 - 13:00 TypeORM et OpenAPI Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI   19/11/2024 09:45 - 11:15 TypeORM et OpenAPI Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI   25/11/2024 09:45 - 11:15 Sécurité Sécurisation d&amp;rsquo;API, de mots de passe, HTTPs, Autorisation &amp;amp; Authentification   28/11/2024 11:30 - 13:00 Extra Backend Dev Vendre son API, Développement No-code     Séances de TP Le sujet du projet (partie Backend) est disponible sur GitHub ici.</description>
     </item>
     
   </channel>
