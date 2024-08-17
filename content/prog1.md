@@ -6,7 +6,7 @@ title = "Prog1"
 
 **Professeurs** : 
 <p style="text-align: center;">
-Stéphanie Challita, Hélène Feuillâtre, Fabrice Lamarche, Paul Temple, Pierre-Victor Besson
+Stéphanie Challita, Hélène Feuillâtre, Fabrice Lamarche, Paul Temple, Philémon Houdaille, Manel Chehibi
 </p>
 
 ---
@@ -21,13 +21,13 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 | Semaine | Date | Heure | Thème | Notes |
 | -------- | -------- | -------- | -------- |-------- |
-| Semaine 41 | 09/10/2023 | 08:00 - 09:30 | Rappel de programmation | Programmes, Syntaxe, Variables, Structures de contrôles |
-| Semaine 41 | 12/10/2023 | 11:30 - 13:00 | Classes et Objets | Concepts de classes et d'objets, attributs, méthodes, instances, etc.
-| Semaine 42 | 16/10/2023 | 08:00 - 09:30 | Classes et Objets | Concepts de classes et d'objets, attributs, méthodes, instances, etc. |
-| Semaine 42 | 20/10/2023 | 16:45 - 18:15 | Interfaces et Implémentations - Généricité | Notion d'interfaces, abstractions, polymorphisme et liaisons tardives |
-| Semaine 43 | 27/10/2023 | 08:00 - 09:30 | Structures de données | Collections, List, Map, File, Pile, Arbre | 
-| Semaine 45 | 10/11/2023 | 13:15 - 14:45 | Structures de données | Collections, List, Map, File, Pile, Arbre | 
-| Semaine 46 | 13/11/2023 | 08:00 - 09:30 | Héritage | Classes mères, Classes filles, Classes abstraites | 
+| Semaine 42 | 15/10/2024 | 13:15 - 14:45 | Rappel de programmation | Programmes, Syntaxe, Variables, Structures de contrôles |
+| Semaine 42 | 15/10/2024 | 15:00 - 16:30 | Classes et Objets | Concepts de classes et d'objets, attributs, méthodes, instances, etc.
+| Semaine 42 | 18/10/2024 | 13:15 - 14:45 | Classes et Objets | Concepts de classes et d'objets, attributs, méthodes, instances, etc. |
+| Semaine 42 | 18/10/2024 | 15:00 - 16:30 | Interfaces et Implémentations - Généricité | Notion d'interfaces, abstractions, polymorphisme et liaisons tardives |
+| Semaine 45 | 05/11/2024 | 09:45 - 11:15 | Structures de données | Collections, List, Map, File, Pile, Arbre | 
+| Semaine 45 | 05/11/2024 | 11:30 - 13:00 | Structures de données | Collections, List, Map, File, Pile, Arbre | 
+| Semaine 46 | 14/11/2024 | 09:45 - 11:15 | Héritage | Classes mères, Classes filles, Classes abstraites | 
 
 ---
 
@@ -49,14 +49,15 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 | Semaine | Date | Sujets | # Séances |
 | -------- | -------- | -------- | -------- |
 | Semaine 42 | 16/10/2023 - 22/10/2023 | [TP0 : Configuration Eclipse](/prog/TP00-config-prog-ESIR.pdf) | Autonomie | 
-| Semaine 43 | 23/10/2023 - 29/10/2023 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 1 | 
-| Semaine 45 | 06/11/2023 - 12/11/2023 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 2 | 
-| Semaine 46 | 13/11/2023 - 19/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 | 
-| Semaine 47 | 20/11/2023 - 26/11/2023 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 |
-| Semaine 47 | 20/11/2023 - 26/11/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 1 |  
-| Semaine 48 | 27/11/2023 - 03/12/2023 | [TP3 : Huffman](/prog/TP03-huffman-prog-ESIR.pdf) | 2 | 
-| Semaine 49 | 04/12/2023 - 10/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
-| Semaine 50 | 11/12/2023 - 17/12/2023 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 3 | 
+| Semaine 43 | 21/10/2024 - 27/10/2024 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 2 | 
+| Semaine 45 | 04/11/2024 - 10/11/2024 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 1 | 
+| Semaine 45 | 04/11/2024 - 10/11/2024 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 1 | 
+| Semaine 46 | 11/11/2024 - 17/11/2024 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 2 |
+| Semaine 47 | 18/11/2024 - 24/11/2024 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 1 |
+| Semaine 47 | 18/11/2024 - 24/11/2024 | [TP3 : Accounting](/prog/TP03-accounting-prog-ESIR.pdf) | 1 |  
+| Semaine 49 | 02/12/2024 - 08/12/2024 | [TP3 : Accounting](/prog/TP03-accounting-prog-ESIR.pdf) | 3 | 
+| Semaine 49 | 02/12/2024 - 08/12/2024 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 1 | 
+| Semaine 50 | 09/12/2024 - 15/12/2024 | [TP4 : Transports](/prog/TP04-transports-prog-ESIR.pdf) | 4 | 
 <!-- [Correction TP1](/prog/materials/tp1/correction-TP01.zip) -->
 
 ---
@@ -64,11 +65,10 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 ##### Contrôles</h3>
 
 | Semaine | Date | Heure | Examen | Durée (h) |
-| -------- | -------- | -------- | -------- | -------- |
-| Semaine 47 | 20/11/2023 | 08:00 - 09:00 | Contrôle sur table   | 1 | 
-| Semaine 47 | 24/11/2023 | 16:45 - 18:45 | Devoir (sur machine) | 1 | 
-| Semaine 51 | 18/12/2023 | 15:15 - 16:15 | Contrôle sur table   | 1 | 
-| Semaine 02 | 11/01/2024 | 08:00 - 10:00 | Devoir (sur machine) | 1 | 
+| -------- | -------- | -------- | -------- | -------- | 
+| Semaine 48 | 28/11/2024 | 09:45 - 11:45 | Devoir (sur machine)  | 1 | 
+| Semaine 51 | 17/12/2024 | 13:15 - 14:45 | Contrôle (sur table)   | 1.5 | 
+| Semaine 02 | 07/01/2025 | 09:45 - 11:45 | Contrôle (sur machine)  | 1 | 
 
 ---
 
