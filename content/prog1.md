@@ -35,11 +35,10 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 | Semaine | Date | Heure | Sujets |
 | -------- | -------- | -------- | -------- |
-| Semaine 43 | 24/10/2023 | 15:00 - 16:30 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (première partie) | 
-| Semaine 45 | 10/11/2023 | 15:00 - 16:30 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (deuxième partie) | 
-| Semaine 46 | 13/11/2023 | 15:15 - 16:45 |  [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (deuxième partie) + [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (première partie) | 
-| Semaine 46 | 17/11/2023 | 11:15 - 12:45 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (première partie) |
-| Semaine 48 | 27/11/2023 | 08:00 - 09:30 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (deuxième partie) |
+| Semaine 45 | 07/11/2024 | 8:00 - 11:15 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) | 
+| Semaine 48 | 26/11/2024 | 09:45 - 13:00 |  [TD01 : File ](/prog/TD01-file-prog-ESIR.pdf) (suite) + [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) | 
+| Semaine 50 | 10/12/2024 | 15:00 - 17:00 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (suite) |
+
 				
 ---
 
@@ -68,7 +67,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 | -------- | -------- | -------- | -------- | -------- | 
 | Semaine 48 | 28/11/2024 | 09:45 - 11:45 | Devoir (sur machine)  | 1 | 
 | Semaine 51 | 17/12/2024 | 13:15 - 14:45 | Contrôle (sur table)   | 1.5 | 
-| Semaine 02 | 07/01/2025 | 09:45 - 11:45 | Contrôle (sur machine)  | 1 | 
+| Semaine 02 | 07/01/2025 | 09:45 - 11:45 | Devoir (sur machine)  | 1 | 
 
 ---
 
