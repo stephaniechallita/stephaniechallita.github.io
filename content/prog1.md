@@ -6,7 +6,7 @@ title = "Prog1"
 
 **Professeurs** : 
 <p style="text-align: center;">
-Stéphanie Challita, Hélène Feuillâtre, Fabrice Lamarche, Paul Temple, Philémon Houdaille, Manel Chehibi
+Stéphanie Challita, Hélène Feuillâtre, Fabrice Lamarche, Paul Temple, Yann Paillard, Manel Chehibi
 </p>
 
 ---
