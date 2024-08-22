@@ -111,13 +111,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 ---
 
 {{< expand "TP3" >}}
-- [CodageHuffman.java](/prog/materials/tp3/CodageHuffman.java)
-- [DecodageHuffman.java](/prog/materials/tp3/DecodageHuffman.java)
-- [OutilsHuffman.java](/prog/materials/tp3/OutilsHuffman.java)
-- [outilsArbre.jar](/prog/materials/tp3/outilsArbre.jar)
-- [types.jar](/prog/materials/tp3/types.jar)
-- [outilsHuffman.jar](/prog/materials/tp3/outilsHuffman.jar)
-- [resources.zip](/prog/materials/tp3/resources.zip)
+- [dunder_mifflin.txt](/prog/materials/tp3/dunder_mifflin.txt)
 {{< /expand >}}
 
 ---
