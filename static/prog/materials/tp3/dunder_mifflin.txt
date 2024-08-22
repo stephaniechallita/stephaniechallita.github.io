@@ -1,0 +1,20 @@
+97a63e01-1a41-47a3-b3cf-0c5b1a5a5e34, 01/03/2024, Bought "World's Best Boss" mug for Michael, Office Supplies, Cash, 20
+f4c17db1-3b39-4ef2-8e20-4d7f3c9cf125, 02/03/2024, Purchased "Schrute Bucks" from Dwight, Office Supplies, Cash, 50
+1d18d0f3-6c50-48c5-b601-7683d496f1e1, 03/04/2024, Received payment from Michael for "That's what she said" joke royalties, Cash, Sales Revenue, 100
+fa68d05a-979b-49f1-8b89-98a7b3690dd4, 04/04/2024, Paid rent for the Dunder Mifflin annex (aka the closet), Rent Expense, Cash, 200
+7ef5cf3b-1f4b-429f-89b3-5b26cc12c925, 05/04/2024, Sold paper to Kelly for her "party planning committee" invitations, Cash, Sales Revenue, 150
+6c7fd7ab-3b0a-4a5c-bb7d-4e194c4626fb, 06/05/2024, Bought "Dunder Mifflin Fun Run" t-shirts for the office, Office Supplies, Cash, 80
+fa0b85f3-352a-4f17-9294-5e98bc9e947f, 07/05/2024, Received payment from Kevin for his "famous" chili recipe, Cash, Sales Revenue, 75
+9de54d7e-08f0-43d0-8bf8-7fb1095a3ac1, 08/06/2024, Paid electricity bill to the electric city (home of the Scranton Strangler), Utilities Expense, Cash, 90
+e0b71f39-24f5-4247-8d5f-d70b17278d8d, 09/06/2024, Issued Dundie Awards to employees (including "Hottest in the Office" and "Whitest Sneakers"), Salaries Expense, Cash, 300
+bd0c6b32-8954-492b-8d8c-30c40a3b1d9f, 10/06/2024, Bought "Assistant to the Regional Manager" mugs for Jim and Dwight, Office Supplies, Cash, 40
+7bb22f7e-93ae-46ec-83d2-68f4d68710e8, 11/06/2024, Received payment from Pam for her artwork (including the infamous "Dunder Mifflinfinity" painting), Cash, Sales Revenue, 200
+58e0dca6-f6b9-4396-95b6-bd77768b08e1, 12/07/2024, Paid "threat level midnight" movie royalties to Michael, Salaries Expense, Cash, 500
+ef185c53-62c7-4408-9e1b-cf4da0eeaa02, 13/07/2024, Purchased "beets by Dwight" merchandise for the office, Office Supplies, Cash, 120
+d432ca8d-68b1-40e4-a800-225cb7b39f53, 14/08/2024, Sold paper to Creed for his "quality assurance" business, Cash, Sales Revenue, 180
+87aef8da-381e-46bc-b504-b6b4cb54d3cf, 15/08/2024, Bought "Scranton Strangler" bobbleheads for the office, Office Supplies, Cash, 70
+b5bc13d1-57c6-46a1-ba0e-08b747963748, 16/08/2024, Received payment from Angela for her cat's "Senator Sprinkles" calendar, Cash, Sales Revenue, 100
+6a40fbd2-2fb3-4fc7-bc17-5f85e5a3e1ac, 17/09/2024, Paid janitorial fees to Creed for his "cleaning services", Salaries Expense, Cash, 50
+c430d961-6f4f-4653-a582-afec7a4f4fe6, 18/09/2024, Bought "Dwight's Beets" bumper stickers for the office, Office Supplies, Cash, 30
+93ff047f-0c7a-44a0-812b-88bf30c8318b, 19/09/2024, Received payment from Oscar for his "finest homemade cookie" recipe, Cash, Sales Revenue, 120
+3d3177bc-4b14-48af-a6aa-0e0b5df39fb3, 20/09/2024, Paid Roy's Wedding Band for their performance at the office, Salaries Expense, Cash, 300
