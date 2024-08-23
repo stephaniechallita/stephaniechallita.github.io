@@ -35,7 +35,8 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 | Semaine | Date | Heure | Sujets |
 | -------- | -------- | -------- | -------- |
-| Semaine 45 | 07/11/2024 | 8:00 - 11:15 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) | 
+| Semaine 45 | 07/11/2024 | 9:45 - 11:15 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) | 
+| Semaine 47 | 19/11/2024 | 15:00 - 16:30 | [TD01 : File](/prog/TD01-file-prog-ESIR.pdf) (suite) | 
 | Semaine 48 | 26/11/2024 | 09:45 - 13:00 |  [TD01 : File ](/prog/TD01-file-prog-ESIR.pdf) (suite) + [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) | 
 | Semaine 50 | 10/12/2024 | 15:00 - 17:00 | [TD02 : Héritage](/prog/TD02-heritage-prog-ESIR.pdf) (suite) |
 
