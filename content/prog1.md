@@ -48,7 +48,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 | Semaine | Date | Sujets | # Séances |
 | -------- | -------- | -------- | -------- |
-| Semaine 42 | 16/10/2023 - 22/10/2023 | [TP0 : Configuration Eclipse](/prog/TP00-config-prog-ESIR.pdf) | Autonomie | 
+| Semaine 42 | 14/10/2024 - 18/10/2024 | [TP0 : Configuration Eclipse](/prog/TP00-config-prog-ESIR.pdf) | Autonomie | 
 | Semaine 43 | 21/10/2024 - 27/10/2024 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 2 | 
 | Semaine 45 | 04/11/2024 - 10/11/2024 | [TP1 : Rationnel](/prog/TP01-rationnel-prog-ESIR.pdf) | 1 | 
 | Semaine 45 | 04/11/2024 - 10/11/2024 | [TP2 : Tableaux](/prog/TP02-tableau-prog-ESIR.pdf) | 1 | 
