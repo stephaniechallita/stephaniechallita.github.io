@@ -13,7 +13,7 @@ googleAnalytics = ""  # add your tracking id
   favicon = "favicon.ico"  # path to a .ico to use as favicon
   logo = ""  # url or path to a logo to put in the header
   [params.footer]
-    text = "Stéphanie Challita. Last Update: 14/09/2022" 
+    text = "Stéphanie Challita. Last Update: 20/08/2024" 
     url = "https://github.com/stephaniechallita/stephaniechallita.github.io"
   [params.style]  # appearance options (can be omitted)
     fontFamily = "Inconsolata"
@@ -53,7 +53,10 @@ googleAnalytics = ""  # add your tracking id
     icon = "fab fa-researchgate"
     title = "Research Gate"
     url = "https://www.researchgate.net/profile/Stephanie_Challita"
-  
+  [[params.socialIcons]]
+    icon = "fab fa-mastodon"
+    title = "Mastodon"
+    url = "https://mastodon.social/@stephaniechallita"
     
 
 [permalinks]

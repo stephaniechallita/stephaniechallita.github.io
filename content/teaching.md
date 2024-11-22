@@ -8,9 +8,8 @@ title = "Teaching"
 
 I teach many courses related to software engineering  at [ESIR (Ecole Supérieure d'Ingénieurs de Rennes)](https://esir.univ-rennes1.fr/en) attached to [University of Rennes 1](https://www.univ-rennes1.fr/). I am mainly responsible of the object-oriented programming and web development courses.
     
-- ESIR1-SI (S5) > [Programmation](../prog1)
-- ESIR2-SI (S7) > [Web](../web)
-- ESIR3-SI (S9) > [JXC-Frontend Engineering](../jxc)
+- ESIR1-SI (S5) > [Object-Oriented Programming in Java (PROG1)](../prog1)
+- ESIR2-SI (S7) > [Web Development](../web)
 
 
 ### 2020 - 2021
@@ -35,7 +34,7 @@ While preparing my PhD, I had the opportunity to teach at the [FIL](http://fil.u
 
 I taught 156 hours and I was involved in the following courses:
 
-- [L3S5 MIAGE](http://portail.fil.univ-lille1.fr/portail/index.php?dipl=L&sem=S5M&ue=ACCUEIL&label=Pr%C3%A9sentation) > [Conception Orientée Objet](http://portail.fil.univ-lille1.fr/portail/index.php?dipl=L&sem=S5M&ue=COO&label=Pr%C3%A9sentation)
-- [L1S2 PEIP](http://www.polytech-lille.fr/polytech-apres-le-bac-p110.html#.WXsER4SGOpo) > [Algorithmes et Programmation 1](http://portail.fil.univ-lille1.fr/portail/index.php?dipl=L1&sem=S2&ue=AP1&label=Pr%C3%A9sentation)
+- [L3S5 MIAGE](http://portail.fil.univ-lille1.fr/portail/index.php?dipl=L&sem=S5M&ue=ACCUEIL&label=Pr%C3%A9sentation) > [Conception Orientée Objet](https://portail.fil.univ-lille.fr/portail/index.php?dipl=L&sem=S3&ue=POO&label=Pr%C3%A9sentation)
+- [L1S2 PEIP](http://www.polytech-lille.fr/polytech-apres-le-bac-p110.html#.WXsER4SGOpo) > [Algorithmes et Programmation 1](https://www.fil.univ-lille.fr/~L1S2API/CoursTP/index.html)
 
                                         

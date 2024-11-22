@@ -18,8 +18,15 @@ You can also access all the articles from [HAL <i class="ai ai-hal"></i>](https:
 ---
 
 {{< expand "International Journals" >}}
+- Anne Bumiller, **Stéphanie Challita**, [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/), Nicolas Aillery, Gaël Le Lan. 
+[<i class="fa fa-paperclip"></i>](https://dl.acm.org/doi/pdf/10.1145/3582696) "On Understanding Context Modelling for Adaptive Authentication Systems."
+*ACM Transactions on Autonomous and Adaptive Systems, 2023.*
 
-- **Stéphanie Challita**, [Fabian Korte](https://www.swe.informatik.uni-goettingen.de/staff/fabian-korte), [Johannes Erbel](https://www.swe.informatik.uni-goettingen.de/staff/johannes-martin-erbel), [Faiez Zalila](https://sites.google.com/site/faiezzalila), [Jens Grabowski](https://www.swe.informatik.uni-goettingen.de/staff/jens-grabowski), [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html) 
+- [Faiez Zalila](https://sites.google.com/site/faiezzalila), [Fabian Korte](https://www.swe.informatik.uni-goettingen.de/staff/fabian-korte), [Johannes Erbel](https://www.swe.informatik.uni-goettingen.de/staff/johannes-martin-erbel), **Stéphanie Challita**, [Jens Grabowski](https://www.swe.informatik.uni-goettingen.de/staff/jens-grabowski), [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html). 
+[<i class="fa fa-paperclip"></i>](https://hal.science/hal-03927522/document) "MoDMaCAO: a Model-Driven Framework for the Design, Validation and Configuration Management of Cloud Applications based on OCCI."
+*Software & Systems Modeling (SoSyM), 2022.*
+
+- **Stéphanie Challita**, [Fabian Korte](https://www.swe.informatik.uni-goettingen.de/staff/fabian-korte), [Johannes Erbel](https://www.swe.informatik.uni-goettingen.de/staff/johannes-martin-erbel), [Faiez Zalila](https://sites.google.com/site/faiezzalila), [Jens Grabowski](https://www.swe.informatik.uni-goettingen.de/staff/jens-grabowski), [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html). 
 [<i class="fa fa-paperclip"></i>](https://link.springer.com/article/10.1007/s10270-021-00869-y) "Model-Based Cloud Resource Provisioning with TOSCA and OCCI."
 *Software & Systems Modeling (SoSyM), 2021.*
 
