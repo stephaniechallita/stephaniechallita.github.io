@@ -15,10 +15,7 @@ title = "Web"
 				
 Les slides du cours de Dev Backend sont disponibles [ici](/web/WebServer-ESIR.pdf).
 
-Les slides du cours de Dev Frontend sont disponibles ici :
-- [Partie 1](/web/Cours_WM_FrontEnd_2223_part1.pdf) : Généralités, HTML, Javascript, Introduction à Angular, Composants web
-- [Partie 2](/web/Cours_WM_FrontEnd_2223_part2.pdf) : Concepts Angular
-- [Partie 3](/web/Cours_WM_FrontEnd_2223_part3.pdf) : Tests Angular
+Les slides du cours de Dev Frontend sont disponibles [ici](/web/Cours_WM_FrontEnd_2425.pdf).
 
 
 #### Plan du cours :
