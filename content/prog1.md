@@ -113,6 +113,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 
 {{< expand "TP3" >}}
 - [dunder_mifflin.txt](/prog/materials/tp3/dunder_mifflin.txt)
+- [Import.java](/prog/materials/tp3/Import.java)
 {{< /expand >}}
 
 ---
@@ -132,6 +133,7 @@ Les slides du cours sont disponibles [ici](/prog/cours-prog-ESIR.pdf).
 - [Tests unitaires avec JUnit](/prog/materials/resources/test_unitaire_junit.pdf)
 - [Introduction à Linux (Unix)](/prog/materials/resources/unix_linux_introduction_fr.pdf)
 - [Outils d'aide au développement](/prog/materials/resources/outils.pdf)
+- [Upgrade Java](/prog/materials/resources/upgrade_java.pdf)
 {{< /expand >}}
 
 ---
