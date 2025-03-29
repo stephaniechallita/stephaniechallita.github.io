@@ -28,6 +28,7 @@ Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoS
 ---
 
 {{< expand "Conferences & Workshops Program Committees" >}}
+- PC Member @[MODELS'2025-NIER track](https://conf.researchr.org/track/models-2025/models-2025-nier)
 - PC Member @[ECMFA'2025](https://conf.researchr.org/home/staf-2025/ecmfa-2025)
 - PC Member @[ICSR'2024](https://cyprusconferences.org/icsr2024/)
 - PC Member @[SATrends'2024](https://conf.researchr.org/home/icse-2024/satrends-2024) (*co-located with* [ICSE'2024](https://conf.researchr.org/home/icse-2024))
@@ -68,6 +69,8 @@ Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoS
 ---
 
 {{< expand "Collaborative projects" >}}
+- [Software Heritage](https://www.softwareheritage.org/) (2023 - Present)
+- [PEPR CLOUD - Taranis project](https://taranis-cloud.fr/en/partners/) (2023 - 2030)
 - [SPAI](https://team.inria.fr/spai/presentation/) (2018 - 2023)
 - [OCCIware](https://www.occiware.org/bin/view/Main/) (2014 - 2017)
 {{< /expand >}}

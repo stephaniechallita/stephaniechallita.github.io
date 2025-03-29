@@ -6,15 +6,15 @@ title = "Research"
 
 Overall, my research project aims to facilitate and improve software development. 
 For this, I am interested in the **development of Domain-Specific Modeling Languages** which have shown their effectiveness in the world of software development, thanks to a set of features such as abstraction, verification, code generation and many others.
-More specifically, **my research aims to provide languages and tools to model, verify and ease software development of heterogeneous distributed systems like Cloud Computing.**
+More specifically, **my current research aims to provide languages and tools to model, verify and ease software development of REST APIs.**
 
 My research interests include:
 
+- ***REST APIs***
 - ***Model-Driven Engineering***
 - ***Software Language Engineering***
 - ***Reverse-Engineering***
 - ***Model Verification & Validation***
-- ***REST APIs***
 - and ***Cloud Computing***
 	
 ---
@@ -28,6 +28,15 @@ My research interests include:
 - Yazid Benjamaa, June 12 - September 15, 2023, **“A DSL for specifying DevSecOps tools”**
 - Mouna Hissane, May 01 - August 31, 2021, **“A model-driven approach for analyzing security of Cloud APIs”**, co-supervision: [Nan Messe](https://nanzhangmesse.github.io/"), [Olivier Barais](https://olivier.barais.fr/)
 - Léo Rolland, June 07 - August 27, 2021, **“A technical dive into software cloudification”**, co-supervision: [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/)
+
+---
+
+**Awards & Grants**  
+- **Allocations d'Installation Scientifique (AIS)** from Rennes Métropole (10k €), 2024
+
+- **Installation Package at IRISA** from CNRS (5k €), 2021 
+
+- **L'Oréal-UNESCO Fellowship for Women in Science** (15k €), 2018 
 
 ---
 
