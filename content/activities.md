@@ -22,7 +22,7 @@ Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoS
 - Program Co-Chair @[FAACS'2020](https://faacs-workshop.github.io/2020/) (*co-located with* [ECSA'2020](https://ecsa2020.disim.univaq.it)
 - Publicity Co-Chair @[ECSA'2020](https://ecsa2020.disim.univaq.it)
 - Student Volunteers Co-Chair @[ECSA'2019](https://ecsa2019.univ-lille.fr/home)
-- Communications Chair @[FormaliSE'2019](https://2019.icse-conferences.org/track/Formalise-2019-papers) (*co-located with* [ICSE'2019](https://conf.researchr.org/home/icse-2019)
+- Communications Chair @[FormaliSE'2019](https://2019.icse-conferences.org/track/Formalise-2019-papers) (*co-located with* [ICSE'2019](https://conf.researchr.org/home/icse-2019))
 {{< /expand >}}
 
 ---

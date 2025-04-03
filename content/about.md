@@ -38,10 +38,10 @@ In 2015, I received a Research Master’s degree in Computer Science from [Unive
 ## Contact
 
 <p style="text-align: center">
-	<i class="icon fa-envelope"></i> stephanie{dot}challita{at}inria{dot}fr
+	<i class="icon fa-envelope"></i> stephanie{dot}challita{at}irisa{dot}fr
 </p>
 
 <p style="text-align: center">
-	<i class="icon fa-map-pin"></i> Inria Rennes - Bretagne Atlantique, DiverSE Team – Office F 329
+	<i class="icon fa-map-pin"></i> IRISA/Inria Rennes - Bretagne Atlantique, DiverSE Team – Office F 329
  	Campus de Beaulieu, 263 Avenue Général Leclerc, 35042 Rennes, France.
  </p>
