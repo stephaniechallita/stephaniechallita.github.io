@@ -65,7 +65,11 @@ You can also access all the articles from [HAL <i class="ai ai-hal"></i>](https:
 
 - **Stéphanie Challita**, Fawaz Paraiso, [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html).
 [<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-01481631/document) "A Study of Virtual Machine Placement Optimization in Data Centers."
-*7th International Conference on Cloud Computing and Services Science (CLOSER).* Porto, Portugal, 2017.
+*7th International Conference on Cloud Computing and Services Science (CLOSER).* Porto, Portugal, 2017. 
+
+- Fawaz Paraiso, [Yahya Al-dhuraibi](https://www.linkedin.com/in/yahya-al-dhuraibi-6a73b3a1/?locale=fr_FR), **Stéphanie Challita**, [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html).
+[<i class="fa fa-paperclip"></i>](https://inria.hal.science/hal-01534730/file/paper.pdf) "Gestion de ressources multi-nuages dirigé par des modèles."
+*Compas.* Lorient, France, 2016.
 
 - Fawaz Paraiso, **Stéphanie Challita**, [Yahya Al-dhuraibi](https://www.linkedin.com/in/yahya-al-dhuraibi-6a73b3a1/?locale=fr_FR), [Philippe Merle](http://chercheurs.lille.inria.fr/~pmerle/index.html).
 [<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-01314827/document) "Model-Driven Management of Docker Containers."
