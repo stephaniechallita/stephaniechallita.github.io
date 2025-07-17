@@ -8,7 +8,7 @@ title = "About"
 
 {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}}
 
-I am Associate Professor of Software Engineering at [University of Rennes 1](https://www.univ-rennes1.fr/). 
+I am Associate Professor of Software Engineering at [University of Rennes](https://www.univ-rennes.fr/). 
 I teach at the engineering school [ESIR](https://esir.univ-rennes1.fr/en) and I am a member of [DiverSE](https://www.diverse-team.fr/) research team, which is joint to [CNRS](http://www.cnrs.fr/),  [Inria Rennes - Bretagne Atlantique](https://www.inria.fr/en/centre-inria-rennes-bretagne-atlantique) and [Irisa](https://www.irisa.fr/en).
 Until September 2020, I was a Postdoctoral Researcher at [I3S laboratory](http://univ-cotedazur.fr/laboratories/i3s) & [Inria Sophia Antipolis – Méditerranée](https://www.inria.fr/en/centre-inria-sophia-antipolis-mediterranee) in France, within the [Kairos](https://team.inria.fr/kairos/) research team. 
 
@@ -22,7 +22,7 @@ In 2015, I received a Research Master’s degree in Computer Science from [Unive
 		<img width=120 style="margin-left: 10px;" src="/esir.png">
 	</div>
 	<div style="display: inline-block;">
-		<img width=120 style="margin-left: 10px;" src="/university_rennes_1.jpg">
+		<img width=120 style="margin-left: 10px;" src="/universiterennes.png">
 	</div>
 	<div style="display: inline-block;">
 		<img width=120 style="margin-left: 10px;" src="/inria.png">

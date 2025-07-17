@@ -13,7 +13,7 @@ googleAnalytics = ""  # add your tracking id
   favicon = "favicon.ico"  # path to a .ico to use as favicon
   logo = ""  # url or path to a logo to put in the header
   [params.footer]
-    text = "Stéphanie Challita. Last Update: 25/03/2025" 
+    text = "Stéphanie Challita. Last Update: 16/07/2025" 
     url = "https://github.com/stephaniechallita/stephaniechallita.github.io"
   [params.style]  # appearance options (can be omitted)
     fontFamily = "Inconsolata"
