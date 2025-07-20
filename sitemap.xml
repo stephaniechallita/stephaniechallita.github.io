@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://stephaniechallita.github.io/ase/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://stephaniechallita.github.io/about/</loc>
   </url>
   
@@ -17,6 +12,10 @@
   
   <url>
     <loc>https://stephaniechallita.github.io/activities/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stephaniechallita.github.io/ase/</loc>
   </url>
   
   <url>
