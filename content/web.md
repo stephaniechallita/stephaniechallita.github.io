@@ -6,7 +6,7 @@ title = "Web"
 
 **Professeurs** : 
 <p style="text-align: center;">
-    Stéphanie Challita &amp Hélène Feuillâtre  
+    Stéphanie Challita, Hélène Feuillâtre &amp Nicolò Cavalli
 </p>
 
 ---
@@ -25,13 +25,12 @@ Les slides du cours de Dev Frontend sont disponibles [ici](/web/Cours_WM_FrontEn
 | Date | Heure | Thème | Notes |
 | -------- | -------- | -------- | -------- |
 | 08/09/2025 | 13:15 - 14:45 | Introduction et Généralités | Histoire, vision globale, architecture, frontend, backend, TypeScript et NestJS | 
-| 15/09/2025 | 15:00 - 16:30 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs | 
-| 23/09/2025 | 09:15 - 10:45 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs | 
+| 08/09/2025 | 15:00 - 16:30 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs |
+| 15/09/2025 | 15:00 - 16:30 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs| 
+| 23/09/2025 | 09:15 - 10:45 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI | 
 | 23/09/2025 | 11:00 - 12:30 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI |
-| 07/10/2025 | 9:45 - 11:15 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI |  
-| 07/10/2025 | 11:30 - 13:00 | Sécurité | Sécurisation d'API, de mots de passe, HTTPs, Autorisation & Authentification |
-| 21/10/2025 |  13:15 - 14:45 |  Extra Backend Dev | Vendre son API, Développement No-code |
-			
+| 07/10/2025 | 9:45 - 11:15 | Sécurité | Sécurisation d'API, de mots de passe, HTTPs, Autorisation & Authentification |  
+| 07/10/2025 | 11:30 - 13:00 | Extra Backend Dev | Vendre son API, Développement No-code |			
 ---
 
 ##### Séances de TP
@@ -53,7 +52,7 @@ Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ic
 
 | Date | Heure | Sujet |
 | -------- | -------- | -------- |
-| 05/12/2025 | 08:00 - 11:15 | [Introduction à Angular](https://gitlab.istic.univ-rennes1.fr/hfeuilla/jxc_tp2_angular) |
+| 05/12/2025 | 08:00 - 11:15 | [Introduction à Angular](https://v17.angular.io/tutorial/first-app) |
 | 12/12/2025 | 15:00 - 18:15 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
 | 16/12/2025 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
 | 05/01/2026 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
