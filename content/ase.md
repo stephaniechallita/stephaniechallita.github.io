@@ -4,9 +4,9 @@ title = "ASE"
 
 ## Course Material - Advanced Software Engineering - ESIR
 
-**Professor** :  
+**Professors** :  
 <p style="text-align: center;">
-    Stéphanie Challita
+    Stéphanie Challita &amp Chiara Relevat
 </p>
 
 ---
