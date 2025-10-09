@@ -19,7 +19,9 @@ My research interests include:
 	
 ---
 
-**Thesis supervision:**
+**Thesis supervision:** 
+- Haitam El Hayani, October 2024 - Present, **“Extending Infrastructure as Code (IaC) languages, focusing on enhancing their capabilities and improving their integration with modern cloud deployment practices”**, co-supervision: [Olivier Barais](https://olivier.barais.fr/), [Jolan Philippe](https://jolanphilippe.github.io/index.html) 
+
 - Anne Bumiller, October 2020 - November 2023, **“Contextual modeling of adaptive authentication systems”**, co-supervision: [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/)
 
 --- 
@@ -29,16 +31,7 @@ My research interests include:
 - Mouna Hissane, May 01 - August 31, 2021, **“A model-driven approach for analyzing security of Cloud APIs”**, co-supervision: [Nan Messe](https://nanzhangmesse.github.io/"), [Olivier Barais](https://olivier.barais.fr/)
 - Léo Rolland, June 07 - August 27, 2021, **“A technical dive into software cloudification”**, co-supervision: [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/)
 
----
-
-**Awards & Grants**  
-- **Allocations d'Installation Scientifique (AIS)** from Rennes Métropole (10k €), 2024
-
-- **Installation Package at IRISA** from CNRS (5k €), 2021 
-
-- **L'Oréal-UNESCO Fellowship for Women in Science** (15k €), 2018 
-
----
+--- 
 
 I have [open positions](../positions) and I am always looking for competent and motivated students to join us in [DiverSE](https://www.diverse-team.fr/).
 Contact me on <i class="fa-regular fa-envelope"></i> stephanie{dot}challita{at}inria{dot}fr.
