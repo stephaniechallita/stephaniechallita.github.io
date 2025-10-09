@@ -69,15 +69,6 @@ Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoS
 
 ---
 
-{{< expand "Collaborative projects" >}}
-- [Software Heritage](https://www.softwareheritage.org/) (2023 - Present)
-- [PEPR CLOUD - Taranis project](https://taranis-cloud.fr/en/partners/) (2023 - 2030)
-- [SPAI](https://team.inria.fr/spai/presentation/) (2018 - 2023)
-- [OCCIware](https://www.occiware.org/bin/view/Main/) (2014 - 2017)
-{{< /expand >}}
-
----
-
 {{< expand "Talks" >}}
 - Seminar in 2020 @[ENS Rennes](http://www.ens-rennes.fr/actualites/seminaire-2-mercredi-30-09-2020-par-stephanie-challita-automated-reverse-engineering-of-a-cloud-api-294396.kjsp?RH=1412169140861) (see the slides [here](http://www.ens-rennes.fr/medias/fichier/seminaire-30-09-2020-stephanie-challita_1601553362988-pdf))
 - [GLE/LOUISE/RIMEL](http://www.lgi2p.mines-ales.fr/~urtado/Groupe_RIMEL/Journee_RIMEL_2019/RIMEL2019_Programme.html) working day 2019 organized by GDR GPL

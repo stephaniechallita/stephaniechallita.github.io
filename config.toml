@@ -91,23 +91,7 @@ googleAnalytics = ""  # add your tracking id
     name = "Projects"
     url = "/projects"
     weight = 5
-    pre = '<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="16"
-  height="16"
-  viewBox="0 0 16 16"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M2 7h20v14H2z" />
-  <path d="M2 7l4-4h12l4 4" />
-  <path d="M8 7V4h8v3" />
-  <path d="M12 11v4" />
-</svg>
-'
+    pre = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M2 7h20v14H2z" /> <path d="M2 7l4-4h12l4 4" /> <path d="M8 7V4h8v3" /> <path d="M12 11v4" /></svg>'
   #  name = "Resume"
   #  url = "/resume.pdf"
   #  # 'pre' and 'post' hooks are available
