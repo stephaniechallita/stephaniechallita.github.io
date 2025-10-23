@@ -23,6 +23,10 @@ title = "ASE"
 | 08/12/2025 | 09:45 - 13:00 | [Model Management]() |  
 | 02/02/2026 | 09:45 - 13:00 | [Model Execution]() |
 
+###### Materials
+
+You can access the FSM assignment online [here](../ase_fsm) or download the PDF version [here](/ase/FSM.pdf).
+
 ---
 
 ##### Lab Sessions
