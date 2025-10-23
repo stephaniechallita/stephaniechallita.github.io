@@ -35,7 +35,17 @@
       
       <guid>https://stephaniechallita.github.io/ase/</guid>
       <description>Course Material - Advanced Software Engineering - ESIR Professors :
-Stéphanie Challita &amp;amp Chiara Relevat  Course Schedule: Lectures    Date Time Topic     10/11/2025 09:45 - 13:00 Introduction to MDE, SLE - Introduction to DSL   17/11/2025 09:45 - 13:00 Introduction to DSL   24/11/2025 09:45 - 13:00 Introduction to DSL   27/11/2025 09:45 - 13:00 Model Management   08/12/2025 09:45 - 13:00 Model Management   02/02/2026 09:45 - 13:00 Model Execution     Lab Sessions The labs will consist in implementing individually the proposed tutorial.</description>
+Stéphanie Challita &amp;amp Chiara Relevat  Course Schedule: Lectures    Date Time Topic     10/11/2025 09:45 - 13:00 Introduction to MDE, SLE - Introduction to DSL   17/11/2025 09:45 - 13:00 Introduction to DSL   24/11/2025 09:45 - 13:00 Introduction to DSL   27/11/2025 09:45 - 13:00 Model Management   08/12/2025 09:45 - 13:00 Model Management   02/02/2026 09:45 - 13:00 Model Execution    Materials You can access the FSM assignment online here or download the PDF version here.</description>
+    </item>
+    
+    <item>
+      <title>ASE - FSM</title>
+      <link>https://stephaniechallita.github.io/ase_fsm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephaniechallita.github.io/ase_fsm/</guid>
+      <description>This exercise will help you apply the concepts from the lessons through a simple domain use case. It will take you from metamodeling to interpretation and compilation. It’s also excellent preparation for your graded lab sessions on the Robots project.
+In this lab, you will model a Finite State Machine (FSM). An FSM is a structure used to describe the behavior of a system based on states and transitions between those states.</description>
     </item>
     
     <item>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ASE - FSM</title>
+    <meta name="description" content="">
+    <meta name="author" content='Stéphanie Challita'>
+
+
+    <style>
+        .collapsible {
+          background-color: #7395AE;
+          color: white;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+        }
+        
+        .active, .collapsible:hover {
+          background-color: #7395AE;
+        }
+        
+        .collapsible:after {
+          content: '\002B';
+          color: white;
+          font-weight: bold;
+          float: right;
+          margin-left: 5px;
+        }
+        
+        .active:after {
+          content: "\2212";
+        }
+        
+        .content {
+          padding: 0 18px;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+          background-color: #f1f1f1;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"/>
+    <link rel="me" href="https://mastodon.social/@stephaniechallita"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="/sass/researcher.min.css">
+
+    
+        <link rel="icon" type="image/ico" href="https://stephaniechallita.github.io/favicon.ico">
+    
+
+    
+        
+    
+</head>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="https://stephaniechallita.github.io/" title="Stéphanie Challita">
+          
+          Stéphanie Challita
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="/publications" title="Publications">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg> Publications
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="/research" title="Research">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/></svg> Research
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="/teaching" title="Teaching">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/></svg> Teaching
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="/activities" title="Activities">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16"> <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/> </svg> Activities
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="/projects" title="Projects">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16"><path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/></svg> Projects
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <p>This exercise will help you apply the concepts from the lessons through a simple domain use case. It will take you from metamodeling to interpretation and compilation. It’s also excellent preparation for your graded lab sessions on the Robots project.</p>
+<p>In this lab, you will model a Finite State Machine (<code>FSM</code>).
+An FSM is a structure used to describe the behavior of a system based on states and transitions between those states.
+Each machine contains a set of states, one initial state, and transitions triggered by events.</p>
+<p>By the end of this lab, you will have:</p>
+<ul>
+<li>a machine (<code>FSM</code>),</li>
+<li>states (<code>State</code>),</li>
+<li>and transitions (<code>Transition</code>).</li>
+</ul>
+<h2 id="modeling-a-finite-state-machine-fsm-with-ecore">Modeling a Finite State Machine (FSM) with Ecore</h2>
+<p>In this lab, you will model a Finite State Machine (<code>FSM</code>) using an Ecore metamodel.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Go to <a href="https://www.eclipse.org/downloads/">download page</a> of Eclipse, and download the installer for your machine.</p>
+<p>Run the installer, and search for Eclispe IDE for DSL developers:</p>
+<p><img src="/ase/images/install.png" alt="Eclispe Installer">{ height=25% }</p>
+<h3 id="ecore-metamodeling">Ecore Metamodeling</h3>
+<p><code>Ecore</code> is the core modeling language of the Eclipse Modeling Framework (<code>EMF</code>).
+It is used to describe the structure of models, in other words, to define metamodels.
+A metamodel specifies what concepts exist in a domain, what properties they have, and how they relate to each other.</p>
+<h4 id="key-concepts">Key Concepts</h4>
+<p><strong>EPackage</strong>: A container that groups related model elements (similar to a namespace or a Java package).
+It has a name, a namespace prefix, and a URI that uniquely identifies it.</p>
+<p><strong>EClass</strong>: Represents a concept or type in the model (like a class in object-oriented programming).
+Each EClass can have:</p>
+<ul>
+<li>EAttributes (primitive features, such as strings or numbers)</li>
+<li>EReferences (links to other classes)</li>
+</ul>
+<p><strong>EAttribute</strong>: Defines a simple property of a class.
+For example: <code>FSM.name : EString</code> means that each FSM has a string attribute called name.</p>
+<p><strong>EReference</strong>: Describes a relationship between classes. A reference can be:</p>
+<ul>
+<li>Containment: the target object belongs to the container (like composition in UML).</li>
+<li>Non-containment: a simple reference (like an association).</li>
+</ul>
+<p><strong>Opposite references</strong>: Two references can be declared as opposites to ensure consistency between both ends of a relation (e.g., Transition.src ↔ State.outgoing).</p>
+<p><strong>Multiplicity</strong>: Indicates how many elements can be linked (e.g., [0..*] for many, [1] for exactly one).</p>
+<h4 id="to-start">To start</h4>
+<p>Go to <code>File</code> &gt; <code>New</code> &gt; <code>Ecore modeling project</code>, name it <code>fsm</code> and open the <code>model/fsm.ecore</code> file.
+You can edit it with Right click on the package <code>fsm</code> (generated when creating a Ecore project) &gt; <code>New Child</code> &gt; <code>EClass</code> | <code>...</code>.</p>
+<p>You can do the same on an <code>EClass</code>: <code>New Child</code> &gt; <code>EAttribute</code> | <code>EReference</code> | <code>...</code> .</p>
+<p>When selecting (double click on it) a node, you can edit its properties in a dedicated window.</p>
+<h3 id="fsm-metamodling">FSM Metamodling</h3>
+<p>Model a Finite State Machine (FSM) using an Ecore metamodel. To help you, here is a class diagram illustrating what is expected:</p>
+<p><img src="/ase/images/diagram.png" alt="FSM class diagram">{ height=50% }</p>
+<h2 id="xtext">XText</h2>
+<p>In this exercise, you will design an Xtext grammar that defines a textual syntax for the <code>FSM</code> metamodel you created earlier in Ecore. Your goal is to allow users to describe finite state machines in a simple and readable DSL.</p>
+<p><strong>Objectives</strong></p>
+<ul>
+<li>Understand how to map an Ecore metamodel to an Xtext grammar.</li>
+<li>Learn how to define rules for objects, attributes, and references.</li>
+<li>Write a concrete syntax that supports the creation of FSMs, States, and Transitions.</li>
+</ul>
+<h3 id="context">Context</h3>
+<p>You already have an Ecore metamodel describing:</p>
+<p>A machine (<code>FSM</code>) containing:</p>
+<ul>
+<li>one optional initial state,</li>
+<li>a set of states (ownedStates),</li>
+<li>and a set of transitions (ownedTransitions).</li>
+</ul>
+<p>A state (<code>State</code>) that can have incoming and outgoing transitions.
+A transition (<code>Transition</code>) linking two states (<code>src</code>, <code>tgt</code>), with optional <code>trigger</code> and <code>action</code>.</p>
+<h3 id="project">Project</h3>
+<p>Create a new Xtext project: <code>File</code> → <code>New</code> → <code>Project</code> → <code>Xtext Project</code>.</p>
+<ul>
+<li>Use the package name: <code>xtext.Fsm</code>.</li>
+<li>Use the file extension: <code>fsm</code>.</li>
+</ul>
+<h3 id="define-the-grammar">Define the grammar</h3>
+<p>Base it on the metamodel from the previous exercise. Make sure each <code>FSM</code> can contain states and transitions, and that these can refer to each other by name.</p>
+<p>Use references ([Type|EString]) for links such as <code>initialState</code>, <code>src</code>, and <code>tgt</code>.</p>
+<p>Your grammar should allow users to write files like this:</p>
+<pre><code class="language-xtext" data-lang="xtext">FSM MyFsm {
+  initialState &quot;S1&quot;
+  ownedStates {
+    State &quot;S1&quot; { outgoing(&quot;t1&quot;) },
+    State &quot;S2&quot; { incoming(&quot;t1&quot;) }
+  }
+  ownedTransitions {
+    Transition &quot;t1&quot; src &quot;S1&quot; tgt &quot;S2&quot; trigger &quot;go&quot; action &quot;doSomething&quot;
+  }
+}
+</code></pre><h3 id="check-your-grammar">Check your grammar</h3>
+<p>Validate the grammar (no errors or warnings). Launch the Eclipse runtime and create a new <code>.fsm</code> file to test it. Use content assist (Ctrl+Space) to verify that names and references are correctly resolved.</p>
+<h2 id="xtext-fsm-interpretation">Xtext FSM Interpretation</h2>
+<p>In this part, you will develop an interpreter for your <code>FSM</code> language.
+Instead of generating Java code (as in the compiler), the interpreter will directly execute the model in memory.
+This allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
+<h3 id="goal">Goal</h3>
+<p>Your interpreter should:</p>
+<ul>
+<li>Load an FSM model from an .fsm file.</li>
+<li>Start from the machine’s initial state.</li>
+<li>Select one of the outgoing transitions (for example, randomly).</li>
+<li>Apply its trigger and action, and move to the target state.</li>
+<li>Continue until a state with no outgoing transitions is reached.</li>
+</ul>
+<p>The execution should produce trace messages in the console to show the evolution of the system.</p>
+<h3 id="step-1-create-the-interpreter-class">Step 1: Create the interpreter class</h3>
+<p>Create a new class (preferably in Xtend) in your runtime plugin, e.g.: <code>xtext.interpreter.FsmInterpreter</code>.</p>
+<p>This class should:</p>
+<ul>
+<li>Define a method run(FSM fsm) to start the interpretation.</li>
+<li>Maintain a small context object storing the current state.</li>
+<li>Iterate through transitions and update the current state as the FSM evolves.</li>
+</ul>
+<h3 id="step-2-connect-it-to-eclipse">Step 2: Connect it to Eclipse</h3>
+<p>Add a menu or command entry (e.g. “Run FSM”) in your runtime Eclipse that:</p>
+<ul>
+<li>Retrieves the currently opened .fsm file,</li>
+<li>Loads it into a resource,</li>
+<li>Passes the model to your interpreter.</li>
+</ul>
+<p>To do this you need to create a new java class in <code>xtext.ui.handlers</code>, such as <code>RunFsmHandler</code>, then attach a new Eclipse command to it, by editing <code>plugin.xml</code> in your <code>ui</code> project to add the following code at the bottom of the file, before <code>&lt;/plugin&gt;</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;extension</span> <span style="color:#a6e22e">point=</span><span style="color:#e6db74">&#34;org.eclipse.ui.commands&#34;</span><span style="color:#f92672">&gt;</span>
+	 	<span style="color:#f92672">&lt;command</span>
+	        <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;xtext.ui.commands.runfsm&#34;</span>
+	        <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Run FSM&#34;</span>
+	        <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;Interpret and execute the selected FSM&#34;</span><span style="color:#f92672">&gt;</span>
+	  <span style="color:#f92672">&lt;/command&gt;</span>
+	<span style="color:#f92672">&lt;/extension&gt;</span>
+	
+	<span style="color:#f92672">&lt;extension</span>
+	     <span style="color:#a6e22e">point=</span><span style="color:#e6db74">&#34;org.eclipse.ui.handlers&#34;</span><span style="color:#f92672">&gt;</span>
+	  <span style="color:#f92672">&lt;handler</span>
+	        <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;xtext.ui.handlers.RunFsmHandler&#34;</span>
+	        <span style="color:#a6e22e">commandId=</span><span style="color:#e6db74">&#34;xtext.ui.commands.runfsm&#34;</span><span style="color:#f92672">&gt;</span>
+	  <span style="color:#f92672">&lt;/handler&gt;</span>
+	<span style="color:#f92672">&lt;/extension&gt;</span>
+	
+	<span style="color:#f92672">&lt;extension</span>
+	     <span style="color:#a6e22e">point=</span><span style="color:#e6db74">&#34;org.eclipse.ui.menus&#34;</span><span style="color:#f92672">&gt;</span>
+	  <span style="color:#f92672">&lt;menuContribution</span>
+	        <span style="color:#a6e22e">locationURI=</span><span style="color:#e6db74">&#34;popup:org.eclipse.ui.popup.any?after=additions&#34;</span><span style="color:#f92672">&gt;</span>
+	    <span style="color:#f92672">&lt;command</span>
+	          <span style="color:#a6e22e">commandId=</span><span style="color:#e6db74">&#34;xtext.ui.commands.runfsm&#34;</span>
+	          <span style="color:#a6e22e">label=</span><span style="color:#e6db74">&#34;Run FSM&#34;</span>
+	          <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;push&#34;</span><span style="color:#f92672">&gt;</span>
+	    <span style="color:#f92672">&lt;/command&gt;</span>
+	  <span style="color:#f92672">&lt;/menuContribution&gt;</span>
+	<span style="color:#f92672">&lt;/extension&gt;</span>
+</code></pre></div><p>Also, edit <code>MANIFEST.MF</code> in your <code>ui</code> project. The property <code>Require-Bundle</code> should have:</p>
+<pre><code>fr.esir.ase.xtext.fsm,
+ fr.esir.ase.xtext.fsm.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version=&quot;3.14.300&quot;,
+ org.eclipse.ui.ide;bundle-version=&quot;3.18.500&quot;,
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared
+</code></pre><p>and the property <code>Export-Package</code> should have:</p>
+<pre><code>xtext.ui.quickfix,
+fr.esir.ase.xtext.fsm.ui.internal,
+xtext.ui.contentassist,
+xtext.ui.handlers
+</code></pre><p>Running this command should simulate the FSM and print trace messages such as:</p>
+<pre><code>Starting FSM: MyMachine
+Initial state: S1
+--- Executing transition: t1
+Trigger: go
+Action: move
+Now in state: S2
+Reached terminal state: S2
+</code></pre><h3 id="step-3-use-the-interpreter-pattern">Step 3 Use the Interpreter Pattern</h3>
+<p>For a more structured design, implement the Interpreter Pattern with dispatch methods:</p>
+<pre><code>interpret(FSM, Context)
+interpret(State, Context)
+interpret(Transition, Context)
+</code></pre><p>Each method defines how a model element contributes to the interpretation.
+This approach emphasizes traversal and semantics, complementing the Visitor pattern you used for code generation.</p>
+<h3 id="expected-outcome">Expected outcome</h3>
+<p>At the end of this part, you should be able to, in the runtime Eclipse, <code>Right Click</code> &gt; <code>Run FSM</code> on a <code>.fsm</code> file.</p>
+<p>See the simulated execution of your FSM in the console.</p>
+<h2 id="xtext-compiler">Xtext Compiler</h2>
+<p>In this part, you will implement a compiler for your FSM language.
+The compiler will translate a textual FSM model into a Java implementation that can be executed independently.
+Unlike the interpreter (which executes the model directly), the compiler generates source code following the <code>State</code> design pattern.</p>
+<h3 id="goal-1">Goal</h3>
+<p>Your compiler should:</p>
+<ul>
+<li>Generate Java classes representing the FSM structure (machine, states, transitions).</li>
+<li>Implement a runtime behavior that can execute transitions and evolve between states.</li>
+<li>Produce files that can be compiled and executed as a standalone Java program.</li>
+</ul>
+<p>This process illustrates the Visitor pattern, as your compiler must traverse the model and produce corresponding code elements.</p>
+<h3 id="step-1-create-the-compiler">Step 1 Create the compiler</h3>
+<p>You should have a package in <code>xtext.fsm</code> named <code>xtext.generator</code> with an xtend file named <code>FsmGenerator</code> with stub code generated by Eclipse.
+If not, create the package and the xtend file. In your runtime project, create a new Xtend class, for example:</p>
+<pre><code class="language-xtend" data-lang="xtend">package xtext.generator
+
+class FsmCompiler {
+    def compile(FSM fsm, IFileSystemAccess fsa) {
+        // TODO: implement code generation here
+    }
+  	
+	def void generateFile(IFileSystemAccess fsa, String path, String content) {
+	    fsa.generateFile('../../CompiledFsm/src/' + path, content)
+	}
+}
+</code></pre><p>This class will:</p>
+<ul>
+<li>Traverse the model (FSM, State, and Transition elements),</li>
+<li>Use the Xtend template expressions to generate code (e.g. '&rsquo;&rsquo; … &lsquo;''),</li>
+<li>Write Java files using the provided IFileSystemAccess.</li>
+</ul>
+<p>Use the method <code>generateFile</code> to generate a file. Note the path <code>'../../CompiledFsm/src/'</code>:
+We want to generate the file in a dedicated Java project named <code>CompiledFsm</code> in the <code>src</code> folder.</p>
+<h3 id="step-2-integrate-the-compiler">Step 2 Integrate the compiler</h3>
+<p>Your compiler will be called automatically every time a <code>.fsm</code> file is saved.</p>
+<p>To do this, modify your <code>FsmGenerator</code> class with a</p>
+<pre><code class="language-xtend" data-lang="xtend">override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+	for (EObject root : resource.getContents) {
+		if (root instanceof FSM) {
+			val fsm = root as FSM
+			generateForFsm(fsm, fsa)
+		}
+	}
+}
+</code></pre><h3 id="step-3-compiling">Step 3 Compiling</h3>
+<p>Once done, run the <code>ui</code> project.  Create a java project named <code>CompiledFsm</code>: <code>File</code> &gt; <code>New</code> &gt; <code>Java Project</code>.
+Open a <code>.fsm</code> file, edit it and save. The compilation happens automatically. You will find new Java sources in the <code>CompiledFsm</code> project:</p>
+<h2 id="grammar-langium-textual-modeling-definition-of-the-langium-grammar-and-editor-for-your-language">Grammar Langium: Textual modeling: definition of the Langium grammar and editor for your language</h2>
+<p>After determining the domain, it is time to move on to the actual text editor for your language. In this lab, we will build this editor using the TypeScript-based <a href="https://langium.org/">Langium</a> workbench to build a Visual Studio Code extension supporting the edition of your language.</p>
+<p>If not done already, you will need to install a <a href="https://nodejs.org/en/download">node environment</a> as well as <a href="https://code.visualstudio.com/docs/setup/setup-overview">Visual Studio Code</a>, and then run the command <code>npm i -g yo@5.1.0 generator-langium@3.3.0</code> to install the Langium project generator. Then, run <code>yo langium</code> to create the project. This will offer to create a few different things; you <strong>have to</strong> say yes to all of them, pick a language name, extension name, and a file extension (<em>e.g.</em> .rob).
+You can also install the Langium extension from the VSCode marketplace, to have syntax highlighting and validation in your grammar.</p>
+<blockquote>
+<p>[!IMPORTANT]
+We use a particular version of yo and generator-langium in these labs due to the rapid change in the version of Langium.
+<strong>Make sure that you use these versions</strong>.</p>
+</blockquote>
+<p>Depending on what modeling tool you picked in Part 1, the next step can change a little bit. If you picked another method than Ecore, skip the following section.</p>
+<blockquote>
+<p>[!NOTE]
+There is flexibility in the concrete syntax of the language, but make it concise and usable for non-experts in programming. Ask your teacher during labs if you plan to change the syntax.</p>
+</blockquote>
+<h3 id="xtext-to-langium">Xtext to Langium</h3>
+<p>Fortunately, it is possible to convert an Xtext grammar into a Langium grammar thanks to <a href="https://github.com/TypeFox/xtext2langium">this project</a>.</p>
+<p>To convert a grammar, go to the Eclipse menu <em>Help</em> -&gt; <em>Install new software</em> -&gt; in the site field, paste the URL <code>https://typefox.github.io/xtext2langium/download/updates/v0.4.0/</code> and install the package. Afterward, go into your Xtext project&rsquo;s <code>META-INF/MANIFEST.MF</code>, switch to the <em>Dependencies</em> tab, and add Xtext2langium as a dependency. Don&rsquo;t forget to save your manifest file. Then you can go to the MWE2 file (named something like <code>GenerateMyDsl.mwe2</code>) in your project, and replace the <code>fragment</code> field with:</p>
+<pre><code>fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
+    outputPath = './langium'
+}
+</code></pre><p>Right-click the MWE2 file and run it. You should see a <code>langium</code> folder appear in your project, with corresponding <code>.langium</code> grammar files which you can put into your <code>src/language/</code> folder of the Langium project.
+Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.</p>
+<h2 id="interpretation-with-langium">Interpretation with Langium</h2>
+<p>In this part, you will develop an Langium interpreter for your <code>FSM</code> language. This is the same than we have done with xtext/xtend, but here with Langium.</p>
+<p>Add a file <code>interpreter.ts</code> in <code>packages/language/src/</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Reference</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">type</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">State</span>, <span style="color:#a6e22e">Transition</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./generated/ast.js&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FsmInterpreter</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">fsm</span>: <span style="color:#66d9ef">FSM</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+		...
+
+		<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ctx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FsmContext</span>(<span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">initialState</span>.<span style="color:#a6e22e">ref</span>);
+	}
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FsmContext</span> {
+    <span style="color:#a6e22e">currentState</span>: <span style="color:#66d9ef">State</span>;
+
+    <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">initialState</span>: <span style="color:#66d9ef">State</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentState</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">initialState</span>;
+    }
+}
+</code></pre></div><p>In <code>index.ts</code>, add <code>export * from './interpreter.js'</code></p>
+<h2 id="runner">Runner</h2>
+<p>Now, we want a VSCode action, a kind of plugin that execute a command to launch the interpretation.</p>
+<p>In <code>package/extension/src/</code>, a new folder <code>runner</code>, add a new  file <code>runner.ts</code> with the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">createFsmServices</span>, <span style="color:#a6e22e">FsmInterpreter</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fsm-language&#39;</span>; 
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NodeFileSystem</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium/node&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">vscode</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vscode&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">runFsmFile</span>(<span style="color:#a6e22e">textDocument</span>: <span style="color:#66d9ef">vscode.TextDocument</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">services</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createFsmServices</span>({ ...<span style="color:#a6e22e">NodeFileSystem</span> });
+    <span style="color:#66d9ef">const</span> document <span style="color:#f92672">=</span> <span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">shared</span>.<span style="color:#a6e22e">workspace</span>.<span style="color:#a6e22e">LangiumDocumentFactory</span>.<span style="color:#a6e22e">fromString</span>(<span style="color:#a6e22e">textDocument</span>.<span style="color:#a6e22e">getText</span>(), <span style="color:#a6e22e">textDocument</span>.<span style="color:#a6e22e">uri</span>);
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">shared</span>.<span style="color:#a6e22e">workspace</span>.<span style="color:#a6e22e">DocumentBuilder</span>.<span style="color:#a6e22e">build</span>([document], { <span style="color:#a6e22e">validation</span>: <span style="color:#66d9ef">true</span> });
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">parseResult</span>.<span style="color:#a6e22e">value</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fsm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">root</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">FSM</span>;
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fsm</span>) {
+        <span style="color:#a6e22e">vscode</span>.window.<span style="color:#a6e22e">showErrorMessage</span>(<span style="color:#e6db74">`Parsing failed: </span><span style="color:#e6db74">${</span>document.<span style="color:#a6e22e">diagnostics</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">1</span>);
+    }
+
+    <span style="color:#a6e22e">vscode</span>.window.<span style="color:#a6e22e">showInformationMessage</span>(<span style="color:#e6db74">&#39;FSM loaded successfully&#39;</span>);
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">interpreter</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FsmInterpreter</span>(<span style="color:#a6e22e">fsm</span>);
+    <span style="color:#a6e22e">interpreter</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">fsm</span>);
+}
+</code></pre></div><p>Then, add in <code>src/extension/main.ts</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">export async function activate(context: vscode.ExtensionContext): Promise&lt;void&gt; {
+    client = await startLanguageClient(context);
+<span style="color:#a6e22e">+    context.subscriptions.push(
+</span><span style="color:#a6e22e">+        vscode.commands.registerCommand(&#39;fsm.runFsm&#39;, () =&gt; {
+</span><span style="color:#a6e22e">+            const editor = vscode.window.activeTextEditor;
+</span><span style="color:#a6e22e">+            if (editor) {
+</span><span style="color:#a6e22e">+                runFsmFile(editor.document);
+</span><span style="color:#a6e22e">+            }
+</span><span style="color:#a6e22e">+        })
+</span><span style="color:#a6e22e">+    );
+</span><span style="color:#a6e22e"></span>}
+</code></pre></div><p>And add in <code>package.json</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">&#34;contributes&#34;: {
+        ...
+<span style="color:#a6e22e">+        &#34;commands&#34;: [
+</span><span style="color:#a6e22e">+            {
+</span><span style="color:#a6e22e">+              &#34;command&#34;: &#34;fsm.runFsm&#34;,
+</span><span style="color:#a6e22e">+              &#34;title&#34;: &#34;Run FSM&#34;
+</span><span style="color:#a6e22e">+            }
+</span><span style="color:#a6e22e">+        ]
+</span><span style="color:#a6e22e"></span>    },
+    &#34;activationEvents&#34;: [
+        &#34;onLanguage:fsm&#34;,
+<span style="color:#a6e22e">+        &#34;onCommand:fsm.runFsm&#34;
+</span><span style="color:#a6e22e"></span>    ],
+</code></pre></div><h2 id="build-and-run">Build and Run</h2>
+<p>To test, open a terminal, go to <code>packages/extension</code> and run <code>npm run build</code>. In VSCode, press F5 to launch a new VSCode with our extensions.</p>
+<p>In this new VSCode, :</p>
+<ul>
+<li>Open a <code>.fsm</code></li>
+<li><code>Ctrl+Shift+P</code> &gt; <code>Run FSM</code></li>
+<li>We should see in the console something happening.</li>
+</ul>
+<h2 id="compilation-with-langium">Compilation with Langium</h2>
+<p>In this part, you will develop a Langium compiler for your <code>FSM</code> language. This is the same than we have done with xtext/xtend, but here with Langium.</p>
+<p>With all the knowledge accumulated, you should be able to implement this compiler by yourself.</p>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    <div class="container text-center">
+        
+            <a href="https://scholar.google.fr/citations?user=DrOTwx4AAAAJ&amp;hl=en" class="ai ai-google-scholar fa-1x" title="Google scholar"></a>
+        
+            <a href="https://orcid.org/0000-0001-7614-7488" class="ai ai-orcid fa-1x" title="Orcid"></a>
+        
+            <a href="https://github.com/stephaniechallita" class="fab fa-github fa-1x" title="GihHub"></a>
+        
+            <a href="https://twitter.com/StephanieChall1" class="fab fa-twitter fa-1x" title="Twitter"></a>
+        
+            <a href="https://www.linkedin.com/in/st%C3%A9phanie-challita-60943562/" class="fab fa-linkedin fa-1x" title="LinkedIn"></a>
+        
+            <a href="https://www.slideshare.net/StephanieCHALLITA" class="fab fa-slideshare fa-1x" title="Slideshare"></a>
+        
+            <a href="https://www.researchgate.net/profile/Stephanie_Challita" class="fab fa-researchgate fa-1x" title="Research Gate"></a>
+        
+            <a href="https://mastodon.social/@stephaniechallita" class="fab fa-mastodon fa-1x" title="Mastodon"></a>
+        
+    </div>
+    
+        <div class="container text-center">
+            <a href="https://github.com/stephaniechallita/stephaniechallita.github.io" title="Stéphanie Challita. Last Update: 09/10/2025"><small>Stéphanie Challita. Last Update: 09/10/2025</small></a>
+        </div>
+    
+</div>
+</body>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+</html>
