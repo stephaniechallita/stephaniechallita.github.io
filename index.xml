@@ -35,7 +35,7 @@
       
       <guid>https://stephaniechallita.github.io/ase/</guid>
       <description>Course Material - Advanced Software Engineering - ESIR Professors :
-Stéphanie Challita &amp;amp Chiara Relevat  Course Schedule: Lectures    Date Time Topic     10/11/2025 09:45 - 13:00 Introduction to MDE, SLE - Introduction to DSL   17/11/2025 09:45 - 13:00 Introduction to DSL   24/11/2025 09:45 - 13:00 Introduction to DSL   27/11/2025 09:45 - 13:00 Model Management   08/12/2025 09:45 - 13:00 Model Management   02/02/2026 09:45 - 13:00 Model Execution    Materials You can access the FSM assignment online here or download the PDF version here.</description>
+Stéphanie Challita &amp;amp Chiara Relevat  Course Schedule: Lectures    Date Time Topic Flipped SessionContent Activity     10/11/2025 09:45 - 13:00 MDE / SLE - DSL     17/11/2025 09:45 - 13:00 DSL EMF modeling FSM metamodeling   24/11/2025 09:45 - 13:00 DSL Xtext FSM Xtext   27/11/2025 09:45 - 13:00 DSL  FSM Langium   08/12/2025 09:45 - 13:00 Model Management Xtend    02/02/2026 09:45 - 13:00 Model Management Visitors FSM interpreter/compiler    Materials You can access the FSM assignment online here or download the PDF version here.</description>
     </item>
     
     <item>
