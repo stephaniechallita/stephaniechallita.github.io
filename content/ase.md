@@ -14,14 +14,14 @@ title = "ASE"
 #### Course Schedule:
 
 ##### Lectures
-| Date | Time | Topic |  
-| -------- | -------- | -------- |  
-| 10/11/2025 | 09:45 - 13:00 | [Introduction to MDE, SLE]() - [Introduction to DSL]() |  
-| 17/11/2025 | 09:45 - 13:00 | [Introduction to DSL]() |  
-| 24/11/2025 | 09:45 - 13:00 | [Introduction to DSL]() |  
-| 27/11/2025 | 09:45 - 13:00 | [Model Management]() |  
-| 08/12/2025 | 09:45 - 13:00 | [Model Management]() |  
-| 02/02/2026 | 09:45 - 13:00 | [Model Execution]() |
+| Date | Time | Topic | Flipped Session Content | Activity |
+| -------- | -------- | -------- | -------- | -------- |  
+| 10/11/2025 | 09:45 - 13:00 | [MDE / SLE]() - [DSL]() |  |  |
+| 17/11/2025 | 09:45 - 13:00 | [DSL]() | EMF modeling | FSM metamodeling |
+| 24/11/2025 | 09:45 - 13:00 | [DSL]() | Xtext | FSM Xtext |
+| 27/11/2025 | 09:45 - 13:00 | [DSL]() | | FSM Langium |
+| 08/12/2025 | 09:45 - 13:00 | [Model Management]() | Xtend | |
+| 02/02/2026 | 09:45 - 13:00 | [Model Management]() | Visitors | FSM interpreter/compiler |
 
 ###### Materials
 
@@ -31,23 +31,20 @@ You can access the FSM assignment online [here](../ase_fsm) or download the PDF 
 
 ##### Lab Sessions
 
-The labs will consist in implementing individually the proposed [tutorial](). The tentative timeline is the following:
+The labs will consist in implementing in pair [the RobotML project](https://github.com/stephaniechallita/dsl). The tentative timeline is the following:
 
 | Date | Time | Topic |  
 | -------- | -------- | -------- |  
-| 01/12/2025 | 13:15 - 16:15 | Ecore |  
-| 10/12/2025 | 08:00 - 12:30 | Xtext - Langium |  
-| 21/01/2026 | 08:00 - 12:30 | Langium |  
-| 28/01/2026 | 08:00 - 12:30 | Interpretation |  
-| 04/02/2026 | 08:00 - 12:30 | Interpretation |  
-| 09/02/2026 | 13:15 - 16:15 | Compilation |
+| 01/12/2025 | 13:15 - 16:15 | Abstract syntax (Metamodeling) |  
+| 10/12/2025 | 08:00 - 12:30 | Concrete syntax (Langium Grammar ) |  
+| 21/01/2026 | 08:00 - 12:30 | Semantics |  
+| 28/01/2026 | 08:00 - 12:30 | Semantics |  
+| 04/02/2026 | 08:00 - 12:30 | Semantics |  
+| 09/02/2026 | 13:15 - 16:15 | Semantics |
 
 ##### Assessment
 
-| Date | Note |  
-| -------- | -------- |  
-| 24/11/2025 | Exam - part 1 |  
-| 02/02/2026 | Exam - part 2 |
+By the end of the module, you must submit a Git repository containing all your source files, along with a comprehensive README that clearly describes the project’s structure, its functionality, and the engineering decisions you made, including the reasoning behind each choice.
 
 ##### Further Material
 - The [textbook](http://mdebook.irisa.fr/) of the course  
