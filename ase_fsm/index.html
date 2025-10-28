@@ -130,7 +130,7 @@ Each machine contains a set of states, one initial state, and transitions trigge
 <h3 id="prerequisites">Prerequisites</h3>
 <p>Go to <a href="https://www.eclipse.org/downloads/">download page</a> of Eclipse, and download the installer for your machine.</p>
 <p>Run the installer, and search for Eclispe IDE for DSL developers:</p>
-<p><img src="/ase/install.png" alt="Eclispe Installer"></p>
+<p><img src="./images/install.png" alt="Eclispe Installer"></p>
 <h3 id="ecore-metamodeling">Ecore Metamodeling</h3>
 <p><code>Ecore</code> is the core modeling language of the Eclipse Modeling Framework (<code>EMF</code>).
 It is used to describe the structure of models, in other words, to define metamodels.
@@ -160,7 +160,7 @@ You can edit it with Right click on the package <code>fsm</code> (generated when
 <p>When selecting (double click on it) a node, you can edit its properties in a dedicated window.</p>
 <h3 id="fsm-metamodeling">FSM Metamodeling</h3>
 <p>Model a Finite State Machine (FSM) using an Ecore metamodel. To help you, here is a class diagram illustrating what is expected:</p>
-<p><img src="/ase/diagram.png" alt="FSM class diagram"></p>
+<p><img src="./images/diagram.png" alt="FSM class diagram"></p>
 <h2 id="xtext">XText</h2>
 <p>In this exercise, you will design an Xtext grammar that defines a textual syntax for the <code>FSM</code> metamodel you created earlier in Ecore. Your goal is to allow users to describe finite state machines in a simple and readable DSL.</p>
 <p><strong>Objectives</strong></p>
@@ -201,10 +201,17 @@ A transition (<code>Transition</code>) linking two states (<code>src</code>, <co
 }
 </code></pre><h3 id="check-your-grammar">Check your grammar</h3>
 <p>Validate the grammar (no errors or warnings). Launch the Eclipse runtime and create a new <code>.fsm</code> file to test it. Use content assist (Ctrl+Space) to verify that names and references are correctly resolved.</p>
-<h2 id="xtext-fsm-interpretation">Xtext FSM Interpretation</h2>
+<h3 id="xtext-to-langium">Xtext to Langium</h3>
+<p>Fortunately, it is possible to convert an Xtext grammar into a Langium grammar thanks to <a href="https://github.com/TypeFox/xtext2langium">this project</a>.</p>
+<p>To convert a grammar, go to the Eclipse menu <em>Help</em> -&gt; <em>Install new software</em> -&gt; in the site field, paste the URL <code>https://typefox.github.io/xtext2langium/download/updates/v0.4.0/</code> and install the package. Afterward, go into your Xtext project&rsquo;s <code>META-INF/MANIFEST.MF</code>, switch to the <em>Dependencies</em> tab, and add Xtext2langium as a dependency. Don&rsquo;t forget to save your manifest file. Then you can go to the MWE2 file (named something like <code>GenerateMyDsl.mwe2</code>) in your project, and replace the <code>fragment</code> field with:</p>
+<pre><code>fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
+    outputPath = './langium'
+}
+</code></pre><p>Right-click the MWE2 file and run it. You should see a <code>langium</code> folder appear in your project, with corresponding <code>.langium</code> grammar files which you can put into your <code>src/language/</code> folder of the Langium project.
+Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.</p>
+<h2 id="interpretation-with-langium">Interpretation with Langium</h2>
 <p>In this part, you will develop an interpreter for your <code>FSM</code> language.
-Instead of generating Java code (as in the compiler), the interpreter will directly execute the model in memory.
-This allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
+The interpreter allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
 <h3 id="goal">Goal</h3>
 <p>Your interpreter should:</p>
 <ul>
@@ -215,158 +222,6 @@ This allows you to simulate the behavior of an FSM by evolving a runtime state.<
 <li>Continue until a state with no outgoing transitions is reached.</li>
 </ul>
 <p>The execution should produce trace messages in the console to show the evolution of the system.</p>
-<h3 id="step-1-create-the-interpreter-class">Step 1: Create the interpreter class</h3>
-<p>Create a new class (preferably in Xtend) in your runtime plugin, e.g.: <code>xtext.interpreter.FsmInterpreter</code>.</p>
-<p>This class should:</p>
-<ul>
-<li>Define a method run(FSM fsm) to start the interpretation.</li>
-<li>Maintain a small context object storing the current state.</li>
-<li>Iterate through transitions and update the current state as the FSM evolves.</li>
-</ul>
-<h3 id="step-2-connect-it-to-eclipse">Step 2: Connect it to Eclipse</h3>
-<p>Add a menu or command entry (e.g. “Run FSM”) in your runtime Eclipse that:</p>
-<ul>
-<li>Retrieves the currently opened .fsm file,</li>
-<li>Loads it into a resource,</li>
-<li>Passes the model to your interpreter.</li>
-</ul>
-<p>To do this you need to create a new java class in <code>xtext.ui.handlers</code>, such as <code>RunFsmHandler</code>, then attach a new Eclipse command to it, by editing <code>plugin.xml</code> in your <code>ui</code> project to add the following code at the bottom of the file, before <code>&lt;/plugin&gt;</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;extension</span> <span style="color:#a6e22e">point=</span><span style="color:#e6db74">&#34;org.eclipse.ui.commands&#34;</span><span style="color:#f92672">&gt;</span>
-	 	<span style="color:#f92672">&lt;command</span>
-	        <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;xtext.ui.commands.runfsm&#34;</span>
-	        <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Run FSM&#34;</span>
-	        <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;Interpret and execute the selected FSM&#34;</span><span style="color:#f92672">&gt;</span>
-	  <span style="color:#f92672">&lt;/command&gt;</span>
-	<span style="color:#f92672">&lt;/extension&gt;</span>
-	
-	<span style="color:#f92672">&lt;extension</span>
-	     <span style="color:#a6e22e">point=</span><span style="color:#e6db74">&#34;org.eclipse.ui.handlers&#34;</span><span style="color:#f92672">&gt;</span>
-	  <span style="color:#f92672">&lt;handler</span>
-	        <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;xtext.ui.handlers.RunFsmHandler&#34;</span>
-	        <span style="color:#a6e22e">commandId=</span><span style="color:#e6db74">&#34;xtext.ui.commands.runfsm&#34;</span><span style="color:#f92672">&gt;</span>
-	  <span style="color:#f92672">&lt;/handler&gt;</span>
-	<span style="color:#f92672">&lt;/extension&gt;</span>
-	
-	<span style="color:#f92672">&lt;extension</span>
-	     <span style="color:#a6e22e">point=</span><span style="color:#e6db74">&#34;org.eclipse.ui.menus&#34;</span><span style="color:#f92672">&gt;</span>
-	  <span style="color:#f92672">&lt;menuContribution</span>
-	        <span style="color:#a6e22e">locationURI=</span><span style="color:#e6db74">&#34;popup:org.eclipse.ui.popup.any?after=additions&#34;</span><span style="color:#f92672">&gt;</span>
-	    <span style="color:#f92672">&lt;command</span>
-	          <span style="color:#a6e22e">commandId=</span><span style="color:#e6db74">&#34;xtext.ui.commands.runfsm&#34;</span>
-	          <span style="color:#a6e22e">label=</span><span style="color:#e6db74">&#34;Run FSM&#34;</span>
-	          <span style="color:#a6e22e">style=</span><span style="color:#e6db74">&#34;push&#34;</span><span style="color:#f92672">&gt;</span>
-	    <span style="color:#f92672">&lt;/command&gt;</span>
-	  <span style="color:#f92672">&lt;/menuContribution&gt;</span>
-	<span style="color:#f92672">&lt;/extension&gt;</span>
-</code></pre></div><p>Also, edit <code>MANIFEST.MF</code> in your <code>ui</code> project. The property <code>Require-Bundle</code> should have:</p>
-<pre><code>fr.esir.ase.xtext.fsm,
- fr.esir.ase.xtext.fsm.ide,
- org.eclipse.xtext.ui,
- org.eclipse.xtext.ui.shared,
- org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.ui.editors;bundle-version=&quot;3.14.300&quot;,
- org.eclipse.ui.ide;bundle-version=&quot;3.18.500&quot;,
- org.eclipse.ui,
- org.eclipse.compare,
- org.eclipse.xtext.builder,
- org.eclipse.core.runtime,
- org.eclipse.xtext.ui,
- org.eclipse.xtext.ui.shared
-</code></pre><p>and the property <code>Export-Package</code> should have:</p>
-<pre><code>xtext.ui.quickfix,
-fr.esir.ase.xtext.fsm.ui.internal,
-xtext.ui.contentassist,
-xtext.ui.handlers
-</code></pre><p>Running this command should simulate the FSM and print trace messages such as:</p>
-<pre><code>Starting FSM: MyMachine
-Initial state: S1
---- Executing transition: t1
-Trigger: go
-Action: move
-Now in state: S2
-Reached terminal state: S2
-</code></pre><h3 id="step-3-use-the-interpreter-pattern">Step 3 Use the Interpreter Pattern</h3>
-<p>For a more structured design, implement the Interpreter Pattern with dispatch methods:</p>
-<pre><code>interpret(FSM, Context)
-interpret(State, Context)
-interpret(Transition, Context)
-</code></pre><p>Each method defines how a model element contributes to the interpretation.
-This approach emphasizes traversal and semantics, complementing the Visitor pattern you used for code generation.</p>
-<h3 id="expected-outcome">Expected outcome</h3>
-<p>At the end of this part, you should be able to, in the runtime Eclipse, <code>Right Click</code> &gt; <code>Run FSM</code> on a <code>.fsm</code> file.</p>
-<p>See the simulated execution of your FSM in the console.</p>
-<h2 id="xtext-compiler">Xtext Compiler</h2>
-<p>In this part, you will implement a compiler for your FSM language.
-The compiler will translate a textual FSM model into a Java implementation that can be executed independently.
-Unlike the interpreter (which executes the model directly), the compiler generates source code following the <code>State</code> design pattern.</p>
-<h3 id="goal-1">Goal</h3>
-<p>Your compiler should:</p>
-<ul>
-<li>Generate Java classes representing the FSM structure (machine, states, transitions).</li>
-<li>Implement a runtime behavior that can execute transitions and evolve between states.</li>
-<li>Produce files that can be compiled and executed as a standalone Java program.</li>
-</ul>
-<p>This process illustrates the Visitor pattern, as your compiler must traverse the model and produce corresponding code elements.</p>
-<h3 id="step-1-create-the-compiler">Step 1 Create the compiler</h3>
-<p>You should have a package in <code>xtext.fsm</code> named <code>xtext.generator</code> with an xtend file named <code>FsmGenerator</code> with stub code generated by Eclipse.
-If not, create the package and the xtend file. In your runtime project, create a new Xtend class, for example:</p>
-<pre><code class="language-xtend" data-lang="xtend">package xtext.generator
-
-class FsmCompiler {
-    def compile(FSM fsm, IFileSystemAccess fsa) {
-        // TODO: implement code generation here
-    }
-  	
-	def void generateFile(IFileSystemAccess fsa, String path, String content) {
-	    fsa.generateFile('../../CompiledFsm/src/' + path, content)
-	}
-}
-</code></pre><p>This class will:</p>
-<ul>
-<li>Traverse the model (FSM, State, and Transition elements),</li>
-<li>Use the Xtend template expressions to generate code (e.g. '&rsquo;&rsquo; … &lsquo;''),</li>
-<li>Write Java files using the provided IFileSystemAccess.</li>
-</ul>
-<p>Use the method <code>generateFile</code> to generate a file. Note the path <code>'../../CompiledFsm/src/'</code>:
-We want to generate the file in a dedicated Java project named <code>CompiledFsm</code> in the <code>src</code> folder.</p>
-<h3 id="step-2-integrate-the-compiler">Step 2 Integrate the compiler</h3>
-<p>Your compiler will be called automatically every time a <code>.fsm</code> file is saved.</p>
-<p>To do this, modify your <code>FsmGenerator</code> class with a</p>
-<pre><code class="language-xtend" data-lang="xtend">override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-	for (EObject root : resource.getContents) {
-		if (root instanceof FSM) {
-			val fsm = root as FSM
-			generateForFsm(fsm, fsa)
-		}
-	}
-}
-</code></pre><h3 id="step-3-compiling">Step 3 Compiling</h3>
-<p>Once done, run the <code>ui</code> project.  Create a java project named <code>CompiledFsm</code>: <code>File</code> &gt; <code>New</code> &gt; <code>Java Project</code>.
-Open a <code>.fsm</code> file, edit it and save. The compilation happens automatically. You will find new Java sources in the <code>CompiledFsm</code> project:</p>
-<h2 id="grammar-langium-textual-modeling-definition-of-the-langium-grammar-and-editor-for-your-language">Grammar Langium: Textual modeling: definition of the Langium grammar and editor for your language</h2>
-<p>After determining the domain, it is time to move on to the actual text editor for your language. In this lab, we will build this editor using the TypeScript-based <a href="https://langium.org/">Langium</a> workbench to build a Visual Studio Code extension supporting the edition of your language.</p>
-<p>If not done already, you will need to install a <a href="https://nodejs.org/en/download">node environment</a> as well as <a href="https://code.visualstudio.com/docs/setup/setup-overview">Visual Studio Code</a>, and then run the command <code>npm i -g yo@5.1.0 generator-langium@3.3.0</code> to install the Langium project generator. Then, run <code>yo langium</code> to create the project. This will offer to create a few different things; you <strong>have to</strong> say yes to all of them, pick a language name, extension name, and a file extension (<em>e.g.</em> .rob).
-You can also install the Langium extension from the VSCode marketplace, to have syntax highlighting and validation in your grammar.</p>
-<blockquote>
-<p>[!IMPORTANT]
-We use a particular version of yo and generator-langium in these labs due to the rapid change in the version of Langium.
-<strong>Make sure that you use these versions</strong>.</p>
-</blockquote>
-<p>Depending on what modeling tool you picked in Part 1, the next step can change a little bit. If you picked another method than Ecore, skip the following section.</p>
-<blockquote>
-<p>[!NOTE]
-There is flexibility in the concrete syntax of the language, but make it concise and usable for non-experts in programming. Ask your teacher during labs if you plan to change the syntax.</p>
-</blockquote>
-<h3 id="xtext-to-langium">Xtext to Langium</h3>
-<p>Fortunately, it is possible to convert an Xtext grammar into a Langium grammar thanks to <a href="https://github.com/TypeFox/xtext2langium">this project</a>.</p>
-<p>To convert a grammar, go to the Eclipse menu <em>Help</em> -&gt; <em>Install new software</em> -&gt; in the site field, paste the URL <code>https://typefox.github.io/xtext2langium/download/updates/v0.4.0/</code> and install the package. Afterward, go into your Xtext project&rsquo;s <code>META-INF/MANIFEST.MF</code>, switch to the <em>Dependencies</em> tab, and add Xtext2langium as a dependency. Don&rsquo;t forget to save your manifest file. Then you can go to the MWE2 file (named something like <code>GenerateMyDsl.mwe2</code>) in your project, and replace the <code>fragment</code> field with:</p>
-<pre><code>fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
-    outputPath = './langium'
-}
-</code></pre><p>Right-click the MWE2 file and run it. You should see a <code>langium</code> folder appear in your project, with corresponding <code>.langium</code> grammar files which you can put into your <code>src/language/</code> folder of the Langium project.
-Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.</p>
-<h2 id="interpretation-with-langium">Interpretation with Langium</h2>
-<p>In this part, you will develop an Langium interpreter for your <code>FSM</code> language. This is the same than we have done with xtext/xtend, but here with Langium.</p>
 <p>Add a file <code>interpreter.ts</code> in <code>packages/language/src/</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Reference</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">type</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">State</span>, <span style="color:#a6e22e">Transition</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./generated/ast.js&#39;</span>;
@@ -446,7 +301,17 @@ Make sure the grammars names match up between your projects, otherwise you will 
 <li>We should see in the console something happening.</li>
 </ul>
 <h2 id="compilation-with-langium">Compilation with Langium</h2>
-<p>In this part, you will develop a Langium compiler for your <code>FSM</code> language. This is the same than we have done with xtext/xtend, but here with Langium.</p>
+<p>In this part, you will implement a compiler for your FSM language.
+The compiler will translate a textual FSM model into a Java implementation that can be executed independently.
+Unlike the interpreter (which executes the model directly), the compiler generates source code following the <code>State</code> design pattern.</p>
+<h3 id="goal-1">Goal</h3>
+<p>Your compiler should:</p>
+<ul>
+<li>Generate JS files representing the FSM structure (machine, states, transitions).</li>
+<li>Implement a runtime behavior that can execute transitions and evolve between states.</li>
+<li>Produce files that can be executed as a standalone JavaScript program.</li>
+</ul>
+<p>This process illustrates the Visitor pattern, as your compiler must traverse the model and produce corresponding code elements.</p>
 <p>With all the knowledge accumulated, you should be able to implement this compiler by yourself.</p>
 
 </div>
