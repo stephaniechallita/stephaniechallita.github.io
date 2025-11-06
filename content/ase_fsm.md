@@ -23,7 +23,7 @@ Go to [download page](https://www.eclipse.org/downloads/) of Eclipse, and downlo
 
 Run the installer, and search for Eclispe IDE for DSL developers:
 
-![Eclispe Installer](./images/install.png)
+![Eclispe Installer](/ase/install.png)
 
 ### Ecore Metamodeling
 
@@ -67,7 +67,7 @@ When selecting (double click on it) a node, you can edit its properties in a ded
 
 Model a Finite State Machine (FSM) using an Ecore metamodel. To help you, here is a class diagram illustrating what is expected:
 
-![FSM class diagram](./images/diagram.png)
+![FSM class diagram](/ase/diagram.png)
 
 ## XText
 
