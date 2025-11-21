@@ -182,7 +182,8 @@ A transition (<code>Transition</code>) linking two states (<code>src</code>, <co
 <h3 id="project">Project</h3>
 <p>Create a new Xtext project: <code>File</code> → <code>New</code> → <code>Project</code> → <code>Xtext Project</code>.</p>
 <ul>
-<li>Use the package name: <code>xtext.Fsm</code>.</li>
+<li>Project name: <code>fr.esir.ase.xtext.fsm</code></li>
+<li>Language name: <code>xtext.Fsm</code>.</li>
 <li>Use the file extension: <code>fsm</code>.</li>
 </ul>
 <h3 id="define-the-grammar">Define the grammar</h3>
@@ -200,15 +201,31 @@ A transition (<code>Transition</code>) linking two states (<code>src</code>, <co
   }
 }
 </code></pre><h3 id="check-your-grammar">Check your grammar</h3>
-<p>Validate the grammar (no errors or warnings). Launch the Eclipse runtime and create a new <code>.fsm</code> file to test it. Use content assist (Ctrl+Space) to verify that names and references are correctly resolved.</p>
+<p>Validate the grammar (no errors or warnings). Then, launch the Eclipse runtime by right-clicking on your xtext project, Run as &gt; Eclipse Application.
+In the new Eclipes runtime, aka modeling workbench, create a new project:
+<code>File</code> → <code>New</code> → <code>Project</code> → <code>Project</code>. You can name it <code>test-fsm</code>.
+In this project, create new <code>.fsm</code> file:
+<code>File</code> → <code>New</code> → <code>File</code>, and name it <code>test.fsm</code>: Mind to type the extension, which will let your Eclipse recognize the file as a file of your fsm language.</p>
+<p>Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reporst any syntaxique errors, by writing wrong token such as <code>Sate</code> instead of <code>State</code>.</p>
+<h3 id="langium">Langium</h3>
+<p>If not done already, you will need to install a <a href="https://nodejs.org/en/download">node environment</a> as well as <a href="https://code.visualstudio.com/docs/setup/setup-overview">Visual Studio Code</a>, and then run the command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -g yo@5.1.0 generator-langium@3.3.0<span style="color:#e6db74">`</span>
+</code></pre></div><p>to install the Langium project generator. Then, run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yo langium
+</code></pre></div><p>to generate the project. This will offer to create a few different things; you <strong>have to</strong> say yes to all of them <strong>BUT CLI</strong>, pick a language name, extension name, and a file extension (<em>e.g.</em> .fsm).
+You can also install the Langium extension from the VSCode marketplace, to have syntax highlighting and validation in your grammar.</p>
+<blockquote>
+<p>We use a particular version of yo and generator-langium in these labs due to the rapid change in the version of Langium.
+<strong>Make sure that you use these versions</strong>.</p>
+</blockquote>
 <h3 id="xtext-to-langium">Xtext to Langium</h3>
 <p>Fortunately, it is possible to convert an Xtext grammar into a Langium grammar thanks to <a href="https://github.com/TypeFox/xtext2langium">this project</a>.</p>
-<p>To convert a grammar, go to the Eclipse menu <em>Help</em> -&gt; <em>Install new software</em> -&gt; in the site field, paste the URL <code>https://typefox.github.io/xtext2langium/download/updates/v0.4.0/</code> and install the package. Afterward, go into your Xtext project&rsquo;s <code>META-INF/MANIFEST.MF</code>, switch to the <em>Dependencies</em> tab, and add Xtext2langium as a dependency. Don&rsquo;t forget to save your manifest file. Then you can go to the MWE2 file (named something like <code>GenerateMyDsl.mwe2</code>) in your project, and replace the <code>fragment</code> field with:</p>
+<p>To convert a grammar, go to the Eclipse menu <em>Help</em> -&gt; <em>Install new software</em> -&gt; in the site field, paste the URL <code>https://typefox.github.io/xtext2langium/download/updates/v0.4.0/</code> and install the package. Afterwards, go into your Xtext project&rsquo;s <code>META-INF/MANIFEST.MF</code>, switch to the <em>Dependencies</em> tab, and in the <em>Required Plug-ins</em> section add <code>Xtext2langium</code> as a dependency. Don&rsquo;t forget to save your manifest file. Then you can go to the MWE2 file (named something like <code>GenerateMyDsl.mwe2</code>) in your project, and replace the <code>fragment</code> field within <code>language</code> with:</p>
 <pre><code>fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
     outputPath = './langium'
 }
-</code></pre><p>Right-click the MWE2 file and run it. You should see a <code>langium</code> folder appear in your project, with corresponding <code>.langium</code> grammar files which you can put into your <code>src/language/</code> folder of the Langium project.
-Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.</p>
+</code></pre><p>Right-click the MWE2 file and run it. You should see a <code>langium</code> folder appear in your project, with corresponding <code>.langium</code> grammar files which you can put into your <code>src/language/</code> folder of the Langium project in VSCode.</p>
+<p>Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.</p>
 <h2 id="interpretation-with-langium">Interpretation with Langium</h2>
 <p>In this part, you will develop an interpreter for your <code>FSM</code> language.
 The interpreter allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
