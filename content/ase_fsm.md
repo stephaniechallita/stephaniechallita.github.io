@@ -166,6 +166,18 @@ Right-click the MWE2 file and run it. You should see a `langium` folder appear i
 
 Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.
 
+## Langium Build
+
+Once copied and adjusted, run in the Langium project, :
+
+```sh
+npm install
+npm run langium:generate
+npm run build
+```
+
+Hit F5 in VS Code to run the extension. A new VSCode will popup: the modeling workbench. In this new VSCode, create a file with the correct extenion and test your grammar.
+
 ## Interpretation with Langium
 
 In this part, you will develop an interpreter for your `FSM` language.
