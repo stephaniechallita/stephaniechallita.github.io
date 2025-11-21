@@ -226,6 +226,12 @@ You can also install the Langium extension from the VSCode marketplace, to have 
 }
 </code></pre><p>Right-click the MWE2 file and run it. You should see a <code>langium</code> folder appear in your project, with corresponding <code>.langium</code> grammar files which you can put into your <code>src/language/</code> folder of the Langium project in VSCode.</p>
 <p>Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.</p>
+<h2 id="langium-build">Langium Build</h2>
+<p>Once copied and adjusted, run in the Langium project, :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install
+npm run langium:generate
+npm run build
+</code></pre></div><p>Hit F5 in VS Code to run the extension. A new VSCode will popup: the modeling workbench. In this new VSCode, create a file with the correct extenion and test your grammar.</p>
 <h2 id="interpretation-with-langium">Interpretation with Langium</h2>
 <p>In this part, you will develop an interpreter for your <code>FSM</code> language.
 The interpreter allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
