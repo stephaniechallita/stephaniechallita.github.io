@@ -25,7 +25,7 @@ title = "ASE"
 
 ###### Materials
 
-You can access the FSM assignment online [here](../ase_fsm) or download the PDF version [here](/ase/FSM.pdf).
+You can access the FSM assignment [here](../ase_fsm).
 
 ---
 

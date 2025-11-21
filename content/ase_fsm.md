@@ -95,7 +95,8 @@ A transition (`Transition`) linking two states (`src`, `tgt`), with optional `tr
 
 Create a new Xtext project: `File` → `New` → `Project` → `Xtext Project`.
 
-- Use the package name: `xtext.Fsm`.
+- Project name: `fr.esir.ase.xtext.fsm`
+- Language name: `xtext.Fsm`.
 - Use the file extension: `fsm`.
 
 ### Define the grammar
@@ -121,13 +122,39 @@ FSM MyFsm {
 
 ### Check your grammar
 
-Validate the grammar (no errors or warnings). Launch the Eclipse runtime and create a new `.fsm` file to test it. Use content assist (Ctrl+Space) to verify that names and references are correctly resolved.
+Validate the grammar (no errors or warnings). Then, launch the Eclipse runtime by right-clicking on your xtext project, Run as > Eclipse Application.
+In the new Eclipes runtime, aka modeling workbench, create a new project:
+`File` → `New` → `Project` → `Project`. You can name it `test-fsm`.
+In this project, create new `.fsm` file:
+`File` → `New` → `File`, and name it `test.fsm`: Mind to type the extension, which will let your Eclipse recognize the file as a file of your fsm language.
+
+Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reporst any syntaxique errors, by writing wrong token such as `Sate` instead of `State`.
+
+### Langium
+
+If not done already, you will need to install a [node environment](https://nodejs.org/en/download) as well as [Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview), and then run the command:
+
+```sh
+npm i -g yo@5.1.0 generator-langium@3.3.0`
+```
+
+to install the Langium project generator. Then, run:
+
+```sh
+yo langium
+```
+
+to generate the project. This will offer to create a few different things; you **have to** say yes to all of them **BUT CLI**, pick a language name, extension name, and a file extension (*e.g.* .fsm).
+You can also install the Langium extension from the VSCode marketplace, to have syntax highlighting and validation in your grammar.
+
+> We use a particular version of yo and generator-langium in these labs due to the rapid change in the version of Langium.
+> **Make sure that you use these versions**.
 
 ### Xtext to Langium
 
 Fortunately, it is possible to convert an Xtext grammar into a Langium grammar thanks to [this project](https://github.com/TypeFox/xtext2langium).
 
-To convert a grammar, go to the Eclipse menu _Help_ -> _Install new software_ -> in the site field, paste the URL `https://typefox.github.io/xtext2langium/download/updates/v0.4.0/` and install the package. Afterward, go into your Xtext project's `META-INF/MANIFEST.MF`, switch to the _Dependencies_ tab, and add Xtext2langium as a dependency. Don't forget to save your manifest file. Then you can go to the MWE2 file (named something like `GenerateMyDsl.mwe2`) in your project, and replace the `fragment` field with:
+To convert a grammar, go to the Eclipse menu _Help_ -> _Install new software_ -> in the site field, paste the URL `https://typefox.github.io/xtext2langium/download/updates/v0.4.0/` and install the package. Afterwards, go into your Xtext project's `META-INF/MANIFEST.MF`, switch to the _Dependencies_ tab, and in the _Required Plug-ins_ section add `Xtext2langium` as a dependency. Don't forget to save your manifest file. Then you can go to the MWE2 file (named something like `GenerateMyDsl.mwe2`) in your project, and replace the `fragment` field within `language` with:
 
 ```
 fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
@@ -135,7 +162,8 @@ fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
 }
 ```
 
-Right-click the MWE2 file and run it. You should see a `langium` folder appear in your project, with corresponding `.langium` grammar files which you can put into your `src/language/` folder of the Langium project. 
+Right-click the MWE2 file and run it. You should see a `langium` folder appear in your project, with corresponding `.langium` grammar files which you can put into your `src/language/` folder of the Langium project in VSCode.
+
 Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.
 
 ## Interpretation with Langium
