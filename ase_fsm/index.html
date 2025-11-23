@@ -207,6 +207,11 @@ In the new Eclipes runtime, aka modeling workbench, create a new project:
 In this project, create new <code>.fsm</code> file:
 <code>File</code> → <code>New</code> → <code>File</code>, and name it <code>test.fsm</code>: Mind to type the extension, which will let your Eclipse recognize the file as a file of your fsm language.</p>
 <p>Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reporst any syntaxique errors, by writing wrong token such as <code>Sate</code> instead of <code>State</code>.</p>
+<p>You can also open your <code>.fsm</code> file with the FSM Model Editor by <code>Right Click</code> on a <code>.fsm</code> → <code>Open with</code> → <code>Fsm Model Editor</code>. You will see your program as EMF models.</p>
+<h3 id="generate-an-xtext-grammar-from-ecore">Generate an Xtext grammar from ecore</h3>
+<p>Eclipse allows you to create a Xtext project based on a ecore:</p>
+<p><code>File</code> → <code>New</code> → <code>Project</code> → Type xtext → <code>Xtext Project From Existing Ecore Models</code></p>
+<p>You can check and compare the generated grammar with yours.</p>
 <h3 id="langium">Langium</h3>
 <p>If not done already, you will need to install a <a href="https://nodejs.org/en/download">node environment</a> as well as <a href="https://code.visualstudio.com/docs/setup/setup-overview">Visual Studio Code</a>, and then run the command:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm i -g yo@5.1.0 generator-langium@3.3.0<span style="color:#e6db74">`</span>
