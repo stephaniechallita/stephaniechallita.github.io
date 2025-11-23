@@ -130,6 +130,16 @@ In this project, create new `.fsm` file:
 
 Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reporst any syntaxique errors, by writing wrong token such as `Sate` instead of `State`.
 
+You can also open your `.fsm` file with the FSM Model Editor by `Right Click` on a `.fsm` → `Open with` → `Fsm Model Editor`. You will see your program as EMF models.
+
+### Generate an Xtext grammar from ecore
+
+Eclipse allows you to create a Xtext project based on a ecore:
+
+`File` → `New` → `Project` → Type xtext → `Xtext Project From Existing Ecore Models`
+
+You can check and compare the generated grammar with yours.
+
 ### Langium
 
 If not done already, you will need to install a [node environment](https://nodejs.org/en/download) as well as [Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview), and then run the command:
