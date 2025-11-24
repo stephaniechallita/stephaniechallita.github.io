@@ -69,6 +69,23 @@ Model a Finite State Machine (FSM) using an Ecore metamodel. To help you, here i
 
 ![FSM class diagram](/ase/diagram.png)
 
+
+#### Known issue
+
+If you have any problem to create a ecore project in Eclipse, you should go to:
+
+`Help` → `Install New Software`
+
+In the window type:
+
+`Work with: 2025-03 - https://download.eclipse.org/releases/2025-03`
+
+Check the box **Modeling**, then click on `Next` → `Next` → Accept the conditions using the radio button → `Finish`
+
+Restart `Eclipse` and you should have a new entry in the menu:
+
+`File` → `New` → `Other`, type `Ecore` → `Ecore Modeling Project`
+
 ## XText
 
 In this exercise, you will design an Xtext grammar that defines a textual syntax for the `FSM` metamodel you created earlier in Ecore. Your goal is to allow users to describe finite state machines in a simple and readable DSL.
