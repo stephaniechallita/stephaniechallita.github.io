@@ -161,6 +161,14 @@ You can edit it with Right click on the package <code>fsm</code> (generated when
 <h3 id="fsm-metamodeling">FSM Metamodeling</h3>
 <p>Model a Finite State Machine (FSM) using an Ecore metamodel. To help you, here is a class diagram illustrating what is expected:</p>
 <p><img src="/ase/diagram.png" alt="FSM class diagram"></p>
+<h4 id="known-issue">Known issue</h4>
+<p>If you have any problem to create a ecore project in Eclipse, you should go to:</p>
+<p><code>Help</code> → <code>Install New Software</code></p>
+<p>In the window type:</p>
+<p><code>Work with: 2025-03 - https://download.eclipse.org/releases/2025-03</code></p>
+<p>Check the box <strong>Modeling</strong>, then click on <code>Next</code> → <code>Next</code> → Accept the conditions using the radio button → <code>Finish</code></p>
+<p>Restart <code>Eclipse</code> and you should have a new entry in the menu:</p>
+<p><code>File</code> → <code>New</code> → <code>Other</code>, type <code>Ecore</code> → <code>Ecore Modeling Project</code></p>
 <h2 id="xtext">XText</h2>
 <p>In this exercise, you will design an Xtext grammar that defines a textual syntax for the <code>FSM</code> metamodel you created earlier in Ecore. Your goal is to allow users to describe finite state machines in a simple and readable DSL.</p>
 <p><strong>Objectives</strong></p>
