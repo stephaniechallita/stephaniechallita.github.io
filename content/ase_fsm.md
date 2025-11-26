@@ -139,13 +139,13 @@ FSM MyFsm {
 
 ### Check your grammar
 
-Validate the grammar (no errors or warnings). Then, launch the Eclipse runtime by right-clicking on your xtext project, Run as > Eclipse Application.
+Validate the grammar (no errors or warnings). Then, launch the Eclipse runtime by right-clicking on your xtext project, `Run as` → `Eclipse Application`.
 In the new Eclipes runtime, aka modeling workbench, create a new project:
 `File` → `New` → `Project` → `Project`. You can name it `test-fsm`.
 In this project, create new `.fsm` file:
 `File` → `New` → `File`, and name it `test.fsm`: Mind to type the extension, which will let your Eclipse recognize the file as a file of your fsm language.
 
-Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reporst any syntaxique errors, by writing wrong token such as `Sate` instead of `State`.
+Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reports any syntaxique errors, by writing wrong token such as `Sate` instead of `State`.
 
 You can also open your `.fsm` file with the FSM Model Editor by `Right Click` on a `.fsm` → `Open with` → `Fsm Model Editor`. You will see your program as EMF models.
 
@@ -203,7 +203,41 @@ npm run langium:generate
 npm run build
 ```
 
-Hit F5 in VS Code to run the extension. A new VSCode will popup: the modeling workbench. In this new VSCode, create a file with the correct extenion and test your grammar.
+Hit F5 in VS Code to run the extension. A new VSCode will popup: the modeling workbench. In this new VSCode, create a file with the correct extension and test your grammar.
+
+File example:
+
+```
+FSM DoorSystem {
+    initialState Closed
+
+    ownedStates {
+        State Closed {
+            outgoing(open)
+            incoming(close)
+        },
+        State Open {
+            outgoing(close)
+            incoming(open)
+        }
+    }
+
+    ownedTransitions {
+        Transition open {
+            trigger "open"
+            action "open door"
+            src Closed
+            tgt Open
+        },
+        Transition close {
+            trigger "close"
+            action "close door"
+            src Open
+            tgt Closed
+        }
+    }
+}
+```
 
 ## Interpretation with Langium
 
