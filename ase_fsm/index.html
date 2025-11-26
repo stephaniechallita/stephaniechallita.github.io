@@ -209,12 +209,12 @@ A transition (<code>Transition</code>) linking two states (<code>src</code>, <co
   }
 }
 </code></pre><h3 id="check-your-grammar">Check your grammar</h3>
-<p>Validate the grammar (no errors or warnings). Then, launch the Eclipse runtime by right-clicking on your xtext project, Run as &gt; Eclipse Application.
+<p>Validate the grammar (no errors or warnings). Then, launch the Eclipse runtime by right-clicking on your xtext project, <code>Run as</code> → <code>Eclipse Application</code>.
 In the new Eclipes runtime, aka modeling workbench, create a new project:
 <code>File</code> → <code>New</code> → <code>Project</code> → <code>Project</code>. You can name it <code>test-fsm</code>.
 In this project, create new <code>.fsm</code> file:
 <code>File</code> → <code>New</code> → <code>File</code>, and name it <code>test.fsm</code>: Mind to type the extension, which will let your Eclipse recognize the file as a file of your fsm language.</p>
-<p>Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reporst any syntaxique errors, by writing wrong token such as <code>Sate</code> instead of <code>State</code>.</p>
+<p>Use content assist (Ctrl+Space) to verify that names and references are correctly resolved and check if the IDE reports any syntaxique errors, by writing wrong token such as <code>Sate</code> instead of <code>State</code>.</p>
 <p>You can also open your <code>.fsm</code> file with the FSM Model Editor by <code>Right Click</code> on a <code>.fsm</code> → <code>Open with</code> → <code>Fsm Model Editor</code>. You will see your program as EMF models.</p>
 <h3 id="generate-an-xtext-grammar-from-ecore">Generate an Xtext grammar from ecore</h3>
 <p>Eclipse allows you to create a Xtext project based on a ecore:</p>
@@ -244,8 +244,38 @@ You can also install the Langium extension from the VSCode marketplace, to have 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install
 npm run langium:generate
 npm run build
-</code></pre></div><p>Hit F5 in VS Code to run the extension. A new VSCode will popup: the modeling workbench. In this new VSCode, create a file with the correct extenion and test your grammar.</p>
-<h2 id="interpretation-with-langium">Interpretation with Langium</h2>
+</code></pre></div><p>Hit F5 in VS Code to run the extension. A new VSCode will popup: the modeling workbench. In this new VSCode, create a file with the correct extension and test your grammar.</p>
+<p>File example:</p>
+<pre><code>FSM DoorSystem {
+    initialState Closed
+
+    ownedStates {
+        State Closed {
+            outgoing(open)
+            incoming(close)
+        },
+        State Open {
+            outgoing(close)
+            incoming(open)
+        }
+    }
+
+    ownedTransitions {
+        Transition open {
+            trigger &quot;open&quot;
+            action &quot;open door&quot;
+            src Closed
+            tgt Open
+        },
+        Transition close {
+            trigger &quot;close&quot;
+            action &quot;close door&quot;
+            src Open
+            tgt Closed
+        }
+    }
+}
+</code></pre><h2 id="interpretation-with-langium">Interpretation with Langium</h2>
 <p>In this part, you will develop an interpreter for your <code>FSM</code> language.
 The interpreter allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
 <h3 id="goal">Goal</h3>
