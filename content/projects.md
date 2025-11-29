@@ -5,7 +5,7 @@ title = "Projects and Awards"
 ## Grants
 
 ### Current Projects
-- **[PEEPS Project](#)** - *ANR Jeunes Chercheuses Jeunes Chercheurs (JCJC)*, €349k (2026–2030)  
+- **[PEEPS Project](https://project.inria.fr/peeps/)** - *ANR Jeunes Chercheuses Jeunes Chercheurs (JCJC)*, €349k (2026–2030)  
 -Role : Project leader
 
 - **[PEPR CLOUD – Taranis Project](https://taranis-cloud.fr/en/partners/)** - National program on cloud computing - Model, Deploy, Orchestrate, and Optimize the Cloud (2023–2030)  

@@ -4,7 +4,12 @@ title = "Research"
 
 ## Research
 
-I have [open positions](../positions) and I am always looking for competent and motivated students to join us in [DiverSE](https://www.diverse-team.fr/).
+<div style="border: 1px solid red; background-color: #ffe6e6; padding: 10px; border-radius: 5px; color: #202020">
+I have <a href="https://stephaniechallita.github.io/positions">open positions</a> and I am always looking for competent and motivated students to join us in <a href="https://www.diverse-team.fr/">DiverSE</a>.
+</div>
+
+</br>
+
 Contact me on <i class="fa-regular fa-envelope"></i> stephanie{dot}challita{at}inria{dot}fr.
 
 ---
@@ -36,6 +41,5 @@ My research interests include:
 - Mouna Hissane, May 01 - August 31, 2021, **“A model-driven approach for analyzing security of Cloud APIs”**, co-supervision: [Nan Messe](https://nanzhangmesse.github.io/"), [Olivier Barais](https://olivier.barais.fr/) 
 
 - Léo Rolland, June 07 - August 27, 2021, **“A technical dive into software cloudification”**, co-supervision: [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/)
-
---- 
+ 
 
