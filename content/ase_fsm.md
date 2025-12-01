@@ -19,11 +19,10 @@ In this lab, you will model a Finite State Machine (`FSM`) using an Ecore metamo
 
 ### Prerequisites
 
-Go to [download page](https://www.eclipse.org/downloads/) of Eclipse, and download the installer for your machine.
+The modeling is made with [Eclipse DSL 2025-09](https://www.eclipse.org/downloads/packages/release/2025-09/r/eclipse-ide-java-and-dsl-developers) with the added [Ecore tools 4.0](https://projects.eclipse.org/projects/modeling.emft.ecoretools).
 
-Run the installer, and search for Eclispe IDE for DSL developers:
-
-![Eclispe Installer](/ase/install.png)
+> [!WARNING]
+> You have to test the Eclipse version before the first lab session or there might be problem with the last Sirius version when using Xtext2Langium in the next part.
 
 ### Ecore Metamodeling
 
@@ -181,11 +180,14 @@ You can also install the Langium extension from the VSCode marketplace, to have 
 
 Fortunately, it is possible to convert an Xtext grammar into a Langium grammar thanks to [this project](https://github.com/TypeFox/xtext2langium).
 
-To convert a grammar, go to the Eclipse menu _Help_ -> _Install new software_ -> in the site field, paste the URL `https://typefox.github.io/xtext2langium/download/updates/v0.4.0/` and install the package. Afterwards, go into your Xtext project's `META-INF/MANIFEST.MF`, switch to the _Dependencies_ tab, and in the _Required Plug-ins_ section add `Xtext2langium` as a dependency. Don't forget to save your manifest file. Then you can go to the MWE2 file (named something like `GenerateMyDsl.mwe2`) in your project, and replace the `fragment` field within `language` with:
+To convert a grammar, go to the Eclipse menu _Help_ -> _Install new software_ -> in the site field, paste the URL `https://typefox.github.io/xtext2langium/download/updates/v0.4.0/` and install the package. Afterwards, go into your Xtext project's `META-INF/MANIFEST.MF`, switch to the _Dependencies_ tab, and in the _Required Plug-ins_ section add `Xtext2langium` as a dependency. Don't forget to save your manifest file. Then you can go to the MWE2 file (named something like `GenerateMyDsl.mwe2`) in your project, and add to `language`, the following `fragment`:
 
 ```
-fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
-    outputPath = './langium'
+language {
+    ...
+    fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
+        outputPath = './langium'
+    }
 }
 ```
 
