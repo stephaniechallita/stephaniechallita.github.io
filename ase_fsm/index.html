@@ -128,9 +128,11 @@ Each machine contains a set of states, one initial state, and transitions trigge
 <h2 id="modeling-a-finite-state-machine-fsm-with-ecore">Modeling a Finite State Machine (FSM) with Ecore</h2>
 <p>In this lab, you will model a Finite State Machine (<code>FSM</code>) using an Ecore metamodel.</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>Go to <a href="https://www.eclipse.org/downloads/">download page</a> of Eclipse, and download the installer for your machine.</p>
-<p>Run the installer, and search for Eclispe IDE for DSL developers:</p>
-<p><img src="/ase/install.png" alt="Eclispe Installer"></p>
+<p>The modeling is made with <a href="https://www.eclipse.org/downloads/packages/release/2025-09/r/eclipse-ide-java-and-dsl-developers">Eclipse DSL 2025-09</a> with the added <a href="https://projects.eclipse.org/projects/modeling.emft.ecoretools">Ecore tools 4.0</a>.</p>
+<blockquote>
+<p>[!WARNING]
+You have to test the Eclipse version before the first lab session or there might be problem with the last Sirius version when using Xtext2Langium in the next part.</p>
+</blockquote>
 <h3 id="ecore-metamodeling">Ecore Metamodeling</h3>
 <p><code>Ecore</code> is the core modeling language of the Eclipse Modeling Framework (<code>EMF</code>).
 It is used to describe the structure of models, in other words, to define metamodels.
@@ -233,9 +235,12 @@ You can also install the Langium extension from the VSCode marketplace, to have 
 </blockquote>
 <h3 id="xtext-to-langium">Xtext to Langium</h3>
 <p>Fortunately, it is possible to convert an Xtext grammar into a Langium grammar thanks to <a href="https://github.com/TypeFox/xtext2langium">this project</a>.</p>
-<p>To convert a grammar, go to the Eclipse menu <em>Help</em> -&gt; <em>Install new software</em> -&gt; in the site field, paste the URL <code>https://typefox.github.io/xtext2langium/download/updates/v0.4.0/</code> and install the package. Afterwards, go into your Xtext project&rsquo;s <code>META-INF/MANIFEST.MF</code>, switch to the <em>Dependencies</em> tab, and in the <em>Required Plug-ins</em> section add <code>Xtext2langium</code> as a dependency. Don&rsquo;t forget to save your manifest file. Then you can go to the MWE2 file (named something like <code>GenerateMyDsl.mwe2</code>) in your project, and replace the <code>fragment</code> field within <code>language</code> with:</p>
-<pre><code>fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
-    outputPath = './langium'
+<p>To convert a grammar, go to the Eclipse menu <em>Help</em> -&gt; <em>Install new software</em> -&gt; in the site field, paste the URL <code>https://typefox.github.io/xtext2langium/download/updates/v0.4.0/</code> and install the package. Afterwards, go into your Xtext project&rsquo;s <code>META-INF/MANIFEST.MF</code>, switch to the <em>Dependencies</em> tab, and in the <em>Required Plug-ins</em> section add <code>Xtext2langium</code> as a dependency. Don&rsquo;t forget to save your manifest file. Then you can go to the MWE2 file (named something like <code>GenerateMyDsl.mwe2</code>) in your project, and add to <code>language</code>, the following <code>fragment</code>:</p>
+<pre><code>language {
+    ...
+    fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
+        outputPath = './langium'
+    }
 }
 </code></pre><p>Right-click the MWE2 file and run it. You should see a <code>langium</code> folder appear in your project, with corresponding <code>.langium</code> grammar files which you can put into your <code>src/language/</code> folder of the Langium project in VSCode.</p>
 <p>Make sure the grammars names match up between your projects, otherwise you will have to manually refactor the conflicts.</p>
