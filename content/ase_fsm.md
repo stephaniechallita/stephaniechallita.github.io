@@ -248,16 +248,16 @@ The interpreter allows you to simulate the behavior of an FSM by evolving a runt
 
 ### Goal
 
-Your interpreter should:
+The interpreter algorithm should:
 - Load an FSM model from an .fsm file.
 - Start from the machine’s initial state.
 - Select one of the outgoing transitions (for example, randomly).
 - Apply its trigger and action, and move to the target state.
-- Continue until a state with no outgoing transitions is reached.
+- Continue until a state with no outgoing transitions is reached (terminal state) or a given number (_e.g._ 10) of transitions has been executed.
 
-The execution should produce trace messages in the console to show the evolution of the system.
+**The execution should produce trace messages in the console (`console.log('...')`) to show the evolution of the system.**
 
-Add a file `interpreter.ts` in `packages/language/src/`:
+Add a file `interpreter.ts` in `language`:
 
 
 ```ts
@@ -266,9 +266,8 @@ import type { FSM, State, Transition } from './generated/ast.js';
 
 export class FsmInterpreter {
     public run(fsm: FSM): void {
-		...
-
 		const ctx = new FsmContext(fsm.initialState.ref);
+        /* FSM interpreter algorithm goes there */
 	}
 }
 
@@ -287,7 +286,7 @@ In `index.ts`, add `export * from './interpreter.js'`
 
 Now, we want a VSCode action, a kind of plugin that execute a command to launch the interpretation.
 
-In `package/extension/src/`, a new folder `runner`, add a new  file `runner.ts` with the following code:
+In `extension`, a new folder `runner`, add a new  file `runner.ts` with the following code:
 
 ```ts
 import { FSM, createFsmServices, FsmInterpreter } from 'fsm-language'; 
@@ -313,7 +312,7 @@ export async function runFsmFile(textDocument: vscode.TextDocument) {
 }
 ```
 
-Then, add in `src/extension/main.ts`:
+Then, add in `main.ts` from `extension`:
 
 ```diff
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
@@ -350,27 +349,33 @@ And add in `package.json`:
 	
 ## Build and Run
 
-To test, open a terminal, go to `packages/extension` and run `npm run build`. In VSCode, press F5 to launch a new VSCode with our extensions.
+To test, open a terminal, go to `extension` folder and run `npm run build`. 
+In VSCode, press F5 to launch a new VSCode with our extensions.
 	
 In this new VSCode, :
 	
-- Open a `.fsm`
-- `Ctrl+Shift+P` > `Run FSM`
-- We should see in the console something happening.
+- Open a `.fsm` file
+- `Ctrl+Shift+P`, then type: `> Run FSM`
+- You should see in the console of the VSCode containing the interpreter (language workbench), the traces of your `console.log()`.
 
 ## Compilation with Langium
 
 In this part, you will implement a compiler for your FSM language.
-The compiler will translate a textual FSM model into a Java implementation that can be executed independently.
+The compiler will translate a textual FSM model into a JavaScript implementation that can be executed independently.
 Unlike the interpreter (which executes the model directly), the compiler generates source code following the `State` design pattern.
 
 ### Goal
 
 Your compiler should:
-- Generate JS files representing the FSM structure (machine, states, transitions).
+- Generate JavaScript files representing the FSM structure (machine, states, transitions).
 - Implement a runtime behavior that can execute transitions and evolve between states.
 - Produce files that can be executed as a standalone JavaScript program.
 
 This process illustrates the Visitor pattern, as your compiler must traverse the model and produce corresponding code elements.
 
-With all the knowledge accumulated, you should be able to implement this compiler by yourself.
+With all the knowledge accumulated, you should be able to implement this compiler by yourself, in particular, based on what we did for the intrepreter.
+
+Do not forget to:
+- Update the `main.ts` from `extension`
+- Update the `package.json`
+- Run `npm run build` in the `extension` 
