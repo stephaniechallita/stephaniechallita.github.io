@@ -284,24 +284,23 @@ npm run build
 <p>In this part, you will develop an interpreter for your <code>FSM</code> language.
 The interpreter allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
 <h3 id="goal">Goal</h3>
-<p>Your interpreter should:</p>
+<p>The interpreter algorithm should:</p>
 <ul>
 <li>Load an FSM model from an .fsm file.</li>
 <li>Start from the machine’s initial state.</li>
 <li>Select one of the outgoing transitions (for example, randomly).</li>
 <li>Apply its trigger and action, and move to the target state.</li>
-<li>Continue until a state with no outgoing transitions is reached.</li>
+<li>Continue until a state with no outgoing transitions is reached (terminal state) or a given number (<em>e.g.</em> 10) of transitions has been executed.</li>
 </ul>
-<p>The execution should produce trace messages in the console to show the evolution of the system.</p>
-<p>Add a file <code>interpreter.ts</code> in <code>packages/language/src/</code>:</p>
+<p><strong>The execution should produce trace messages in the console (<code>console.log('...')</code>) to show the evolution of the system.</strong></p>
+<p>Add a file <code>interpreter.ts</code> in <code>language</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Reference</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">type</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">State</span>, <span style="color:#a6e22e">Transition</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./generated/ast.js&#39;</span>;
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FsmInterpreter</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">fsm</span>: <span style="color:#66d9ef">FSM</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
-		...
-
 		<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ctx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FsmContext</span>(<span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">initialState</span>.<span style="color:#a6e22e">ref</span>);
+        <span style="color:#75715e">/* FSM interpreter algorithm goes there */</span>
 	}
 }
 
@@ -315,7 +314,7 @@ The interpreter allows you to simulate the behavior of an FSM by evolving a runt
 </code></pre></div><p>In <code>index.ts</code>, add <code>export * from './interpreter.js'</code></p>
 <h2 id="runner">Runner</h2>
 <p>Now, we want a VSCode action, a kind of plugin that execute a command to launch the interpretation.</p>
-<p>In <code>package/extension/src/</code>, a new folder <code>runner</code>, add a new  file <code>runner.ts</code> with the following code:</p>
+<p>In <code>extension</code>, a new folder <code>runner</code>, add a new  file <code>runner.ts</code> with the following code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">createFsmServices</span>, <span style="color:#a6e22e">FsmInterpreter</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fsm-language&#39;</span>; 
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NodeFileSystem</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium/node&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">vscode</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vscode&#39;</span>;
@@ -337,7 +336,7 @@ The interpreter allows you to simulate the behavior of an FSM by evolving a runt
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">interpreter</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FsmInterpreter</span>(<span style="color:#a6e22e">fsm</span>);
     <span style="color:#a6e22e">interpreter</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">fsm</span>);
 }
-</code></pre></div><p>Then, add in <code>src/extension/main.ts</code>:</p>
+</code></pre></div><p>Then, add in <code>main.ts</code> from <code>extension</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">export async function activate(context: vscode.ExtensionContext): Promise&lt;void&gt; {
     client = await startLanguageClient(context);
 <span style="color:#a6e22e">+    context.subscriptions.push(
@@ -364,26 +363,33 @@ The interpreter allows you to simulate the behavior of an FSM by evolving a runt
 <span style="color:#a6e22e">+        &#34;onCommand:fsm.runFsm&#34;
 </span><span style="color:#a6e22e"></span>    ],
 </code></pre></div><h2 id="build-and-run">Build and Run</h2>
-<p>To test, open a terminal, go to <code>packages/extension</code> and run <code>npm run build</code>. In VSCode, press F5 to launch a new VSCode with our extensions.</p>
+<p>To test, open a terminal, go to <code>extension</code> folder and run <code>npm run build</code>.
+In VSCode, press F5 to launch a new VSCode with our extensions.</p>
 <p>In this new VSCode, :</p>
 <ul>
-<li>Open a <code>.fsm</code></li>
-<li><code>Ctrl+Shift+P</code> &gt; <code>Run FSM</code></li>
-<li>We should see in the console something happening.</li>
+<li>Open a <code>.fsm</code> file</li>
+<li><code>Ctrl+Shift+P</code>, then type: <code>&gt; Run FSM</code></li>
+<li>You should see in the console of the VSCode containing the interpreter (language workbench), the traces of your <code>console.log()</code>.</li>
 </ul>
 <h2 id="compilation-with-langium">Compilation with Langium</h2>
 <p>In this part, you will implement a compiler for your FSM language.
-The compiler will translate a textual FSM model into a Java implementation that can be executed independently.
+The compiler will translate a textual FSM model into a JavaScript implementation that can be executed independently.
 Unlike the interpreter (which executes the model directly), the compiler generates source code following the <code>State</code> design pattern.</p>
 <h3 id="goal-1">Goal</h3>
 <p>Your compiler should:</p>
 <ul>
-<li>Generate JS files representing the FSM structure (machine, states, transitions).</li>
+<li>Generate JavaScript files representing the FSM structure (machine, states, transitions).</li>
 <li>Implement a runtime behavior that can execute transitions and evolve between states.</li>
 <li>Produce files that can be executed as a standalone JavaScript program.</li>
 </ul>
 <p>This process illustrates the Visitor pattern, as your compiler must traverse the model and produce corresponding code elements.</p>
-<p>With all the knowledge accumulated, you should be able to implement this compiler by yourself.</p>
+<p>With all the knowledge accumulated, you should be able to implement this compiler by yourself, in particular, based on what we did for the intrepreter.</p>
+<p>Do not forget to:</p>
+<ul>
+<li>Update the <code>main.ts</code> from <code>extension</code></li>
+<li>Update the <code>package.json</code></li>
+<li>Run <code>npm run build</code> in the <code>extension</code></li>
+</ul>
 
 </div>
 
