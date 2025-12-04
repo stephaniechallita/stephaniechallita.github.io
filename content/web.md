@@ -52,7 +52,7 @@ Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ic
 
 | Date | Heure | Sujet |
 | -------- | -------- | -------- |
-| 05/12/2025 | 08:00 - 11:15 | [Introduction à Angular](https://v17.angular.io/tutorial/first-app) |
+| 05/12/2025 | 08:00 - 11:15 | [Introduction à Angular](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_front_angular) |
 | 12/12/2025 | 15:00 - 18:15 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
 | 16/12/2025 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
 | 05/01/2026 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
