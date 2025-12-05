@@ -337,31 +337,33 @@ The interpreter allows you to simulate the behavior of an FSM by evolving a runt
     <span style="color:#a6e22e">interpreter</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">fsm</span>);
 }
 </code></pre></div><p>Then, add in <code>main.ts</code> from <code>extension</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">export async function activate(context: vscode.ExtensionContext): Promise&lt;void&gt; {
-    client = await startLanguageClient(context);
-<span style="color:#a6e22e">+    context.subscriptions.push(
-</span><span style="color:#a6e22e">+        vscode.commands.registerCommand(&#39;fsm.runFsm&#39;, () =&gt; {
-</span><span style="color:#a6e22e">+            const editor = vscode.window.activeTextEditor;
-</span><span style="color:#a6e22e">+            if (editor) {
-</span><span style="color:#a6e22e">+                runFsmFile(editor.document);
-</span><span style="color:#a6e22e">+            }
-</span><span style="color:#a6e22e">+        })
-</span><span style="color:#a6e22e">+    );
-</span><span style="color:#a6e22e"></span>}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">activate</span>(<span style="color:#a6e22e">context</span>: <span style="color:#66d9ef">vscode.ExtensionContext</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span> {
+    <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">startLanguageClient</span>(<span style="color:#a6e22e">context</span>);
+    <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">subscriptions</span>.<span style="color:#a6e22e">push</span>(
+        <span style="color:#a6e22e">vscode</span>.<span style="color:#a6e22e">commands</span>.<span style="color:#a6e22e">registerCommand</span>(<span style="color:#e6db74">&#39;fsm.runFsm&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">editor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vscode</span>.window.<span style="color:#a6e22e">activeTextEditor</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">editor</span>) {
+                <span style="color:#a6e22e">runFsmFile</span>(<span style="color:#a6e22e">editor</span>.document);
+            }
+        })
+    );
+}
 </code></pre></div><p>And add in <code>package.json</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">&#34;contributes&#34;: {
-        ...
-<span style="color:#a6e22e">+        &#34;commands&#34;: [
-</span><span style="color:#a6e22e">+            {
-</span><span style="color:#a6e22e">+              &#34;command&#34;: &#34;fsm.runFsm&#34;,
-</span><span style="color:#a6e22e">+              &#34;title&#34;: &#34;Run FSM&#34;
-</span><span style="color:#a6e22e">+            }
-</span><span style="color:#a6e22e">+        ]
-</span><span style="color:#a6e22e"></span>    },
-    &#34;activationEvents&#34;: [
-        &#34;onLanguage:fsm&#34;,
-<span style="color:#a6e22e">+        &#34;onCommand:fsm.runFsm&#34;
-</span><span style="color:#a6e22e"></span>    ],
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;contributes&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+    <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#960050;background-color:#1e0010">*/</span>
+        <span style="color:#f92672">&#34;commands&#34;</span>: [
+            {
+              <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;fsm.runFsm&#34;</span>,
+              <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Run FSM&#34;</span>
+            },
+        ]
+    }<span style="color:#960050;background-color:#1e0010">,</span>
+    <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#960050;background-color:#1e0010">*/</span>
+    <span style="color:#e6db74">&#34;activationEvents&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+        <span style="color:#e6db74">&#34;onLanguage:fsm&#34;</span>,
+        <span style="color:#e6db74">&#34;onCommand:fsm.runFsm&#34;</span>,
+    ]<span style="color:#960050;background-color:#1e0010">,</span>
+    <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#960050;background-color:#1e0010">*/</span>
 </code></pre></div><h2 id="build-and-run">Build and Run</h2>
 <p>To test, open a terminal, go to <code>extension</code> folder and run <code>npm run build</code>.
 In VSCode, press F5 to launch a new VSCode with our extensions.</p>
@@ -390,7 +392,331 @@ Unlike the interpreter (which executes the model directly), the compiler generat
 <li>Update the <code>package.json</code></li>
 <li>Run <code>npm run build</code> in the <code>extension</code></li>
 </ul>
+<h1 id="solutions">Solutions</h1>
+<h2 id="intepreter">Intepreter</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Reference</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">type</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">State</span>, <span style="color:#a6e22e">Transition</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./generated/ast.js&#39;</span>;
 
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FsmInterpreter</span> {
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">random</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">number</span>;
+
+    <span style="color:#66d9ef">constructor</span>() {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">random</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> Math.<span style="color:#a6e22e">random</span>();
+    }
+
+    <span style="color:#75715e">// Main algoritm of the interpreter
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">fsm</span>: <span style="color:#66d9ef">FSM</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#75715e">// Potentially, the initially is not provided, therefore we return
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">initialState</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">ref</span>) {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`FSM &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; has no initial state.`</span>);
+            <span style="color:#66d9ef">return</span>;
+        }
+
+        <span style="color:#75715e">// Initialization of the runtime state of the interpreter
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ctx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FsmContext</span>(<span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">initialState</span>.<span style="color:#a6e22e">ref</span>);
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Starting FSM: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Initial state: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">currentState</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+
+        <span style="color:#75715e">// Main loop - until we reach a terminal state or 10 transitions have been taken
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+        <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">count</span><span style="color:#f92672">--</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#75715e">// Retrieve all the outgoing transitions from the current state
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">transitions</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getOutgoingTransitions</span>(<span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">currentState</span>);
+
+            <span style="color:#75715e">// if none, i.e. transitions[] is empty, we reach a terminal state, therefore we break
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">transitions</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Reached terminal state: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">currentState</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+                <span style="color:#66d9ef">break</span>;
+            }
+
+            <span style="color:#75715e">// We pick a random transition, and interpret it
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pickedTransition</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pickRandomTransition</span>(<span style="color:#a6e22e">transitions</span>);
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">interpretTransition</span>(<span style="color:#a6e22e">pickedTransition</span>, <span style="color:#a6e22e">ctx</span>);
+        }
+    }
+
+    <span style="color:#75715e">// Interpretating a transition means to print trigger and action, and update the current state
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">interpretTransition</span>(<span style="color:#a6e22e">t</span>: <span style="color:#66d9ef">Transition</span>, <span style="color:#a6e22e">ctx</span>: <span style="color:#66d9ef">FsmContext</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`--- Executing transition: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">trigger</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Trigger: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">trigger</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">action</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Action: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">action</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">tgt</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">ref</span>) {
+            <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">currentState</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">tgt</span>.<span style="color:#a6e22e">ref</span>;
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Now in state: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">currentState</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Transition &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; has no target; stopping.`</span>);
+        }
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">pickRandomTransition</span>(<span style="color:#a6e22e">transitions</span>: <span style="color:#66d9ef">Transition</span>[])<span style="color:#f92672">:</span> <span style="color:#a6e22e">Transition</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">transitions</span>.<span style="color:#a6e22e">length</span>);
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">transitions</span>[<span style="color:#a6e22e">i</span>];
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">getOutgoingTransitions</span>(<span style="color:#a6e22e">state</span>: <span style="color:#66d9ef">State</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Transition</span>[] {
+        <span style="color:#75715e">// in Langium, cross references are usually stored as { ref: &lt;object&gt; }
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">outgoing</span> <span style="color:#f92672">??</span> []).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">ref</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ref</span>.<span style="color:#a6e22e">ref</span>).<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">t</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">t</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Transition</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">!!</span><span style="color:#a6e22e">t</span>);
+    }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FsmContext</span> {
+    <span style="color:#a6e22e">currentState</span>: <span style="color:#66d9ef">State</span>;
+
+    <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">initialState</span>: <span style="color:#66d9ef">State</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentState</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">initialState</span>;
+    }
+}
+</code></pre></div><h2 id="compiler">Compiler</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;node:fs&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;node:path&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">CompositeGeneratorNode</span>, <span style="color:#a6e22e">NL</span>, <span style="color:#a6e22e">toString</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium/generate&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">type</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">State</span>, <span style="color:#a6e22e">Transition</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./generated/ast.js&#39;</span>;
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * A visitor-like compiler for FSM models, generating JavaScript code
+</span><span style="color:#75715e"> * that mirrors the Java generator implemented in Xtend.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FsmCompiler</span> {
+
+    <span style="color:#66d9ef">constructor</span>(<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">readonly</span> <span style="color:#a6e22e">destination</span>: <span style="color:#66d9ef">string</span>) {}
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">compile</span>(<span style="color:#a6e22e">fsm</span>: <span style="color:#66d9ef">FSM</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pkg</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fsm.generated&#39;</span>;
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">outDir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">destination</span>, <span style="color:#a6e22e">pkg</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\./g</span>, <span style="color:#e6db74">&#39;/&#39;</span>));
+        <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">mkdirSync</span>(<span style="color:#a6e22e">outDir</span>, { <span style="color:#a6e22e">recursive</span>: <span style="color:#66d9ef">true</span> });
+
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">generateStateInterface</span>(<span style="color:#a6e22e">pkg</span>, <span style="color:#a6e22e">outDir</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">generateContext</span>(<span style="color:#a6e22e">pkg</span>, <span style="color:#a6e22e">outDir</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">generateStates</span>(<span style="color:#a6e22e">pkg</span>, <span style="color:#a6e22e">fsm</span>, <span style="color:#a6e22e">outDir</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">generateMain</span>(<span style="color:#a6e22e">pkg</span>, <span style="color:#a6e22e">fsm</span>, <span style="color:#a6e22e">outDir</span>);
+
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">absoluteOutDir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">outDir</span>);
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`✅ FSM &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; compiled to </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">absoluteOutDir</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">generateStateInterface</span>(<span style="color:#a6e22e">pkg</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">outDir</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">CompositeGeneratorNode</span>();
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`// Auto-generated FSM State interface`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import { FsmContext } from &#39;./FsmContext&#39;;`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`export interface State {`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">s</span> <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`onEnter(ctx: FsmContext): State | undefined;`</span>, <span style="color:#a6e22e">NL</span>);
+        });
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`}`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">writeFile</span>(<span style="color:#a6e22e">outDir</span>, <span style="color:#e6db74">&#39;State.ts&#39;</span>, <span style="color:#a6e22e">toString</span>(<span style="color:#a6e22e">node</span>));
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">generateContext</span>(<span style="color:#a6e22e">pkg</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">outDir</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">CompositeGeneratorNode</span>();
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`// Auto-generated FSM Context`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import type { State } from &#39;./State&#39;;`</span>, <span style="color:#a6e22e">NL</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`export class FsmContext {`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">s</span> <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`private current: State | undefined;`</span>, <span style="color:#a6e22e">NL</span>, <span style="color:#a6e22e">NL</span>);
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`setState(s: State) { this.current = s; }`</span>, <span style="color:#a6e22e">NL</span>);
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`getState(): State | undefined { return this.current; }`</span>, <span style="color:#a6e22e">NL</span>);
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`start() {`</span>, <span style="color:#a6e22e">NL</span>);
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">=&gt;</span> {
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;if (!this.current) {&#39;</span>, <span style="color:#a6e22e">NL</span>);
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">=&gt;</span> { 
+                    <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`console.error(&#39;No initial state defined.&#39;);`</span>, <span style="color:#a6e22e">NL</span>);
+                    <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`return;`</span>, <span style="color:#a6e22e">NL</span>);
+                })
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;}&#39;</span>, <span style="color:#a6e22e">NL</span>, <span style="color:#a6e22e">NL</span>);
+
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`let count = 10;`</span>, <span style="color:#a6e22e">NL</span>)
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`while(count-- &gt; 0) {`</span>, <span style="color:#a6e22e">NL</span>);
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">=&gt;</span> {
+                    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`const nextState = this.current.onEnter(this);`</span>, <span style="color:#a6e22e">NL</span>);
+                    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`if (!nextState) { return; }`</span>, <span style="color:#a6e22e">NL</span>);
+                    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`this.setState(nextState);`</span>, <span style="color:#a6e22e">NL</span>)
+                    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`console.log(&#39;nb transitions remaining:&#39;, count);`</span>, <span style="color:#a6e22e">NL</span>);
+                });
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;}&#39;</span>, <span style="color:#a6e22e">NL</span>);
+            });
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;}&#39;</span>, <span style="color:#a6e22e">NL</span>);
+        });
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`}`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">writeFile</span>(<span style="color:#a6e22e">outDir</span>, <span style="color:#e6db74">&#39;FsmContext.ts&#39;</span>, <span style="color:#a6e22e">toString</span>(<span style="color:#a6e22e">node</span>));
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">generateStates</span>(<span style="color:#a6e22e">pkg</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">fsm</span>: <span style="color:#66d9ef">FSM</span>, <span style="color:#a6e22e">outDir</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">ownedStates</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">generateStateClass</span>(<span style="color:#a6e22e">pkg</span>, <span style="color:#a6e22e">fsm</span>, <span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">outDir</span>);
+        }
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">generateMain</span>(<span style="color:#a6e22e">pkg</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">fsm</span>: <span style="color:#66d9ef">FSM</span>, <span style="color:#a6e22e">outDir</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">CompositeGeneratorNode</span>();
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`// Auto-generated entry point`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import { FsmContext } from &#39;./FsmContext&#39;;`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">ownedStates</span>) {
+            <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import { </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> } from &#39;./</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;;`</span>, <span style="color:#a6e22e">NL</span>);
+        }
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`export class </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">Main {`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">s</span> <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`static main() {`</span>, <span style="color:#a6e22e">NL</span>);
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">=&gt;</span> {
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`const ctx = new FsmContext();`</span>, <span style="color:#a6e22e">NL</span>);
+                <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">initialState</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">ref</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">??</span> <span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">ownedStates</span><span style="color:#f92672">?</span>.[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">?</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#39;undefined&#39;</span>;
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">init</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;undefined&#39;</span>) {
+                    <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`ctx.setState(new </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">init</span><span style="color:#e6db74">}</span><span style="color:#e6db74">());`</span>, <span style="color:#a6e22e">NL</span>);
+                    <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`ctx.start();`</span>, <span style="color:#a6e22e">NL</span>);
+                } <span style="color:#66d9ef">else</span> {
+                    <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`console.error(&#39;No initial state defined.&#39;);`</span>, <span style="color:#a6e22e">NL</span>);
+                }
+            });
+            <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`}`</span>, <span style="color:#a6e22e">NL</span>);
+        });
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`}`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">Main.main()`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">writeFile</span>(<span style="color:#a6e22e">outDir</span>, <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">Main.ts`</span>, <span style="color:#a6e22e">toString</span>(<span style="color:#a6e22e">node</span>));
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">generateStateClass</span>(<span style="color:#a6e22e">pkg</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">fsm</span>: <span style="color:#66d9ef">FSM</span>, <span style="color:#a6e22e">s</span>: <span style="color:#66d9ef">State</span>, <span style="color:#a6e22e">outDir</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">CompositeGeneratorNode</span>();
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`// Auto-generated class for state </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import { randomInt } from &#39;crypto&#39;;`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import { State } from &#39;./State&#39;;`</span>, <span style="color:#a6e22e">NL</span>); 
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import { FsmContext } from &#39;./FsmContext&#39;;`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">outgoing</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">outgoing</span> <span style="color:#f92672">??</span> []).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">ref</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ref</span>.<span style="color:#a6e22e">ref</span>).<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">t</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">t</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">Transition</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">!!</span><span style="color:#a6e22e">t</span>);
+        <span style="color:#a6e22e">outgoing</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">i</span>) <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tgt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">tgt</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">ref</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#39;undefined&#39;</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">tgt</span>) {
+                <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`import { </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tgt</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> } from &#39;./</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tgt</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;;`</span>, <span style="color:#a6e22e">NL</span>);
+            }
+        });
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">NL</span>); 
+
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`export class </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> implements State {`</span>, <span style="color:#a6e22e">NL</span>);
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`onEnter(ctx: FsmContext): State | undefined {`</span>, <span style="color:#a6e22e">NL</span>);
+            <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">body</span> <span style="color:#f92672">=&gt;</span> {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">outgoing</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+                    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`console.log(&#34;Reached terminal state: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;);`</span>, <span style="color:#a6e22e">NL</span>);
+                } <span style="color:#66d9ef">else</span> {
+                    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`console.log(&#34;Entering state: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;);`</span>, <span style="color:#a6e22e">NL</span>);
+                    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`const choice = randomInt(0, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">outgoing</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">);`</span>, <span style="color:#a6e22e">NL</span>);
+                    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`switch (choice) {`</span>, <span style="color:#a6e22e">NL</span>);
+
+                    <span style="color:#a6e22e">outgoing</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">i</span>) <span style="color:#f92672">=&gt;</span> {
+                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tgt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">tgt</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">ref</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#39;undefined&#39;</span>;
+                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">trigger</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">trigger</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#39;&#39;</span>;
+                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">action</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">action</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#39;&#39;</span>;
+                        <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">sw</span> <span style="color:#f92672">=&gt;</span> {
+                            <span style="color:#a6e22e">sw</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`case </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:`</span>, <span style="color:#a6e22e">NL</span>);
+                            <span style="color:#a6e22e">sw</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">caseBody</span> <span style="color:#f92672">=&gt;</span> {
+                                <span style="color:#a6e22e">caseBody</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`console.log(&#34;Transition: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> trigger: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">trigger</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> action: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">action</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;);`</span>, <span style="color:#a6e22e">NL</span>);
+                                <span style="color:#a6e22e">caseBody</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`return new </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">tgt</span><span style="color:#e6db74">}</span><span style="color:#e6db74">();`</span>, <span style="color:#a6e22e">NL</span>);
+                            });
+                        });
+                    });
+                    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">sw</span> <span style="color:#f92672">=&gt;</span> {
+                        <span style="color:#a6e22e">sw</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;default:&#39;</span>, <span style="color:#a6e22e">NL</span>);
+                        <span style="color:#a6e22e">sw</span>.<span style="color:#a6e22e">indent</span>(<span style="color:#a6e22e">defaultCase</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">defaultCase</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;return undefined;&#39;</span>, <span style="color:#a6e22e">NL</span>));
+                    });
+                    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`}`</span>, <span style="color:#a6e22e">NL</span>);
+                }
+            });
+            <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`}`</span>, <span style="color:#a6e22e">NL</span>);
+        });
+        <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">`}`</span>, <span style="color:#a6e22e">NL</span>);
+
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">writeFile</span>(<span style="color:#a6e22e">outDir</span>, <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.ts`</span>, <span style="color:#a6e22e">toString</span>(<span style="color:#a6e22e">node</span>));
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">writeFile</span>(<span style="color:#a6e22e">outDir</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">fileName</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">content</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filePath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">outDir</span>, <span style="color:#a6e22e">fileName</span>);
+        <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#a6e22e">filePath</span>, <span style="color:#a6e22e">content</span>);
+    }
+}
+</code></pre></div><h3 id="compile-action">Compile action</h3>
+<p>Now, we want a VSCode action, a kind of plugin that execute a command to launch the compilation.</p>
+<p>In <code>extension</code>, a new folder <code>compiler</code>, add a new  file <code>compiler.ts</code> with the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;path&#34;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FSM</span>, <span style="color:#a6e22e">createFsmServices</span>, <span style="color:#a6e22e">FsmCompiler</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fsm-language&#39;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">NodeFileSystem</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;langium/node&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">vscode</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vscode&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compileFsmFile</span>(<span style="color:#a6e22e">textDocument</span>: <span style="color:#66d9ef">vscode.TextDocument</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">services</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createFsmServices</span>(<span style="color:#a6e22e">NodeFileSystem</span>);
+    <span style="color:#66d9ef">const</span> document <span style="color:#f92672">=</span> <span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">shared</span>.<span style="color:#a6e22e">workspace</span>.<span style="color:#a6e22e">LangiumDocumentFactory</span>.<span style="color:#a6e22e">fromString</span>(
+        <span style="color:#a6e22e">textDocument</span>.<span style="color:#a6e22e">getText</span>(),
+        <span style="color:#a6e22e">textDocument</span>.<span style="color:#a6e22e">uri</span>
+    );
+
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">services</span>.<span style="color:#a6e22e">shared</span>.<span style="color:#a6e22e">workspace</span>.<span style="color:#a6e22e">DocumentBuilder</span>.<span style="color:#a6e22e">build</span>([document], { <span style="color:#a6e22e">validation</span>: <span style="color:#66d9ef">true</span> });
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">parseResult</span>.<span style="color:#a6e22e">value</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fsm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">root</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">FSM</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fsm</span>) {
+        <span style="color:#a6e22e">vscode</span>.window.<span style="color:#a6e22e">showErrorMessage</span>(<span style="color:#e6db74">`Parsing failed: </span><span style="color:#e6db74">${</span>document.<span style="color:#a6e22e">diagnostics</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        <span style="color:#66d9ef">return</span>;
+    }
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">destinationFolder</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">dirname</span>(<span style="color:#a6e22e">textDocument</span>.<span style="color:#a6e22e">fileName</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">compiler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FsmCompiler</span>(<span style="color:#a6e22e">destinationFolder</span>);
+    <span style="color:#a6e22e">compiler</span>.<span style="color:#a6e22e">compile</span>(<span style="color:#a6e22e">fsm</span>);
+
+    <span style="color:#a6e22e">vscode</span>.window.<span style="color:#a6e22e">showInformationMessage</span>(<span style="color:#e6db74">`FSM &#39;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fsm</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; compiled successfully.`</span>);
+}
+</code></pre></div><p>Then, add in <code>main.ts</code> from <code>extension</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">activate</span>(<span style="color:#a6e22e">context</span>: <span style="color:#66d9ef">vscode.ExtensionContext</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span> {
+    <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">startLanguageClient</span>(<span style="color:#a6e22e">context</span>);
+    <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">subscriptions</span>.<span style="color:#a6e22e">push</span>(
+        <span style="color:#a6e22e">vscode</span>.<span style="color:#a6e22e">commands</span>.<span style="color:#a6e22e">registerCommand</span>(<span style="color:#e6db74">&#39;fsm.runFsm&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">editor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vscode</span>.window.<span style="color:#a6e22e">activeTextEditor</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">editor</span>) {
+                <span style="color:#a6e22e">runFsmFile</span>(<span style="color:#a6e22e">editor</span>.document);
+            }
+        })
+    );
+    <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">subscriptions</span>.<span style="color:#a6e22e">push</span>(
+        <span style="color:#a6e22e">vscode</span>.<span style="color:#a6e22e">commands</span>.<span style="color:#a6e22e">registerCommand</span>(<span style="color:#e6db74">&#39;fsm.compileFsm&#39;</span>, () <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">editor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vscode</span>.window.<span style="color:#a6e22e">activeTextEditor</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">editor</span>) {
+                <span style="color:#a6e22e">compileFsmFile</span>(<span style="color:#a6e22e">editor</span>.document);
+            }
+        })
+    );
+}
+</code></pre></div><p>And add in <code>package.json</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;contributes&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+    <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#960050;background-color:#1e0010">*/</span>
+        <span style="color:#f92672">&#34;commands&#34;</span>: [
+            {
+              <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;fsm.runFsm&#34;</span>,
+              <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Run FSM&#34;</span>
+            },
+            {
+                <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;fsm.compileFsm&#34;</span>,
+                <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Compile FSM&#34;</span>
+            }
+        ]
+    }<span style="color:#960050;background-color:#1e0010">,</span>
+    <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#960050;background-color:#1e0010">*/</span>
+    <span style="color:#e6db74">&#34;activationEvents&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+        <span style="color:#e6db74">&#34;onLanguage:fsm&#34;</span>,
+        <span style="color:#e6db74">&#34;onCommand:fsm.runFsm&#34;</span>,
+        <span style="color:#e6db74">&#34;onCommand:fsm.compileFsm&#34;</span>
+    ]<span style="color:#960050;background-color:#1e0010">,</span>
+    <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#960050;background-color:#1e0010">...</span> <span style="color:#960050;background-color:#1e0010">*/</span>
+</code></pre></div><h2 id="build-and-run-1">Build and Run</h2>
+<p>To test, open a terminal, go to <code>extension</code> folder and run <code>npm run build</code>.
+In VSCode, press F5 to launch a new VSCode with our extensions.</p>
+<p>In this new VSCode, :</p>
+<ul>
+<li>Open a <code>.fsm</code> file</li>
+<li><code>Ctrl+Shift+P</code>, then type: <code>&gt; Compile FSM</code></li>
+<li>A new folder is generated: <code>fsm/generated</code> with a bunch of file.</li>
+<li>In terminal, go to the <code>fsm/generated</code> folder and run, <strong>replacing</strong> the <code>XXX</code> by the correct name:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npx ts-node --compiler-options <span style="color:#e6db74">&#39;{&#34;module&#34;:&#34;CommonJS&#34;}&#39;</span> XXXMain.ts
+</code></pre></div><p>If needed, install <code>ts-node</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install -D ts-node typescript
+</code></pre></div>
 </div>
 
         </div><div id="footer" class="mb-5">
