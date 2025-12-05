@@ -314,37 +314,39 @@ export async function runFsmFile(textDocument: vscode.TextDocument) {
 
 Then, add in `main.ts` from `extension`:
 
-```diff
+```ts
 export async function activate(context: vscode.ExtensionContext): Promise<void> {
     client = await startLanguageClient(context);
-+    context.subscriptions.push(
-+        vscode.commands.registerCommand('fsm.runFsm', () => {
-+            const editor = vscode.window.activeTextEditor;
-+            if (editor) {
-+                runFsmFile(editor.document);
-+            }
-+        })
-+    );
+    context.subscriptions.push(
+        vscode.commands.registerCommand('fsm.runFsm', () => {
+            const editor = vscode.window.activeTextEditor;
+            if (editor) {
+                runFsmFile(editor.document);
+            }
+        })
+    );
 }
 ```
 	
 	
 And add in `package.json`:
 	
-```diff
+```json
 "contributes": {
-        ...
-+        "commands": [
-+            {
-+              "command": "fsm.runFsm",
-+              "title": "Run FSM"
-+            }
-+        ]
+    /* ... */
+        "commands": [
+            {
+              "command": "fsm.runFsm",
+              "title": "Run FSM"
+            },
+        ]
     },
+    /* ... */
     "activationEvents": [
         "onLanguage:fsm",
-+        "onCommand:fsm.runFsm"
+        "onCommand:fsm.runFsm",
     ],
+    /* ... */
 ```
 	
 ## Build and Run
@@ -379,3 +381,361 @@ Do not forget to:
 - Update the `main.ts` from `extension`
 - Update the `package.json`
 - Run `npm run build` in the `extension` 
+
+# Solutions
+
+## Intepreter
+
+```ts
+import { Reference } from 'langium';
+import type { FSM, State, Transition } from './generated/ast.js';
+
+export class FsmInterpreter {
+    private random: () => number;
+
+    constructor() {
+        this.random = () => Math.random();
+    }
+
+    // Main algoritm of the interpreter
+    public run(fsm: FSM): void {
+        // Potentially, the initially is not provided, therefore we return
+        if (!fsm.initialState?.ref) {
+            console.log(`FSM '${fsm.name}' has no initial state.`);
+            return;
+        }
+
+        // Initialization of the runtime state of the interpreter
+        const ctx = new FsmContext(fsm.initialState.ref);
+        console.log(`Starting FSM: ${fsm.name}`);
+        console.log(`Initial state: ${ctx.currentState.name}`);
+
+        // Main loop - until we reach a terminal state or 10 transitions have been taken
+        let count = 10;
+        while (count-- > 0) {
+            // Retrieve all the outgoing transitions from the current state
+            const transitions = this.getOutgoingTransitions(ctx.currentState);
+
+            // if none, i.e. transitions[] is empty, we reach a terminal state, therefore we break
+            if (transitions.length === 0) {
+                console.log(`Reached terminal state: ${ctx.currentState.name}`);
+                break;
+            }
+
+            // We pick a random transition, and interpret it
+            const pickedTransition = this.pickRandomTransition(transitions);
+            this.interpretTransition(pickedTransition, ctx);
+        }
+    }
+
+    // Interpretating a transition means to print trigger and action, and update the current state
+    private interpretTransition(t: Transition, ctx: FsmContext): void {
+        console.log(`--- Executing transition: ${t.name}`);
+        if (t.trigger) console.log(`Trigger: ${t.trigger}`);
+        if (t.action) console.log(`Action: ${t.action}`);
+
+        if (t.tgt?.ref) {
+            ctx.currentState = t.tgt.ref;
+            console.log(`Now in state: ${ctx.currentState.name}`);
+        } else {
+            console.log(`Transition '${t.name}' has no target; stopping.`);
+        }
+    }
+
+    private pickRandomTransition(transitions: Transition[]): Transition {
+        const i = Math.floor(this.random() * transitions.length);
+        return transitions[i];
+    }
+
+    private getOutgoingTransitions(state: State): Transition[] {
+        // in Langium, cross references are usually stored as { ref: <object> }
+        return (state.outgoing ?? []).map(ref => ref.ref).filter((t): t is Transition => !!t);
+    }
+}
+
+export class FsmContext {
+    currentState: State;
+
+    constructor(initialState: State) {
+        this.currentState = initialState;
+    }
+}
+```
+
+## Compiler
+
+```ts
+import fs from 'node:fs';
+import path from 'node:path';
+import { CompositeGeneratorNode, NL, toString } from 'langium/generate';
+import type { FSM, State, Transition } from './generated/ast.js';
+
+/**
+ * A visitor-like compiler for FSM models, generating JavaScript code
+ * that mirrors the Java generator implemented in Xtend.
+ */
+export class FsmCompiler {
+
+    constructor(private readonly destination: string) {}
+
+    public compile(fsm: FSM): void {
+        const pkg = 'fsm.generated';
+        const outDir = path.join(this.destination, pkg.replace(/\./g, '/'));
+        fs.mkdirSync(outDir, { recursive: true });
+
+        this.generateStateInterface(pkg, outDir);
+        this.generateContext(pkg, outDir);
+        this.generateStates(pkg, fsm, outDir);
+        this.generateMain(pkg, fsm, outDir);
+
+        const absoluteOutDir = path.resolve(outDir);
+        console.log(`✅ FSM '${fsm.name}' compiled to ${absoluteOutDir}`);
+    }
+
+    private generateStateInterface(pkg: string, outDir: string): void {
+        const node = new CompositeGeneratorNode();
+        node.append(`// Auto-generated FSM State interface`, NL);
+        node.append(`import { FsmContext } from './FsmContext';`, NL);
+        node.append(`export interface State {`, NL);
+        node.indent(s => {
+            s.append(`onEnter(ctx: FsmContext): State | undefined;`, NL);
+        });
+        node.append(`}`, NL);
+        this.writeFile(outDir, 'State.ts', toString(node));
+    }
+
+    private generateContext(pkg: string, outDir: string): void {
+        const node = new CompositeGeneratorNode();
+        node.append(`// Auto-generated FSM Context`, NL);
+        node.append(`import type { State } from './State';`, NL, NL);
+        node.append(`export class FsmContext {`, NL);
+        node.indent(s => {
+            s.append(`private current: State | undefined;`, NL, NL);
+            s.append(`setState(s: State) { this.current = s; }`, NL);
+            s.append(`getState(): State | undefined { return this.current; }`, NL);
+            s.append(`start() {`, NL);
+            s.indent(b => {
+                b.append('if (!this.current) {', NL);
+                b.indent(c => { 
+                    b.append(`console.error('No initial state defined.');`, NL);
+                    b.append(`return;`, NL);
+                })
+                b.append('}', NL, NL);
+
+                b.append(`let count = 10;`, NL)
+                b.append(`while(count-- > 0) {`, NL);
+                b.indent(c => {
+                    c.append(`const nextState = this.current.onEnter(this);`, NL);
+                    c.append(`if (!nextState) { return; }`, NL);
+                    c.append(`this.setState(nextState);`, NL)
+                    c.append(`console.log('nb transitions remaining:', count);`, NL);
+                });
+                b.append('}', NL);
+            });
+            s.append('}', NL);
+        });
+        node.append(`}`, NL);
+        this.writeFile(outDir, 'FsmContext.ts', toString(node));
+    }
+
+    private generateStates(pkg: string, fsm: FSM, outDir: string): void {
+        for (const s of fsm.ownedStates) {
+            this.generateStateClass(pkg, fsm, s, outDir);
+        }
+    }
+
+    private generateMain(pkg: string, fsm: FSM, outDir: string): void {
+        const node = new CompositeGeneratorNode();
+        node.append(`// Auto-generated entry point`, NL);
+        node.append(`import { FsmContext } from './FsmContext';`, NL);
+        for (const s of fsm.ownedStates) {
+            node.append(`import { ${s.name} } from './${s.name}';`, NL);
+        }
+        node.append(NL);
+        node.append(`export class ${fsm.name}Main {`, NL);
+        node.indent(s => {
+            s.append(`static main() {`, NL);
+            s.indent(b => {
+                b.append(`const ctx = new FsmContext();`, NL);
+                const init = fsm.initialState?.ref?.name ?? fsm.ownedStates?.[0]?.name ?? 'undefined';
+                if (init !== 'undefined') {
+                    b.append(`ctx.setState(new ${init}());`, NL);
+                    b.append(`ctx.start();`, NL);
+                } else {
+                    b.append(`console.error('No initial state defined.');`, NL);
+                }
+            });
+            s.append(`}`, NL);
+        });
+        node.append(`}`, NL);
+        node.append(`${fsm.name}Main.main()`, NL);
+        this.writeFile(outDir, `${fsm.name}Main.ts`, toString(node));
+    }
+
+    private generateStateClass(pkg: string, fsm: FSM, s: State, outDir: string): void {
+        const node = new CompositeGeneratorNode();
+        node.append(`// Auto-generated class for state ${s.name}`, NL);
+        node.append(`import { randomInt } from 'crypto';`, NL);
+        node.append(`import { State } from './State';`, NL); 
+        node.append(`import { FsmContext } from './FsmContext';`, NL);
+        const outgoing = (s.outgoing ?? []).map(ref => ref.ref).filter((t): t is Transition => !!t);
+        outgoing.forEach((t, i) => {
+            const tgt = t.tgt?.ref?.name ?? 'undefined';
+            if (tgt) {
+                node.append(`import { ${tgt} } from './${tgt}';`, NL);
+            }
+        });
+        node.append(NL); 
+
+        node.append(`export class ${s.name} implements State {`, NL);
+        node.indent(b => {
+            b.append(`onEnter(ctx: FsmContext): State | undefined {`, NL);
+            b.indent(body => {
+                if (outgoing.length === 0) {
+                    body.append(`console.log("Reached terminal state: ${s.name}");`, NL);
+                } else {
+                    body.append(`console.log("Entering state: ${s.name}");`, NL);
+                    body.append(`const choice = randomInt(0, ${outgoing.length});`, NL);
+                    body.append(`switch (choice) {`, NL);
+
+                    outgoing.forEach((t, i) => {
+                        const tgt = t.tgt?.ref?.name ?? 'undefined';
+                        const trigger = t.trigger ?? '';
+                        const action = t.action ?? '';
+                        body.indent(sw => {
+                            sw.append(`case ${i}:`, NL);
+                            sw.indent(caseBody => {
+                                caseBody.append(`console.log("Transition: ${t.name} trigger: ${trigger} action: ${action}");`, NL);
+                                caseBody.append(`return new ${tgt}();`, NL);
+                            });
+                        });
+                    });
+                    body.indent(sw => {
+                        sw.append('default:', NL);
+                        sw.indent(defaultCase => defaultCase.append('return undefined;', NL));
+                    });
+                    body.append(`}`, NL);
+                }
+            });
+            b.append(`}`, NL);
+        });
+        node.append(`}`, NL);
+
+        this.writeFile(outDir, `${s.name}.ts`, toString(node));
+    }
+
+    private writeFile(outDir: string, fileName: string, content: string): void {
+        const filePath = path.join(outDir, fileName);
+        fs.writeFileSync(filePath, content);
+    }
+}
+```
+
+### Compile action
+
+Now, we want a VSCode action, a kind of plugin that execute a command to launch the compilation.
+
+In `extension`, a new folder `compiler`, add a new  file `compiler.ts` with the following code:
+
+```ts
+import path from "path";
+import { FSM, createFsmServices, FsmCompiler } from 'fsm-language';
+import { NodeFileSystem } from 'langium/node';
+import * as vscode from 'vscode';
+
+export async function compileFsmFile(textDocument: vscode.TextDocument) {
+    const services = createFsmServices(NodeFileSystem);
+    const document = services.shared.workspace.LangiumDocumentFactory.fromString(
+        textDocument.getText(),
+        textDocument.uri
+    );
+
+    await services.shared.workspace.DocumentBuilder.build([document], { validation: true });
+
+    const root = document.parseResult.value;
+    const fsm = root as FSM;
+    if (!fsm) {
+        vscode.window.showErrorMessage(`Parsing failed: ${document.diagnostics}`);
+        return;
+    }
+
+    const destinationFolder = path.dirname(textDocument.fileName);
+    const compiler = new FsmCompiler(destinationFolder);
+    compiler.compile(fsm);
+
+    vscode.window.showInformationMessage(`FSM '${fsm.name}' compiled successfully.`);
+}
+```
+
+Then, add in `main.ts` from `extension`:
+
+```ts
+export async function activate(context: vscode.ExtensionContext): Promise<void> {
+    client = await startLanguageClient(context);
+    context.subscriptions.push(
+        vscode.commands.registerCommand('fsm.runFsm', () => {
+            const editor = vscode.window.activeTextEditor;
+            if (editor) {
+                runFsmFile(editor.document);
+            }
+        })
+    );
+    context.subscriptions.push(
+        vscode.commands.registerCommand('fsm.compileFsm', () => {
+            const editor = vscode.window.activeTextEditor;
+            if (editor) {
+                compileFsmFile(editor.document);
+            }
+        })
+    );
+}
+```
+	
+	
+And add in `package.json`:
+	
+```json
+"contributes": {
+    /* ... */
+        "commands": [
+            {
+              "command": "fsm.runFsm",
+              "title": "Run FSM"
+            },
+            {
+                "command": "fsm.compileFsm",
+                "title": "Compile FSM"
+            }
+        ]
+    },
+    /* ... */
+    "activationEvents": [
+        "onLanguage:fsm",
+        "onCommand:fsm.runFsm",
+        "onCommand:fsm.compileFsm"
+    ],
+    /* ... */
+```
+
+## Build and Run
+
+To test, open a terminal, go to `extension` folder and run `npm run build`. 
+In VSCode, press F5 to launch a new VSCode with our extensions.
+	
+In this new VSCode, :
+	
+- Open a `.fsm` file
+- `Ctrl+Shift+P`, then type: `> Compile FSM`
+- A new folder is generated: `fsm/generated` with a bunch of file.
+- In terminal, go to the `fsm/generated` folder and run, **replacing** the `XXX` by the correct name:
+
+```sh
+npx ts-node --compiler-options '{"module":"CommonJS"}' XXXMain.ts
+```
+
+If needed, install `ts-node`:
+
+
+```sh
+npm install -D ts-node typescript
+```
