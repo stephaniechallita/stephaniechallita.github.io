@@ -129,8 +129,8 @@ Each machine contains a set of states, one initial state, and transitions trigge
 <p>In this lab, you will model a Finite State Machine (<code>FSM</code>) using an Ecore metamodel.</p>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>The modeling is made with <a href="https://www.eclipse.org/downloads/packages/release/2025-09/r/eclipse-ide-java-and-dsl-developers">Eclipse DSL 2025-09</a> with the added <a href="https://projects.eclipse.org/projects/modeling.emft.ecoretools">Ecore tools 4.0</a>.</p>
-<div style="border-left: 2px solid #8957e5; padding: 10px; color: #202020">
-<i class="fa-solid fa-circle-exclamation" style="color:   #ab7df8; height: 12px; width: 12px;"></i> You have to test the Eclipse version before the first lab session or there might be problem with the last Sirius version when using Xtext2Langium in the next part.
+<div style="border: 1px solid #8957e5; padding: 10px; color: #202020; background: #bca4e7">
+You have to test the Eclipse version before the first lab session or there might be problem with the last Sirius version when using Xtext2Langium in the next part.
 </div>
 <h3 id="ecore-metamodeling">Ecore Metamodeling</h3>
 <p><code>Ecore</code> is the core modeling language of the Eclipse Modeling Framework (<code>EMF</code>).
@@ -279,8 +279,9 @@ npm run build
         }
     }
 }
-</code></pre><div style="border-left: 2px solid #8957e5; padding: 10px; color: #202020">
-<i class="fa-solid fa-circle-exclamation" style="color:   #ab7df8; height: 12px; width: 12px;"></i> You have to run <strong>npm run build</strong> each time you modify the grammar before testing it.</div>
+</code></pre><div style="border: 1px solid #8957e5; padding: 10px; color: #202020; background: #bca4e7">
+You have to run <strong>npm run build</strong> each time you modify the grammar before testing it.
+</div>
 <h2 id="interpretation-with-langium">Interpretation with Langium</h2>
 <p>In this part, you will develop an interpreter for your <code>FSM</code> language.
 The interpreter allows you to simulate the behavior of an FSM by evolving a runtime state.</p>
@@ -374,8 +375,9 @@ In VSCode, press F5 to launch a new VSCode with our extensions.</p>
 <li><code>Ctrl+Shift+P</code>, then type: <code>&gt; Run FSM</code></li>
 <li>You should see in the console of the VSCode containing the interpreter (language workbench), the traces of your <code>console.log()</code>.</li>
 </ul>
-<div style="border-left: 2px solid #8957e5; padding: 10px; color: #202020">
-<i class="fa-solid fa-circle-exclamation" style="color:   #ab7df8; height: 12px; width: 12px;"></i> You have to run <strong>npm run build</strong> in the <strong>extension</strong> each time you modify the interpreter before testing it.</div>
+<div style="border: 1px solid #8957e5; padding: 10px; color: #202020; background: #bca4e7">
+You have to run <strong>npm run build</strong> in the <strong>extension</strong> each time you modify the interpreter before testing it.
+</div>
 <h2 id="compilation-with-langium">Compilation with Langium</h2>
 <p>In this part, you will implement a compiler for your FSM language.
 The compiler will translate a textual FSM model into a JavaScript implementation that can be executed independently.
