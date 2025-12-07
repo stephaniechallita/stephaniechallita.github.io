@@ -21,8 +21,9 @@ In this lab, you will model a Finite State Machine (`FSM`) using an Ecore metamo
 
 The modeling is made with [Eclipse DSL 2025-09](https://www.eclipse.org/downloads/packages/release/2025-09/r/eclipse-ide-java-and-dsl-developers) with the added [Ecore tools 4.0](https://projects.eclipse.org/projects/modeling.emft.ecoretools).
 
-> [!WARNING]
-> You have to test the Eclipse version before the first lab session or there might be problem with the last Sirius version when using Xtext2Langium in the next part.
+<div style="border: 1px solid #8957e5; padding: 10px; color: #202020; background: #bca4e7">
+You have to test the Eclipse version before the first lab session or there might be problem with the last Sirius version when using Xtext2Langium in the next part.
+</div>
 
 ### Ecore Metamodeling
 
@@ -241,6 +242,10 @@ FSM DoorSystem {
 }
 ```
 
+<div style="border: 1px solid #8957e5; padding: 10px; color: #202020; background: #bca4e7">
+You have to run <strong>npm run build</strong> each time you modify the grammar before testing it.
+</div>
+
 ## Interpretation with Langium
 
 In this part, you will develop an interpreter for your `FSM` language.
@@ -359,6 +364,10 @@ In this new VSCode, :
 - Open a `.fsm` file
 - `Ctrl+Shift+P`, then type: `> Run FSM`
 - You should see in the console of the VSCode containing the interpreter (language workbench), the traces of your `console.log()`.
+
+<div style="border: 1px solid #8957e5; padding: 10px; color: #202020; background: #bca4e7">
+You have to run <strong>npm run build</strong> in the <strong>extension</strong> each time you modify the interpreter before testing it.
+</div>
 
 ## Compilation with Langium
 

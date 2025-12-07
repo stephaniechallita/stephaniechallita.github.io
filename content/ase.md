@@ -20,8 +20,8 @@ title = "ASE"
 | 17/11/2025 | 09:45 - 13:00 | [DSL](/ase/2-dsl.pdf) | [EMF modeling](/ase/flipped_sessions/1-EMF.pdf) | FSM metamodeling |
 | 24/11/2025 | 09:45 - 13:00 | [DSL](/ase/2-dsl.pdf) | [Xtext](/ase/flipped_sessions/2-Xtext.pdf) | FSM Xtext |
 | 27/11/2025 | 09:45 - 13:00 | [DSL](/ase/2-dsl.pdf) | | FSM Langium |
-| 08/12/2025 | 09:45 - 13:00 | [Model Management](/ase/3-ModelManagement.pdf) | [Xtend](/ase/flipped_sessions/3-Xtend.pdf) | |
-| 02/02/2026 | 09:45 - 13:00 | [Model Management](/ase/3-ModelManagement.pdf) | [Visitors](/ase/flipped_sessions/4-visitors.pdf) | FSM interpreter/compiler |
+| 08/12/2025 | 09:45 - 13:00 | [Model Management](/ase/3-ModelManagement.pdf) | [Xtend](/ase/flipped_sessions/3-Xtend.pdf) | FSM interpreter |
+| 02/02/2026 | 09:45 - 13:00 | [Model Management](/ase/3-ModelManagement.pdf) | [Visitors](/ase/flipped_sessions/4-visitors.pdf) | FSM compiler |
 
 ###### Materials
 
