@@ -314,6 +314,13 @@ The interpreter allows you to simulate the behavior of an FSM by evolving a runt
     }
 }
 </code></pre></div><p>In <code>index.ts</code>, add <code>export * from './interpreter.js'</code></p>
+<div style="border: 1px solid #8957e5; padding: 10px; color: #202020; background: #bca4e7">
+Note: Yes, it a `.js` while we just created a `.ts`.
+When writing a TypeScript library, such as `fsm-language`, we compile the `.ts` files into `.js` files to the folder `out/`.
+But in the source code (`.ts`), we need to add the imports as they were compiled (`.js`), because:
+- TypeScript in ESM do not rewrite file extensions `.ts` → `.js` automatically.
+- VSCode + Node in ESM requires the paths to the `.js`.
+</div>
 <h2 id="runner">Runner</h2>
 <p>Now, we want a VSCode action, a kind of plugin that execute a command to launch the interpretation.</p>
 <p>In <code>extension</code>, a new folder <code>runner</code>, add a new  file <code>runner.ts</code> with the following code:</p>
