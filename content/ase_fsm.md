@@ -286,6 +286,12 @@ export class FsmContext {
 ```
 
 In `index.ts`, add `export * from './interpreter.js'`
+
+<b>Note</b>: Yes, it a `.js` while we just created a `.ts`.
+When writing a TypeScript library, such as `fsm-language`, we compile the `.ts` files into `.js` files to the folder `out/`.
+But in the source code (`.ts`), we need to add the imports as they were compiled (`.js`), because:
+- TypeScript in ESM do not rewrite file extensions `.ts` → `.js` automatically.
+- VSCode + Node in ESM requires the paths to the `.js`.
 	
 ## Runner
 
