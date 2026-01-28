@@ -52,7 +52,7 @@ Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoS
 
 {{< expand "External Reviewing Services" >}}
 
-- [JoT](http://www.jot.fm), [IEEE Access](https://ieeeaccess.ieee.org), [CCPE](https://www.wiley.com/en-us/Concurrency+and+Computation%3A+Practice+and+Experience-p-9780JNRL00556) & [SPE](https://onlinelibrary.wiley.com/journal/1097024x) journals
+- [SCP](https://www.sciencedirect.com/journal/science-of-computer-programming), [JoT](http://www.jot.fm), [IEEE Access](https://ieeeaccess.ieee.org), [CCPE](https://www.wiley.com/en-us/Concurrency+and+Computation%3A+Practice+and+Experience-p-9780JNRL00556) & [SPE](https://onlinelibrary.wiley.com/journal/1097024x) journals
 - [IEEE/ACM MobileSoft'2017](https://mobilesoftconf.org/2017/")
 - [IEEE WCNC'2018](http://wcnc2018.ieee-wcnc.org/)
 {{< /expand >}}
