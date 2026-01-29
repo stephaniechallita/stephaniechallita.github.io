@@ -11,5 +11,5 @@ title = "Positions"
 --- 
 
 {{< expand "PhD positions" >}}
-No position avalaible
+- [Privacy-Compliant REST APIs](/positions/Challita-Phd.pdf)
 {{< /expand >}}
