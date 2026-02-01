@@ -378,15 +378,15 @@ You have to run <strong>npm run build</strong> in the <strong>extension</strong>
 ## Compilation with Langium
 
 In this part, you will implement a compiler for your FSM language.
-The compiler will translate a textual FSM model into a JavaScript implementation that can be executed independently.
-Unlike the interpreter (which executes the model directly), the compiler generates source code following the `State` design pattern.
+The compiler will translate a textual FSM model into a TypeScript implementation that can be executed independently.
+Unlike the interpreter (which executes the model directly), the compiler generates TypeScript code.
 
 ### Goal
 
 Your compiler should:
-- Generate JavaScript files representing the FSM structure (machine, states, transitions).
+- Generate TypeScript files representing the FSM structure (machine, states, transitions).
 - Implement a runtime behavior that can execute transitions and evolve between states.
-- Produce files that can be executed as a standalone JavaScript program.
+- Produce files that can be executed as a standalone program.
 
 This process illustrates the Visitor pattern, as your compiler must traverse the model and produce corresponding code elements.
 
