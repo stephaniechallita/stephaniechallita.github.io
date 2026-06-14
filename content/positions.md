@@ -11,5 +11,5 @@ title = "Positions"
 --- 
 
 {{< expand "PhD positions" >}}
-- [Privacy-Compliant REST APIs](/positions/Challita-Phd.pdf)
+- [Model-Driven Engineering for Reliable REST APIs](/positions/Challita-Phd.pdf)
 {{< /expand >}}
