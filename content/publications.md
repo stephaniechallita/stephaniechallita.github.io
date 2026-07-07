@@ -38,6 +38,11 @@ You can also access all the articles from [HAL <i class="ai ai-hal"></i>](https:
 ---								
                                     
 {{< expand "International Conferences" >}}
+- **Stéphanie Challita**, [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/). 
+[<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-05683737/document)
+"Sock: A Clock-Based Modeling Language to Specify Secure Periodic
+Real-Time Tasks."
+*22nd European Conference on Modelling Foundations and Applications (ECMFA).* Rennes, France, 2026. 
 
 - Anne Bumiller, [Olivier Barais](https://olivier.barais.fr/), **Stéphanie Challita**, [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), Nicolas Aillery, Gaël Le Lan.
 [<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-03729080/document) "A Context-Driven Modelling Framework for Dynamic Authentication Decisions."
