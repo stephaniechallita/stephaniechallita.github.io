@@ -36,7 +36,8 @@ My research interests include:
 
 --- 
 
-**Internships supervision**
+**Internships supervision** 
+- Abdelilah Ettarch, April 15 - September 15, 2026, **“Extending OpenAPI for privacy-aware REST APIs”**
 - Yazid Benjamaa, June 12 - September 15, 2023, **“A DSL for specifying DevSecOps tools”**
 - Mouna Hissane, May 01 - August 31, 2021, **“A model-driven approach for analyzing security of Cloud APIs”**, co-supervision: [Nan Messe](https://nanzhangmesse.github.io/"), [Olivier Barais](https://olivier.barais.fr/) 
 
