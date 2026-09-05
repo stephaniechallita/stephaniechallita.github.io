@@ -24,13 +24,13 @@ Les slides du cours de Dev Frontend sont disponibles [ici](/web/Cours_WM_FrontEn
 
 | Date | Heure | Thème | Notes |
 | -------- | -------- | -------- | -------- |
-| 08/09/2025 | 13:15 - 14:45 | Introduction et Généralités | Histoire, vision globale, architecture, frontend, backend, TypeScript et NestJS | 
-| 08/09/2025 | 15:00 - 16:30 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs |
-| 15/09/2025 | 15:00 - 16:30 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs| 
-| 23/09/2025 | 09:15 - 10:45 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI | 
-| 23/09/2025 | 11:00 - 12:30 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI |
-| 07/10/2025 | 9:45 - 11:15 | Sécurité | Sécurisation d'API, de mots de passe, HTTPs, Autorisation & Authentification |  
-| 07/10/2025 | 11:30 - 13:00 | Extra Backend Dev | Vendre son API, Développement No-code |			
+| 07/09/2026 | 09:45 - 11:15 | Introduction et Généralités | Histoire, vision globale, architecture, frontend, backend, TypeScript et NestJS | 
+| 07/09/2026 | 11:30 - 13:00 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs |
+| 15/09/2026 | 08:00 - 09:30 | Object Relationnal Mapping (ORM) | Comment passer du monde objet au monde relationel des BDDs| 
+| 15/09/2026 | 09:45 - 11:15 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI | 
+| 15/09/2026 | 11:30 - 13:00 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI |
+| 28/09/2026 | 13:15 - 14:45 | Sécurité | Sécurisation d'API, de mots de passe, HTTPs, Autorisation & Authentification |  
+| 28/09/2026 | 15:00 - 16:30 | Extra Backend Dev | Vendre son API, Développement No-code |			
 ---
 
 ##### Séances de TP
