@@ -57,7 +57,7 @@ Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ic
 | 16/12/2025 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
 | 05/01/2026 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
 
-La soutenance du projet aura lieu le 16/01/2026 de 13:15 à 16:15.
+La soutenance du projet aura lieu le 14/12/2026 de 13:15 à 16:15.
 							
 ---
 
