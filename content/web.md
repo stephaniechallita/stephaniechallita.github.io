@@ -41,21 +41,21 @@ Ci-dessous, une tentative de planning pour les différentes étapes du projet.
 
 | Date | Heure | Sujets |
 | -------- | -------- | -------- | 
-| 03/10/2025 | 8:00 - 11:15 | [Premiers pas avec NestJS](https://github.com/stephaniechallita/WebServer/blob/master/premiers_pas_avec_nestjs.md), [Contrôleurs et première API](https://github.com/stephaniechallita/WebServer/blob/master/controleurs_et_premiere_api.md)|
-| 17/10/2025 (SC) | 13:15 - 16:30 | [Modules et logique métier](https://github.com/stephaniechallita/WebServer/blob/master/modules_et_logiques_metiers.md) |
-| 20/10/2025 | 8:00 - 11:15 |  [TypeORM, Repository et données](https://github.com/stephaniechallita/WebServer/blob/master/typeorm_repository_et_donnees.md) |
-| 03/11/2025 (SC)| 13:15 - 16:30 | [OpenAPI](https://github.com/stephaniechallita/WebServer/blob/master/openapi.md), [Tester son backend NestJS](https://github.com/stephaniechallita/WebServer/blob/master/tester_son_backend_nestjs.md), [Sécurité](https://github.com/stephaniechallita/WebServer/blob/master/securite.md) |
-| 17/11/2025 | 13:15 - 16:30 | [Développement](https://github.com/stephaniechallita/WebServer/blob/master/developpement.md) |
+| 22/09/2026 | 08:00 - 11:15 | [Premiers pas avec NestJS](https://github.com/stephaniechallita/WebServer/blob/master/premiers_pas_avec_nestjs.md), [Contrôleurs et première API](https://github.com/stephaniechallita/WebServer/blob/master/controleurs_et_premiere_api.md)|
+| 29/09/2026 (SC) |  08:00 - 11:15 | [Modules et logique métier](https://github.com/stephaniechallita/WebServer/blob/master/modules_et_logiques_metiers.md) |
+| 12/10/2026 | 08:00 - 11:15 |  [TypeORM, Repository et données](https://github.com/stephaniechallita/WebServer/blob/master/typeorm_repository_et_donnees.md) |
+| 13/10/2026 (SC)| 09:45 - 13:15 | [OpenAPI](https://github.com/stephaniechallita/WebServer/blob/master/openapi.md), [Tester son backend NestJS](https://github.com/stephaniechallita/WebServer/blob/master/tester_son_backend_nestjs.md), [Sécurité](https://github.com/stephaniechallita/WebServer/blob/master/securite.md) |
+| 05/11/2026 | 09:45 - 13:15 | [Développement](https://github.com/stephaniechallita/WebServer/blob/master/developpement.md) |
 |
 
 Le sujet du projet (partie Frontend) est disponible sur le GitLab de l'Istic [ici](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront).
 
 | Date | Heure | Sujet |
 | -------- | -------- | -------- |
-| 05/12/2025 | 08:00 - 11:15 | [Introduction à Angular](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_front_angular) |
-| 12/12/2025 | 15:00 - 18:15 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
-| 16/12/2025 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
-| 05/01/2026 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
+| 20/11/2026 | 15:00 - 18:15 | [Introduction à Angular](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_front_angular) |
+| 23/11/2026 | 09:45 - 13:00 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
+| 30/11/2026 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
+| 08/12/2026 (SC)| 13:15 - 16:30 | [Frontend FR administration](https://gitlab2.istic.univ-rennes1.fr/hfeuilla/wm_fradministrationfront) |
 
 La soutenance du projet aura lieu le 14/12/2026 de 13:15 à 16:15.
 							
