@@ -6,7 +6,7 @@ title = "Activities"
 
 {{< expand "Community Activities" >}} 
 
-2026 - Present : Responsible for the [SciLOG GT-VL working group](https://mygdr.hosted.lip6.fr/GTView/209/) 
+2026 - Present : Responsible for the [SciLOG GT-VL working group](https://mygdr.hosted.lip6.fr/GTView/209/). 
 
 2021 - 2025 : Member of the Conference Activities Committee [(CAC)](https://www.computer.org/volunteering/boards-and-committees/technical-activities) @IEEE Computer Society.
 {{< /expand >}}
