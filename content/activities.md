@@ -4,14 +4,18 @@ title = "Activities"
 
 ## Activities
 
-{{< expand "Activities @IEEE Computer Society" >}}
-Member of IEEE Conference Activities Committee [(CAC)](https://www.computer.org/volunteering/boards-and-committees/technical-activities).
+{{< expand "Community Activities" >}} 
+
+2026 - Present : Responsible for the [SciLOG GT-VL working group](https://mygdr.hosted.lip6.fr/GTView/209/) 
+
+2021 - 2025 : Member of the Conference Activities Committee [(CAC)](https://www.computer.org/volunteering/boards-and-committees/technical-activities) @IEEE Computer Society.
 {{< /expand >}}
 
 ---
 
-{{< expand "Journals" >}}
-Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoSyM)](https://sosym.org/).
+{{< expand "Journals" >}} 
+
+2022 - Present : Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoSyM)](https://sosym.org/).
 {{< /expand >}}
 
 ---
@@ -70,7 +74,10 @@ Assistant Editor of the Journal of Software and Systems Modeling, Springer [(SoS
 
 ---
 
-{{< expand "Talks" >}}
+{{< expand "Talks" >}} 
+
+Besides presenting accepted conference papers: 
+
 - Seminar in 2020 @[ENS Rennes](http://www.ens-rennes.fr/actualites/seminaire-2-mercredi-30-09-2020-par-stephanie-challita-automated-reverse-engineering-of-a-cloud-api-294396.kjsp?RH=1412169140861) (see the slides [here](http://www.ens-rennes.fr/medias/fichier/seminaire-30-09-2020-stephanie-challita_1601553362988-pdf))
 - [GLE/LOUISE/RIMEL](http://www.lgi2p.mines-ales.fr/~urtado/Groupe_RIMEL/Journee_RIMEL_2019/RIMEL2019_Programme.html) working day 2019 organized by GDR GPL
 - PechaKucha @[FormaliSE'2018](https://www.icse2018.org/track/Formalise-2018-papers) (see the slides [here](https://www.slideshare.net/StephanieCHALLITA/pechakucha-formalise2018))
