@@ -18,7 +18,7 @@ You can also access all the articles from [HAL <i class="ai ai-hal"></i>](https:
 ---
 
 {{< expand "International Journals" >}}
-- Haitam El Hayani, [Jolan Philippe](https://jolanphilippe.github.io/), **Stéphanie Challita**, [Olivier Barais](https://olivier.barais.fr/), [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/). "Quality Assurance in Infrastructure as Code: Issues, Approaches, and Open Challenges." *Journal of Systems and Software, 2026.* 
+- Haitam El Hayani, [Jolan Philippe](https://jolanphilippe.github.io/), **Stéphanie Challita**, [Olivier Barais](https://olivier.barais.fr/), [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/). [<i class="fa fa-paperclip"></i>](https://hal.science/hal-05742649/document)"Quality Assurance in Infrastructure as Code: Issues, Approaches, and Open Challenges." *Journal of Systems and Software, 2026.* 
 
 - Anne Bumiller, **Stéphanie Challita**, [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/), [Olivier Barais](https://olivier.barais.fr/), Nicolas Aillery, Gaël Le Lan. 
 [<i class="fa fa-paperclip"></i>](https://dl.acm.org/doi/pdf/10.1145/3582696) "On Understanding Context Modelling for Adaptive Authentication Systems."
