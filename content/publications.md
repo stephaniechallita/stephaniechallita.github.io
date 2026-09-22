@@ -39,7 +39,11 @@ You can also access all the articles from [HAL <i class="ai ai-hal"></i>](https:
 
 ---								
                                     
-{{< expand "International Conferences" >}}
+{{< expand "International Conferences" >}} 
+- Haitam El Hayani, [Jolan Philippe](https://jolanphilippe.github.io/), **Stéphanie Challita**.
+[<i class="fa fa-paperclip"></i>](https://hal.science/hal-05742719v1/file/CONFLANG_2026_POLIAC_Prompt_based_Optimization_using_LLMs_for_Infrastructure_as_Code.pdf)
+"Poliac: Production Observability for LLM-Based Infrastructure as Code."
+*3rd International Workshop on Configuration Languages (ConfLang) co-located with the 41st IEEE/ACM International Conference on Automated Software Engineering (ASE).* Munich, Germany, 2026. 
 - **Stéphanie Challita**, [Benoit Combemale](https://people.irisa.fr/Benoit.Combemale/). 
 [<i class="fa fa-paperclip"></i>](https://hal.inria.fr/hal-05683737/document)
 "Sock: A Clock-Based Modeling Language to Specify Secure Periodic
