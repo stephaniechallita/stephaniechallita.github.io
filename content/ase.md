@@ -19,7 +19,7 @@ title = "ASE"
 | 01/10/2026 | 08:00 - 11:15 | [MDE / SLE](/ase/1-intro.pdf) - [DSL](/ase/2-dsl.pdf) |  |  |
 | 12/10/2026 | 08:00 - 11:15 | [DSL](/ase/2-dsl.pdf) | [EMF modeling](/ase/flipped_sessions/1-EMF.pdf) | FSM metamodeling |
 | 14/10/2026 | 09:45 - 13:00 | [DSL](/ase/2-dsl.pdf) | [Xtext](/ase/flipped_sessions/2-Xtext.pdf) | FSM Xtext |
-| 09/11/2026 | 08:00 - 11:15 | [DSL](/ase/2-dsl.pdf) | | FSM interpreter |
+| 09/11/2026 | 08:00 - 11:15 | [DSL](/ase/2-dsl.pdf) | | FSM Langium / Quiz |
 | 16/11/2026 | 08:00 - 11:15 | [Model Management](/ase/3-ModelManagement.pdf) | [Xtend](/ase/flipped_sessions/3-Xtend.pdf) | FSM interpreter | 
 | 26/11/2026 | 08:00 - 11:15 | [Model Management](/ase/3-ModelManagement.pdf) | [Visitors](/ase/flipped_sessions/4-visitors.pdf) | FSM compiler |
 
