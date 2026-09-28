@@ -30,7 +30,7 @@ Les slides du cours de Dev Frontend sont disponibles [ici](/web/Cours_WM_FrontEn
 | 15/09/2026 | 09:45 - 11:15 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI | 
 | 15/09/2026 | 11:30 - 13:00 | TypeORM et OpenAPI | Framework ORM pour TS, REST, bonnes pratiques et standard OpenAPI |
 | 28/09/2026 | 13:15 - 14:45 | Sécurité | Sécurisation d'API, de mots de passe, HTTPs, Autorisation & Authentification |  
-| 28/09/2026 | 15:00 - 16:30 | Extra Backend Dev | Vendre son API, Développement No-code |			
+| 28/09/2026 | 15:00 - 16:30 | Extra : Accessibilité | Principes WCAG et bonnes pratiques |			
 ---
 
 ##### Séances de TP
