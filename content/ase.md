@@ -68,3 +68,5 @@ By the end of the module, you must submit a Git repository containing all your s
 - Documentation of [Xtext](https://eclipse.dev/Xtext/documentation/) and [Xtend](https://eclipse.dev/Xtext/xtend/documentation/index.html)  
 - Documentation of [Langium](https://langium.org/docs/learn/workflow/) and the project [Xtext2Langium](https://github.com/TypeFox/xtext2langium)  
 - The [GEMOC Studio](https://gemoc.org/studio.html) (incl., EMF, Xtext, Xtend, Sirius…)
+- [Awesome Software Language Engineering ](https://manuelleduc.github.io/awesome-software-language-engineering/)
+- [EMF Cheat Sheet](/ase/emf_cheat_sheet.pdf)
