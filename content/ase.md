@@ -38,7 +38,7 @@ The labs will consist in implementing in pair [the RobotML project](https://gith
 -----------
 | Date | Time | Topic |  
 | -------- | -------- | -------- |  
-| 12/11/2026 | 13:15 - 16:15 | Abstract syntax (Metamodeling) |  
+| 12/11/2026 | 9:45 - 12:45 | Abstract syntax (Metamodeling) |  
 | 19/11/2026 | 13:15 - 17:45 | Concrete syntax (Langium Grammar) |  
 | 23/11/2026 | 13:15 - 17:45 | Concrete syntax (Langium Grammar) |  
 | 03/12/2026 | 13:15 - 17:45 | Semantics |  
