@@ -155,6 +155,12 @@ Eclipse allows you to create a Xtext project based on a ecore:
 
 `File` → `New` → `Project` → Type xtext → `Xtext Project From Existing Ecore Models`
 
+In the wizard, click on `Add...`, select your `fsm.genmodel` file → `Ok`, verify that the entry rule is `FSM - fsm`, then `Next >`
+
+- Project name: `fr.esir.ase.xtext.from.ecore.fsm`
+- Language name: `xtext.Fsm`.
+- Use the file extension: `fsm`.
+
 You can check and compare the generated grammar with yours.
 
 ### Langium
